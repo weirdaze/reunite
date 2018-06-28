@@ -1,0 +1,17 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#searchInput {
+	padding-right: 25px;
+}
+#searchIcon {
+	position: absolute;
+	right: 25px;
+	top: 8px;
+	cursor: pointer;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}

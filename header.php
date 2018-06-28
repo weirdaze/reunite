@@ -19,8 +19,7 @@
 	</head>
 	 
 	<body>
-		<div class="container">
-			<header>
-			    <h1>ReUnite</h1>
-			    header content
-			</header>
+		<header class="bg-dark text-light p-2 mb-3">
+		    <h1 class="text-center">Reunite</h1>
+		</header>
+			
