@@ -1,0 +1,6 @@
+username = "root"
+password = "R3unite123"
+dbhostname = "localhost"
+dbusername = "root"
+dbpassword = "R3unite123"
+dbname = "reunite"
