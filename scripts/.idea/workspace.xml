@@ -17,16 +17,26 @@
       <file leaf-file-name="db_manipulate.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db_manipulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2479">
-              <caret line="44" column="61" lean-forward="true" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
+            <state relative-caret-position="803">
+              <caret line="131" column="24" lean-forward="false" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1530215541799" expanded="true" signature="5262:5448" ph="INSERT INTO person... " />
-                <marker date="1530215541799" expanded="true" signature="9200:9242" ph="DELETE FROM wp_client_vpn... " />
-                <marker date="1530215541799" expanded="true" signature="9200:9244" ph="DELETE FROM person... " />
-                <marker date="1530215541799" expanded="true" signature="10049:10093" ph="SELECT Devic... wp_client_devices" />
-                <marker date="1530215541799" expanded="true" signature="11339:11390" ph="SELECT COUNT... wp_client_vpn" />
+                <marker date="1530218598521" expanded="true" signature="5262:5448" ph="INSERT INTO person... " />
+                <marker date="1530218598521" expanded="true" signature="9250:9292" ph="DELETE FROM wp_client_vpn... " />
+                <marker date="1530218598521" expanded="true" signature="9250:9294" ph="DELETE FROM person... " />
+                <marker date="1530218598521" expanded="true" signature="10099:10143" ph="SELECT Devic... wp_client_devices" />
+                <marker date="1530218598521" expanded="true" signature="11389:11440" ph="SELECT COUNT... wp_client_vpn" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,6 +64,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/appollo.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/db_manipulate.py" />
       </list>
     </option>
@@ -207,11 +218,11 @@
           <caret line="184" column="14" lean-forward="true" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="14" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1530215541799" expanded="true" signature="5262:5448" ph="INSERT INTO person... " />
-            <marker date="1530215541799" expanded="true" signature="9200:9242" ph="DELETE FROM wp_client_vpn... " />
-            <marker date="1530215541799" expanded="true" signature="9200:9244" ph="DELETE FROM person... " />
-            <marker date="1530215541799" expanded="true" signature="10049:10093" ph="SELECT Devic... wp_client_devices" />
-            <marker date="1530215541799" expanded="true" signature="11339:11390" ph="SELECT COUNT... wp_client_vpn" />
+            <marker date="1530218598521" expanded="true" signature="5262:5448" ph="INSERT INTO person... " />
+            <marker date="1530218598521" expanded="true" signature="9250:9292" ph="DELETE FROM wp_client_vpn... " />
+            <marker date="1530218598521" expanded="true" signature="9250:9294" ph="DELETE FROM person... " />
+            <marker date="1530218598521" expanded="true" signature="10099:10143" ph="SELECT Devic... wp_client_devices" />
+            <marker date="1530218598521" expanded="true" signature="11389:11440" ph="SELECT COUNT... wp_client_vpn" />
           </folding>
         </state>
       </provider>
@@ -232,17 +243,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db_manipulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2479">
-          <caret line="44" column="61" lean-forward="true" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
+        <state relative-caret-position="803">
+          <caret line="131" column="24" lean-forward="false" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1530215541799" expanded="true" signature="5262:5448" ph="INSERT INTO person... " />
-            <marker date="1530215541799" expanded="true" signature="9200:9242" ph="DELETE FROM wp_client_vpn... " />
-            <marker date="1530215541799" expanded="true" signature="9200:9244" ph="DELETE FROM person... " />
-            <marker date="1530215541799" expanded="true" signature="10049:10093" ph="SELECT Devic... wp_client_devices" />
-            <marker date="1530215541799" expanded="true" signature="11339:11390" ph="SELECT COUNT... wp_client_vpn" />
+            <marker date="1530218598521" expanded="true" signature="5262:5448" ph="INSERT INTO person... " />
+            <marker date="1530218598521" expanded="true" signature="9250:9292" ph="DELETE FROM wp_client_vpn... " />
+            <marker date="1530218598521" expanded="true" signature="9250:9294" ph="DELETE FROM person... " />
+            <marker date="1530218598521" expanded="true" signature="10099:10143" ph="SELECT Devic... wp_client_devices" />
+            <marker date="1530218598521" expanded="true" signature="11389:11440" ph="SELECT COUNT... wp_client_vpn" />
           </folding>
         </state>
       </provider>

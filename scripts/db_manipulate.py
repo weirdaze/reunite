@@ -95,6 +95,7 @@ def db_add_update_profile(person, new):
                      "', '" + last_facility + "', '" + current_facility + "', '" + relatives + "', '" + date_detained +
                      "', '" + status + "', '" + claiming + "', '" + typed + "', '" + video + "', '" + photo +
                      "', '" + facility_uid + "', '" + init_date + "'")
+            print(query)
             cursor.execute(query)
             cnx.commit()
             cursor.close()
@@ -128,6 +129,7 @@ def db_add_update_profile(person, new):
                      "', DateDetained='" + date_detained + "', Status='" + status + "', Claiming='" + claiming +
                      "', Type='" + typed + "', video='" + video + "', photo='" + photo +
                      "', FacilityUID='" + facility_uid + "'")
+            print(query)
             cursor.execute(query)
             cnx.commit()
             cursor.close()
@@ -172,8 +174,8 @@ def db_get_person_info(uid):
         cursor = cnx.cursor()
         query1 = ("SELECT * FROM person WHERE UID='" + uid + "'")
         cursor.execute(query1)
-        for UID, FirstName, MiddleName, LastName, DOB, MaternalLastName, Sex, EntryPoint, Country, LastFacility, CurrentFacility, Relatives, DateDetained, Status, Claiming, Type, photo, video, FacilityUID, InitDate in cursor:
-            person = [UID, FirstName, MiddleName, LastName, DOB, MaternalLastName, Sex, EntryPoint, Country, LastFacility, CurrentFacility, Relatives, DateDetained, Status, Claiming, Type, photo, video, FacilityUID, InitDate]
+        for UID, FirstName, MiddleName, LastName, DOB, MaternalLastName, Sex, EntryPoint, Country, LastFacility, CurrentFacility, Relatives, DateDetained, Status, Claiming, Type, video, photo, FacilityUID, InitDate in cursor:
+            person = [UID, FirstName, MiddleName, LastName, DOB, MaternalLastName, Sex, EntryPoint, Country, LastFacility, CurrentFacility, Relatives, DateDetained, Status, Claiming, Type, video, photo, FacilityUID, InitDate]
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
             print("Something is wrong with your user name or password")
