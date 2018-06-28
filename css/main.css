@@ -1,14 +1,21 @@
+html, body {
+	height: 100%;
+}
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
 header {
 	height: 100px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-shrink: 0;
 }
 .container {
-	min-height: calc(100vh - 150px);
+	flex: 1 0 auto;
 }
 #searchInput {
 	padding-right: 25px;
@@ -20,5 +27,6 @@ header {
 	cursor: pointer;
 }
 footer {
+	margin-top: auto;
 	height: 50px;
 }
