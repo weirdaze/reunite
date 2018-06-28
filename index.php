@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
-<div class="container">
-	<h2 class="text-center">
-		A quién estás buscando?
+<div class="container py-3">
+	<h2 class="text-center mb-3">
+			¿A quién estás buscando?
 	</h2>
 	<div class="row">
 		<div class="col">

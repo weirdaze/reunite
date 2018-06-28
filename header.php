@@ -19,7 +19,7 @@
 	</head>
 	 
 	<body>
-		<header class="bg-dark text-light p-2 mb-3">
+		<header class="bg-dark text-light p-2">
 		    <h1 class="text-center">Reunite</h1>
 		</header>
 			

@@ -1,6 +1,15 @@
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+header {
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	min-height: calc(100vh - 150px);
+}
 #searchInput {
 	padding-right: 25px;
 }
@@ -11,7 +20,5 @@ body {
 	cursor: pointer;
 }
 footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+	height: 50px;
 }
