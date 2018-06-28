@@ -1,0 +1,10 @@
+conventions
+
+username for the volunteer: first letter of first name + 7 letters of last name + 3 numbers
+    for example: elliott castillo 
+        ecastill001
+
+UID: facility_number (4-digits) + person_id (9-digits) + userID of person registering them (5-digits)
+	for example: Juan Doe
+		1234001110110ecastill001
+
