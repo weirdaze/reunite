@@ -4,6 +4,7 @@ import appollo
 import mysql.connector
 from mysql.connector import errorcode
 import os
+import string
 
 '''
 this is a collection of functions that interact with the database 
@@ -96,7 +97,7 @@ def db_add_update_profile(person, new):
                      "', '" + maternal_last_name + "', '" + sex + "', '" + entry_point + "', '" + country +
                      "', '" + last_facility + "', '" + current_facility + "', '" + relatives + "', '" + date_detained +
                      "', '" + status + "', '" + claiming + "', '" + typed + "', '" + video + "', '" + photo +
-                     "', '" + facility_uid + "', '" + init_date + "'")
+                     "', '" + facility_uid + "', '" + str(init_date) + "')")
             print(query)
             cursor.execute(query)
             cnx.commit()
