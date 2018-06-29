@@ -15,24 +15,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db_manipulate.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="db_manipulate.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db_manipulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="140" column="75" lean-forward="true" selection-start-line="140" selection-start-column="75" selection-end-line="140" selection-end-column="75" />
+            <state relative-caret-position="119">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <marker date="1530223445941" expanded="true" signature="5319:5505" ph="INSERT INTO person... " />
-                <marker date="1530223445941" expanded="true" signature="9313:9355" ph="DELETE FROM wp_client_vpn... " />
-                <marker date="1530223445941" expanded="true" signature="9313:9357" ph="DELETE FROM person... " />
-                <marker date="1530223445941" expanded="true" signature="10162:10206" ph="SELECT Devic... wp_client_devices" />
-                <marker date="1530223445941" expanded="true" signature="11452:11503" ph="SELECT COUNT... wp_client_vpn" />
+                <element signature="e#0#22#0" expanded="true" />
+                <marker date="1530229747465" expanded="true" signature="5281:5467" ph="INSERT INTO person... " />
+                <marker date="1530229747465" expanded="true" signature="9275:9317" ph="DELETE FROM wp_client_vpn... " />
+                <marker date="1530229747465" expanded="true" signature="9275:9319" ph="DELETE FROM person... " />
+                <marker date="1530229747465" expanded="true" signature="10124:10168" ph="SELECT Devic... wp_client_devices" />
+                <marker date="1530229747465" expanded="true" signature="11414:11465" ph="SELECT COUNT... wp_client_vpn" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -64,9 +64,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db_manipulate.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/appollo.py" />
+        <option value="$PROJECT_DIR$/db_manipulate.py" />
       </list>
     </option>
   </component>
@@ -202,7 +202,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1670" height="987" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -210,7 +209,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -242,12 +241,12 @@
         <state relative-caret-position="2760">
           <caret line="184" column="14" lean-forward="true" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="14" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1530223445941" expanded="true" signature="5319:5505" ph="INSERT INTO person... " />
-            <marker date="1530223445941" expanded="true" signature="9313:9355" ph="DELETE FROM wp_client_vpn... " />
-            <marker date="1530223445941" expanded="true" signature="9313:9357" ph="DELETE FROM person... " />
-            <marker date="1530223445941" expanded="true" signature="10162:10206" ph="SELECT Devic... wp_client_devices" />
-            <marker date="1530223445941" expanded="true" signature="11452:11503" ph="SELECT COUNT... wp_client_vpn" />
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1530229747465" expanded="true" signature="5281:5467" ph="INSERT INTO person... " />
+            <marker date="1530229747465" expanded="true" signature="9275:9317" ph="DELETE FROM wp_client_vpn... " />
+            <marker date="1530229747465" expanded="true" signature="9275:9319" ph="DELETE FROM person... " />
+            <marker date="1530229747465" expanded="true" signature="10124:10168" ph="SELECT Devic... wp_client_devices" />
+            <marker date="1530229747465" expanded="true" signature="11414:11465" ph="SELECT COUNT... wp_client_vpn" />
           </folding>
         </state>
       </provider>
@@ -257,21 +256,6 @@
         <state relative-caret-position="90">
           <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_manipulate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="140" column="75" lean-forward="true" selection-start-line="140" selection-start-column="75" selection-end-line="140" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1530223445941" expanded="true" signature="5319:5505" ph="INSERT INTO person... " />
-            <marker date="1530223445941" expanded="true" signature="9313:9355" ph="DELETE FROM wp_client_vpn... " />
-            <marker date="1530223445941" expanded="true" signature="9313:9357" ph="DELETE FROM person... " />
-            <marker date="1530223445941" expanded="true" signature="10162:10206" ph="SELECT Devic... wp_client_devices" />
-            <marker date="1530223445941" expanded="true" signature="11452:11503" ph="SELECT COUNT... wp_client_vpn" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -288,6 +272,21 @@
         <state relative-caret-position="360">
           <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_manipulate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1530229747465" expanded="true" signature="5281:5467" ph="INSERT INTO person... " />
+            <marker date="1530229747465" expanded="true" signature="9275:9317" ph="DELETE FROM wp_client_vpn... " />
+            <marker date="1530229747465" expanded="true" signature="9275:9319" ph="DELETE FROM person... " />
+            <marker date="1530229747465" expanded="true" signature="10124:10168" ph="SELECT Devic... wp_client_devices" />
+            <marker date="1530229747465" expanded="true" signature="11414:11465" ph="SELECT COUNT... wp_client_vpn" />
+          </folding>
         </state>
       </provider>
     </entry>
