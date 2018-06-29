@@ -38,18 +38,30 @@ MariaDB [reunite]> describe person;
 20 rows in set (0.00 sec)
 
 Here is the admin table:
+
 MariaDB [reunite]> describe admin;
 +-------------+--------------+------+-----+---------+-------+----------------------------------------------------+
 | Field       | Type         | Null | Key | Default | Extra |  Description                                       |
 +-------------+--------------+------+-----+---------+-------+----------------------------------------------------+
-| UserID      | varchar(20)  | NO   | PRI | NULL    |       |
-| FirstName   | varchar(100) | NO   | PRI | NULL    |       |
-| MiddleName  | varchar(100) | YES  |     | NULL    |       |
-| LastName    | varchar(100) | NO   | PRI | NULL    |       |
-| Registrants | longtext     | YES  |     | NULL    |       |
-+-------------+--------------+------+-----+---------+-------+
+| UserID      | varchar(20)  | NO   | PRI | NULL    |       |  The username of the admin of the app              |
+| FirstName   | varchar(100) | NO   | PRI | NULL    |       |  First name of the admin                           |
+| MiddleName  | varchar(100) | YES  |     | NULL    |       |  Middle name of the admin                          |
+| LastName    | varchar(100) | NO   | PRI | NULL    |       |  Last name of the admin                            |
+| Registrants | longtext     | YES  |     | NULL    |       |  list of people that registered under the admin    |
++-------------+--------------+------+-----+---------+-------+----------------------------------------------------+
 5 rows in set (0.00 sec)
 
+
+MariaDB [reunite]> describe matches;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| UID_A       | varchar(100) | NO   | PRI | NULL    |       |
+| UID_B       | varchar(100) | NO   | PRI | NULL    |       |
+| Status      | varchar(30)  | YES  |     | NULL    |       |
+| DateMatched | varchar(30)  | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
 
 
 '''
