@@ -18,7 +18,7 @@ MariaDB [reunite]> describe person;
 | FirstName        | varchar(100) | NO   | PRI | NULL    |       | first name                                         |
 | MiddleName       | varchar(100) | YES  |     | NULL    |       | middle name                                        |
 | LastName         | varchar(100) | NO   | PRI | NULL    |       | last name                                          |
-| DOB              | date         | NO   | PRI | NULL    |       | date of birth                                      |
+| DOB              | varchar(30)  | NO   | PRI | NULL    |       | date of birth                                      |
 | MaternalLastName | varchar(100) | YES  |     | NULL    |       | latinos usually have 2 last names                  |
 | Sex              | varchar(10)  | YES  |     | NULL    |       | sex                                                |
 | EntryPoint       | varchar(100) | YES  |     | NULL    |       | where they came into US or were caught             |
@@ -26,14 +26,14 @@ MariaDB [reunite]> describe person;
 | LastFacility     | varchar(100) | YES  |     | NULL    |       | last facility where contact was made               |
 | CurrentFacility  | varchar(100) | YES  |     | NULL    |       | facility where they currently are                  |
 | Relatives        | varchar(500) | YES  |     | NULL    |       | a list of relatives                                |
-| DateDetained     | date         | YES  |     | NULL    |       | date they were detained                            |
+| DateDetained     | varchar(30)  | YES  |     | NULL    |       | date they were detained                            |
 | Status           | varchar(100) | YES  |     | NULL    |       | status of their record - matched, reunited, etc    |
 | Claiming         | varchar(500) | YES  |     | NULL    |       | list of people they are claiming - parents & kids  |
 | Type             | varchar(20)  | YES  |     | NULL    |       | this one is here for later use                     |
 | photo            | varchar(500) | YES  |     | NULL    |       | the reference to path of the picture file          |
 | video            | varchar(500) | YES  |     | NULL    |       | the reference to path of the video file            |
 | FacilityUID      | varchar(100) | YES  |     | NULL    |       | the reference to the person inside facility        |
-| InitDate         | datetime     | YES  |     | NULL    |       | the date this record was created
+| InitDate         | varchar(30)  | YES  |     | NULL    |       | the date this record was created
 +------------------+--------------+------+-----+---------+-------+----------------------------------------------------+
 20 rows in set (0.00 sec)
 
