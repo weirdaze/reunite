@@ -6,6 +6,7 @@ import appollo
 import os
 import string
 from db_manipulate import id_generator
+import tickets
 
 '''
 MariaDB [reunite]> describe matches;
@@ -105,6 +106,8 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     # construct the match list object
     match = [uid_a, uid_b, status, match_id]
     db_add_update_match(match)
+    updates = "created by " + uid_a + " on the app"
+    tickets.create_ticket(match_id, "new", updates)
 
 
 def potential_match():
@@ -181,6 +184,7 @@ def potential_match():
         match_var = [uid_a, uid_b, status, match_id]
         db_add_update_match(match_var)
         update_claiming(match_var)
+        tickets.create_ticket(match_id, "new", "created by potential-match algorithm")
 
 
 def update_claiming(match):
@@ -266,29 +270,3 @@ def update_claiming_field(claiming, uid):
     else:
         cnx.close()
 
-def create_ticket(match_id, status):  #__________THIS IS INCOMPLETE _______________
-    # this function takes in the Match_ID and creates a new ticket when a "potential" match has been identified
-    ticket_number = id_generator(size=11)
-    agent = 'unassigned'
-    date_created = datetime.datetime.now()
-
-    try:
-        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
-                                      host=appollo.dbhostname, database=appollo.dbname)
-        cursor = cnx.cursor()
-        query = ("INSERT INTO tickets (TicketNumber, Match_ID, Status, DateMatched, Match_ID) "
-                 "VALUES('" + uid_a + "', '" + uid_b + "', '" + status + "', '" + date_matched + "', '" + match_id +
-                 "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
-        print(query)
-        cursor.execute(query)
-        cnx.commit()
-        cursor.close()
-    except mysql.connector.Error as err:
-        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Something is wrong with your user name or password")
-        elif err.errno == errorcode.ER_BAD_DB_ERROR:
-            print("Database does not exist")
-        else:
-            print(err)
-    else:
-        cnx.close()
