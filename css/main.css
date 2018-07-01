@@ -26,6 +26,10 @@ header {
 	top: 8px;
 	cursor: pointer;
 }
+.person {
+	min-width: 150px;
+	padding: 10px;
+}
 footer {
 	margin-top: auto;
 	height: 50px;
