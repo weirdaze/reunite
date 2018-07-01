@@ -182,6 +182,7 @@ def potential_match():
         db_add_update_match(match_var)
         update_claiming(match_var)
 
+
 def update_claiming(match):
     # this function will go and update the "claiming" column of the person table and add the new UID
     uid_a = match[0]
@@ -252,6 +253,33 @@ def update_claiming_field(claiming, uid):
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
         query = ("UPDATE person SET Claiming='" + claiming + "' WHERE UID='" + uid + "')")
+        cursor.execute(query)
+        cnx.commit()
+        cursor.close()
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()
+
+def create_ticket(match_id, status):  #__________THIS IS INCOMPLETE _______________
+    # this function takes in the Match_ID and creates a new ticket when a "potential" match has been identified
+    ticket_number = id_generator(size=11)
+    agent = 'unassigned'
+    date_created = datetime.datetime.now()
+
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query = ("INSERT INTO tickets (TicketNumber, Match_ID, Status, DateMatched, Match_ID) "
+                 "VALUES('" + uid_a + "', '" + uid_b + "', '" + status + "', '" + date_matched + "', '" + match_id +
+                 "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
+        print(query)
         cursor.execute(query)
         cnx.commit()
         cursor.close()
