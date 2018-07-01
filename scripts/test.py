@@ -1,4 +1,5 @@
 import db_manipulate
+import db_matches
 
 #uid = db_manipulate.generate_uid('1233', 'ecastill')
 uid = '1233959D7NA60ecastill'
@@ -15,7 +16,7 @@ current_facility = '1233'
 relatives = 'blank'
 date_detained = '2018-05-05'
 status = 'matched'
-claiming = 'blank'
+claiming = 'jesus,mary,joseph'
 typed = 'blank'
 video = '../media/video/SampleVideo_1280x720_5mb.mp4'
 photo = '../media/photo/Boy1.png'
@@ -27,3 +28,7 @@ person = [uid, first_name, middle_name, last_name, dob, maternal_last_name, sex,
 #print db_manipulate.db_get_person_info('1233959D7NA60ecastill')
 
 #db_manipulate.db_remove_profile('1233959D7NA60ecastill')
+
+newid = "jesus"
+
+#print db_matches.append_to_claiming(claiming, newid)

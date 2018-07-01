@@ -8,3 +8,17 @@ UID: facility_number (4-digits) + person_id (9-digits) + userID of person regist
 	for example: Juan Doe
 		1234001110110ecastill001
 
+
+person status codes:
+
+unmatched = person still looking and no one has looked for them
+
+
+Match status codes
+
+claimed - this means UID_A saw UID_B's picture and is claiming them
+matched - this means that UID_A and UID_B have been confirmed as a match by a person
+potential-match - this means that the algorithm has determined that these people are potential matches. Likely, this means that 
+                  have eached claimed each other at some point
+
+

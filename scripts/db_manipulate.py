@@ -1,4 +1,5 @@
 import mysql.connector
+from mysql.connector import errorcode
 import random
 import datetime
 import appollo
@@ -33,7 +34,7 @@ MariaDB [reunite]> describe person;
 | photo            | varchar(500) | YES  |     | NULL    |       | the reference to path of the picture file          |
 | video            | varchar(500) | YES  |     | NULL    |       | the reference to path of the video file            |
 | FacilityUID      | varchar(100) | YES  |     | NULL    |       | the reference to the person inside facility        |
-| InitDate         | varchar(30)  | YES  |     | NULL    |       | the date this record was created
+| InitDate         | varchar(30)  | YES  |     | NULL    |       | the date this record was created                   |
 +------------------+--------------+------+-----+---------+-------+----------------------------------------------------+
 20 rows in set (0.00 sec)
 
@@ -72,8 +73,6 @@ def db_add_update_profile(person, new):
     # it takes in a list 'person' and inserts the attributes into the db
     # new is a boolean value to see if this is an add operation vs an update
     # first break the person apart
-    for item in person:
-        print item
     uid = person[0]
     first_name = person[1]
     middle_name = person[2]
