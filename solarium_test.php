@@ -1,5 +1,5 @@
 <?php
-$execStr = 'python /var/www/html/scripts/search.py';
+$execStr = 'python /var/www/html/reunite/scripts/search.py';
 echo $execStr;
 $result = exec($execStr);
 echo "
