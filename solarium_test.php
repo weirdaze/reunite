@@ -1,5 +1,5 @@
 <?php
-
+echo "hello world";
 require(__DIR__.'init.php');
 htmlHeader();
 
