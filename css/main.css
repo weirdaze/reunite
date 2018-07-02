@@ -30,7 +30,30 @@ header {
 	min-width: 150px;
 	padding: 10px;
 }
+.prevArrow, .nextArrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 footer {
 	margin-top: auto;
 	height: 50px;
+}
+ .modal-dialog {
+	width: 90% !important;
+	max-width: none !important;
+	max-height: none !important;
+	height: 90% !important;
+}
+.modal-content {
+	height: 100%;
+}
+.modal-body {
+	overflow-y: auto;
+}
+#spinner {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	margin-left: -3.5em;
 }
