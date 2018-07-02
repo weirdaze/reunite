@@ -6,6 +6,7 @@ import appollo
 import os
 import string
 from db_manipulate import id_generator
+import tickets
 
 '''
 MariaDB [reunite]> describe matches;
@@ -105,6 +106,8 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     # construct the match list object
     match = [uid_a, uid_b, status, match_id]
     db_add_update_match(match)
+    updates = "created by " + uid_a + " on the app"
+    tickets.create_ticket(match_id, "new", updates)
 
 
 def potential_match():
@@ -181,6 +184,8 @@ def potential_match():
         match_var = [uid_a, uid_b, status, match_id]
         db_add_update_match(match_var)
         update_claiming(match_var)
+        tickets.create_ticket(match_id, "new", "created by potential-match algorithm")
+
 
 def update_claiming(match):
     # this function will go and update the "claiming" column of the person table and add the new UID
@@ -264,3 +269,4 @@ def update_claiming_field(claiming, uid):
             print(err)
     else:
         cnx.close()
+
