@@ -73,6 +73,7 @@ def db_add_update_profile(person, new):
     # it takes in a list 'person' and inserts the attributes into the db
     # new is a boolean value to see if this is an add operation vs an update
     # first break the person apart
+
     uid = person[0]
     first_name = person[1]
     middle_name = person[2]
