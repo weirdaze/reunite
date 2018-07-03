@@ -232,7 +232,6 @@ def uid_is_there(uid):
 def generate_uid(facility_number, user_id):
     # format for the UID: facility_number (4-digits) + person_id (6-digits) + userID
     # of person registering them (5-digits)
-    # ******need to check for existing uid*********
     person_id = id_generator()
     uid = facility_number + person_id + user_id
     while uid_is_there(uid):

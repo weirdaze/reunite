@@ -1,6 +1,5 @@
 import mysql.connector
 from mysql.connector import errorcode
-import random
 import datetime
 import appollo
 import os
