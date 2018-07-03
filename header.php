@@ -29,6 +29,6 @@
 	<body>
 		<header class="bg-dark p-2">
 		    <h1><a class="text-light" href="index.php">Reunite</a></h1>
-		    <a id="logout" class="text-light">Logout <i class="fa fa-sign-out-alt fa-lg"></i></a>
+		    <a href="login.php?logout=1" id="logout" class="text-light">Logout <i class="fa fa-sign-out-alt fa-lg"></i></a>
 		</header>
 			
