@@ -28,9 +28,18 @@ a:hover {
 .container {
 	flex: 1 0 auto;
 }
+.loginalert {
+	position: absolute;
+	width: 90%;
+	max-width: 800px;
+	top: 110px;
+	margin: 0 auto !important;
+	left: 0;
+	right: 0;
+}
 .loginBox {
 	width: 70%;
-	margin: 50px auto 0;
+	margin: 70px auto 20px;
 	background: #fff;
 	max-width: 450px;
 }

@@ -24,7 +24,7 @@
 			
 		}
 ?>
-	<div class="alert <?php echo $alertClass; ?> alert-dismissible fade show m-3" role="alert">
+	<div class="loginalert alert <?php echo $alertClass; ?> alert-dismissible fade show m-3" role="alert">
 		<?php echo $message; ?>
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
