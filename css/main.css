@@ -22,23 +22,34 @@ a:hover {
 #logout {
 	margin-left: auto;
 }
+.signup {
+	display: none;
+}
 .container {
 	flex: 1 0 auto;
 }
-#loginBox {
+.loginalert {
+	position: absolute;
+	width: 90%;
+	max-width: 800px;
+	top: 110px;
+	margin: 0 auto !important;
+	left: 0;
+	right: 0;
+}
+.loginBox {
 	width: 70%;
-	margin: 50px auto 0;
+	margin: 70px auto 20px;
 	background: #fff;
-	border: 2px solid #ddd;
 	max-width: 450px;
 }
-#loginBox .form-group {
+.loginBox .form-group {
 	position: relative;
 }
-#loginBox .form-group input {
+.loginBox .form-group input {
 	padding-left: 35px;
 }
-#loginBox .input-icon {
+.loginBox .input-icon {
 	position: absolute;
 	top: 8px;
 	left: 12px;
