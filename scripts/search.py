@@ -4,5 +4,5 @@ connection = urlopen('http://localhost:8983/solr/mycol1/select?q=LastName:Doe&wt
 response = eval(connection.read())
 print response['response']['numFound'], "documents found."
 for document in response['response']['docs']:
-  print " Last Name =", document['LastName']
+    print " Last Name =", document['LastName']
 
