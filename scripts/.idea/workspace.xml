@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_matches.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="db_matches.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db_matches.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="481">
+              <caret line="258" column="35" lean-forward="false" selection-start-line="258" selection-start-column="32" selection-end-line="258" selection-end-column="35" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <marker date="1530481419897" expanded="true" signature="2349:2385" ph="DELETE FROM matches... " />
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -105,6 +105,11 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>update</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -343,25 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_matches.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1530481419897" expanded="true" signature="2349:2385" ph="DELETE FROM matches... " />
-            <marker date="1530481419897" expanded="true" signature="2349:2402" ph="DELETE FROM person... " />
-            <marker date="1530481419897" expanded="true" signature="3210:3248" ph="SELECT * FRO... person" />
-            <marker date="1530481419897" expanded="true" signature="3210:3265" ph="SELECT * FRO... person" />
-            <marker date="1530481419897" expanded="true" signature="4931:4973" ph="SELECT * FRO... matches" />
-            <marker date="1530481419897" expanded="true" signature="4931:4996" ph="SELECT UID_A... matches" />
-            <marker date="1530481419897" expanded="true" signature="4931:4998" ph="SELECT * FRO... matches" />
-            <marker date="1530481419897" expanded="true" signature="8815:8866" ph="SELECT Claim... person" />
-            <marker date="1530481419897" expanded="true" signature="9661:9731" ph="UPDATE person... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tickets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -374,9 +360,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_matches.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="258" column="35" lean-forward="false" selection-start-line="258" selection-start-column="32" selection-end-line="258" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1530481419897" expanded="true" signature="2349:2385" ph="DELETE FROM matches... " />
+            <marker date="1530481419897" expanded="true" signature="2349:2402" ph="DELETE FROM person... " />
+            <marker date="1530481419897" expanded="true" signature="3210:3248" ph="SELECT * FRO... person" />
+            <marker date="1530481419897" expanded="true" signature="3210:3265" ph="SELECT * FRO... person" />
+            <marker date="1530481419897" expanded="true" signature="4931:4973" ph="SELECT * FRO... matches" />
+            <marker date="1530481419897" expanded="true" signature="4931:4996" ph="SELECT UID_A... matches" />
+            <marker date="1530481419897" expanded="true" signature="4931:4998" ph="SELECT * FRO... matches" />
+            <marker date="1530481419897" expanded="true" signature="8815:8866" ph="SELECT Claim... person" />
+            <marker date="1530481419897" expanded="true" signature="9661:9731" ph="UPDATE person... " />
+          </folding>
         </state>
       </provider>
     </entry>
