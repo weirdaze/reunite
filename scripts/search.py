@@ -5,4 +5,5 @@ response = eval(connection.read())
 print response['response']['numFound'], "documents found."
 for document in response['response']['docs']:
   print " Last Name =", document['LastName']
+  print " First Name =", document['FirstName']
 
