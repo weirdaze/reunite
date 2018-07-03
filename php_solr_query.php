@@ -1,29 +1,15 @@
 <?php
-
-$options = array
-(
-    'hostname' => 'localhost',
-    'login'    => 'root',
-    'password' => 'R3unite123',
-    'port'     => '8983',
-);
-
-$client = new SolrClient($options);
-
-$query = new SolrQuery();
-
-$query->setQuery('myCol1');
-
-$query->setStart(0);
-
-$query->setRows(50);
-
-$query->addField('FirstName')->addField('LastName')->addField('UID')->addField('Country');
-
-$query_response = $client->query($query);
-
-$response = $query_response->getResponse();
-
-print_r($response);
-
+// Get cURL resource
+$curl = curl_init();
+// Set some options - we are passing in a useragent too here
+curl_setopt_array($curl, array(
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => 'http://localhost:8983/solr/mycol1/select?q=LastName:Doe&wt=json',
+    CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+));
+// Send the request & save response to $resp
+$resp = curl_exec($curl);
+// Close request to clear up some resources
+curl_close($curl);
+echo $resp;
 ?>
