@@ -1,5 +1,6 @@
 <?php
 	include 'header_login.php';
+	$showForm = 1;
 ?>
 
 <style>
@@ -16,12 +17,19 @@
 		}
 		else {
 			$alertClass = "alert-danger";
-			switch($_GET["error"]){
-				case "1":
+			$error = $_GET["error"];
+			switch($error){
+				case 1:
 					$message = "Invalid username or password";
+					$showForm = 1;
 					break;
-				case "2":
+				case 2:
 					$message = "Passwords do not match";
+					$showForm = 2;
+					break;
+				case 3:
+					$message = "Username already in the database";
+					$showForm = 2;
 					break;
 			}
 			
@@ -37,8 +45,8 @@
 	}
 ?>
 
-<form class="loginBox signin pb-3" method="post" action="processlogin.php">
-	<div class="bg-info text-light p-2 mb-3 lead">Sign In</div>
+<form class="loginBox signin pb-3 <?php if($showForm == 2){ echo "hidden"; } ?>" method="post" action="processlogin.php">
+	<div class="bg-info text-light px-3 py-2 mb-3 lead">Sign In</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
 		<input class="form-control mb-2" type="text" name="username" placeholder="Username">
@@ -51,8 +59,8 @@
 	<hr class="mx-3" />
 	<span class="small mx-3">Don't have an account? <a class="switchLogin text-primary">Sign Up Here</a></span>
 </form>
-<form class="loginBox signup pb-3" method="post" action="processlogin.php">
-	<div class="bg-info text-light p-2 mb-3 lead">Sign Up</div>
+<form class="loginBox signup pb-3 <?php if($showForm == 1){ echo "hidden"; } ?>" method="post" action="processlogin.php">
+	<div class="bg-info text-light px-3 py-2 mb-3 lead">Sign Up</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
 		<input class="form-control mb-2" type="text" name="firstname" placeholder="First Name">
@@ -92,7 +100,7 @@
 	},2500);
 	
 	$(".switchLogin").click(function(){
-		$(".signin, .signup").toggle();
+		$(".signin, .signup").toggleClass("hidden");
 		$(".alert").slideUp(300);
 	});
 </script>

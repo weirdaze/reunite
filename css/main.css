@@ -19,11 +19,11 @@ a {
 a:hover {
 	text-decoration: none;
 }
+.hidden {
+	display: none;
+}
 #logout {
 	margin-left: auto;
-}
-.signup {
-	display: none;
 }
 .container {
 	flex: 1 0 auto;

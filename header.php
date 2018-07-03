@@ -29,6 +29,10 @@
 	<body>
 		<header class="bg-dark p-2">
 		    <h1><a class="text-light" href="index.php">Reunite</a></h1>
-		    <a href="login.php?logout=1" id="logout" class="text-light">Logout <i class="fa fa-sign-out-alt fa-lg"></i></a>
+		    <div id="userMenu" class="ml-auto">
+			    <span class="text-light"><?php echo $_SESSION['userid']; ?></span>
+			    <br/>
+			    <a href="login.php?logout=1" id="logout" class="text-light">Logout <i class="fa fa-sign-out-alt fa-lg"></i></a>
+			</div>
 		</header>
 			

@@ -16,7 +16,7 @@
 			if(password_verify($password,$row['password']) == 1){
 				session_start();
 				$_SESSION['logged_in'] = true;
-				$_SESSION['user_type'] = "admin";
+				$_SESSION['userid'] = $username;
 				header("Location: index.php");
 			}
 			else {
@@ -41,16 +41,33 @@
 			header("Location: login.php?error=2");
 		}
 		else {
-			$password = password_hash($createpassword,PASSWORD_BCRYPT);
-
-			/*echo password_verify("12334",$password);*/
-			$sql = "INSERT INTO admin (UserID, FirstName, MiddleName, LastName, employee_id, password) VALUES ('".$userid."','".$firstname."','".$middlename."','".$lastname."','".$employeeid."','".$password."')";
-
+			$sql = "SELECT UserID FROM admin WHERE UserID = '$userid'";
 			$result = mysqli_query($db,$sql);
+			$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-			echo $result;
+			$count = mysqli_num_rows($result);
+			// If result matched $myusername and $mypassword, table row must be 1 row
 
-			mysqli_close($db);
+			if($count == 0) {
+				$password = password_hash($createpassword,PASSWORD_BCRYPT);
+
+				/*echo password_verify("12334",$password);*/
+				$sql = "INSERT INTO admin (UserID, FirstName, MiddleName, LastName, employee_id, password) VALUES ('".$userid."','".$firstname."','".$middlename."','".$lastname."','".$employeeid."','".$password."')";
+
+				$result = mysqli_query($db,$sql);
+
+				/*echo $result;*/
+
+				mysqli_close($db);
+
+				session_start();
+				$_SESSION['logged_in'] = true;
+				$_SESSION['userid'] = $userid;
+				header("Location: index.php");
+			}
+			else {
+				header("Location: login.php?error=3");
+			}
 		}
 	}
 ?>
