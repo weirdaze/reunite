@@ -2,7 +2,7 @@
 
 	include('../config.php');
 	session_start();
-	
+
 	$uid = $_GET['uid'];
 
 	$sql = "SELECT * FROM person where uid = '" . $uid . "'";
@@ -21,7 +21,7 @@
 				<div class="prevArrow col-1"><i class="fa fa-chevron-left fa-3x"></i></div>
 				<div class="col">
 					<div class="d-flex align-items-center justify-content-center mb-3">
-						<i class="text-center fa fa-male fa-7x"></i>
+						<img src="media/photo/<?php echo $row['photo']; ?>" height="250" />
 					</div>
 					<div class="d-flex align-items-center justify-content-center flex-wrap mb-3">
 						<i class="fa fa-male fa-3x mr-3"></i>
@@ -32,7 +32,7 @@
 					    <source src="media/video/SampleVideo_1280x720_5mb.mp4" type="video/mp4">
 					</video>
 				</div>
-				<div id="personDetails" class="col" data-uid="<?php echo $uid; ?>" data-person_type_id="<?php echo $_GET['person_type_id']; ?>">
+				<div id="personDetails" class="col" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $_GET['gender']; ?>">
 					<table class="table">
 						<tr>
 							<th>Sex:</th>

@@ -1,30 +1,56 @@
 <?php
 	include('config.php');
-	session_start();
 
-	$user = $_POST['username'];
-    $password = $_POST['password'];
+	if(isset($_POST['username'])){
+		$username = $_POST['username'];
+   		$password = $_POST['password'];
 
-	/*$sql = "SELECT company, project FROM login WHERE username = '$user' and password = '$password';";
-	$result = mysqli_query($db,$sql);
-	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+   		$sql = "SELECT UserID, password FROM admin WHERE UserID = '$username'";
+		$result = mysqli_query($db,$sql);
+		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-	$count = mysqli_num_rows($result);
-	// If result matched $myusername and $mypassword, table row must be 1 row
+		$count = mysqli_num_rows($result);
+		// If result matched $myusername and $mypassword, table row must be 1 row
 
-	if($count == 1) {
-		echo "Login Successful!!";
+		if($count == 1) {
+			if(password_verify($password,$row['password']) == 1){
+				session_start();
+				$_SESSION['logged_in'] = true;
+				$_SESSION['user_type'] = "admin";
+				header("Location: index.php");
+			}
+			else {
+				header("Location: login.php?error=1");
+			}
+		}
+		else {
+			header("Location: login.php?error=1");
+		}
 	}
-	else {
-		$error = "Your Login Name or Password is invalid";
-	}*/
+	elseif(isset($_POST['firstname'])){
 
-	if($user == "Admin" && $password == "Admin123"){
-		$_SESSION['logged_in'] = true;
-		$_SESSION['user_type'] = "admin";
-		header("Location: index.php");
-	}
-	else {
-		header("Location: login.php?error=1");
+		$firstname = $_POST['firstname'];
+		$middlename = $_POST['middlename'];
+		$lastname = $_POST['lastname'];
+		$employeeid = $_POST['employeeid'];
+		$userid = $_POST['createusername'];
+		$createpassword = $_POST['createpassword'];
+		$confirmpassword = $_POST['confirmpassword'];
+
+		if($createpassword !== $confirmpassword){
+			header("Location: login.php?error=2");
+		}
+		else {
+			$password = password_hash($createpassword,PASSWORD_BCRYPT);
+
+			/*echo password_verify("12334",$password);*/
+			$sql = "INSERT INTO admin (UserID, FirstName, MiddleName, LastName, employee_id, password) VALUES ('".$userid."','".$firstname."','".$middlename."','".$lastname."','".$employeeid."','".$password."')";
+
+			$result = mysqli_query($db,$sql);
+
+			echo $result;
+
+			mysqli_close($db);
+		}
 	}
 ?>

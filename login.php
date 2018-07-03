@@ -20,6 +20,9 @@
 				case "1":
 					$message = "Invalid username or password";
 					break;
+				case "2":
+					$message = "Passwords do not match";
+					break;
 			}
 			
 		}
@@ -51,16 +54,24 @@
 <form class="loginBox signup pb-3" method="post" action="processlogin.php">
 	<div class="bg-info text-light p-2 mb-3 lead">Sign Up</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-user"></i></div>
+		<div class="input-icon"><i class="fa fa-id-card"></i></div>
 		<input class="form-control mb-2" type="text" name="firstname" placeholder="First Name">
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-user"></i></div>
-		<input class="form-control mb-2" type="password" name="middlename" placeholder="Middle Name">
+		<div class="input-icon"><i class="fa fa-id-card"></i></div>
+		<input class="form-control mb-2" type="text" name="middlename" placeholder="Middle Name">
+	</div>
+	<div class="form-group mx-3">
+		<div class="input-icon"><i class="fa fa-id-card"></i></div>
+		<input class="form-control mb-2" type="text" name="lastname" placeholder="Last Name">
+	</div>
+	<div class="form-group mx-3">
+		<div class="input-icon"><i class="fa fa-id-card"></i></div>
+		<input class="form-control mb-2" type="text" name="employeeid" placeholder="Employee ID">
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
-		<input class="form-control mb-2" type="password" name="lastname" placeholder="Last Name">
+		<input class="form-control mb-2" type="text" name="createusername" placeholder="Create Username">
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-lock"></i></div>
