@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var timeout = 0;
 	$(document).on("click",".selectPerson",function(){
 		var gender = $(this).data("gender");
 		$(".showUserSelect").show();
@@ -20,9 +21,19 @@ $(document).ready(function(){
 		}
 		var complete = function(){
 			$(".modal-title").html(name + " <a id='uid' data-toggle='tooltip' data-placement='bottom' title='" + uid + "'><i class='far fa-id-badge fa-lg'></i></a>");
-			gender == "male" ? $("#claimMember").text("Es mi Papa!") : $("#claimMember").text("Es mi Mma!");
+			gender == "m" ? $("#claimMember").text("Es mi Papa!") : $("#claimMember").text("Es mi Mama!");
 		}
 		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},before,complete);
+	});
+	$(document).on("keyup","#searchInput",function(){
+		clearTimeout(timeout);
+		timeout = setTimeout(function(){
+			var complete = function() {
+				$("#selectPersonType").slideUp(500);
+			}
+			updateContent("#results","includes/results.php",{"gender": "1", "search_term": $("#searchInput").val()},"",complete);
+		},1000);
+		
 	});
 	/*$(document).on("click",".prevArrow, .nextArrow",function(){
 		var uid = $("#personDetails").data("uid");
