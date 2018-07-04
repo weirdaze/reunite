@@ -18,14 +18,30 @@
 	<div class="bg-info text-light p-2 mb-3 lead">Register</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
-		<input class="form-control mb-2" type="text" name="facility_name" placeholder="Name of the Facility">
+		<input class="form-control mb-2" type="text" name="first_name" placeholder="First Name" required>
 	</div>
     <div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-lock"></i></div>
-		<input class="form-control mb-2" type="text" name="address" placeholder="address">
+		<div class="input-icon"><i class="fa fa-user"></i></div>
+		<input class="form-control mb-2" type="text" name="middle_name" placeholder="Middle Name">
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-lock"></i></div>
+		<div class="input-icon"><i class="fa fa-user"></i></div>
+		<input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name" required>
+	</div>
+	<div class="form-group mx-3">
+		<div class="input-icon"><i class="fa fa-user"></i></div>
+		<input class="form-control mb-2" type="text" name="maternal_last_name" placeholder="Second Last Name">
+	</div>
+    <div class="form-group mx-3">
+		<input class="form-control mb-2" type="date" name="dob" placeholder="Date of Birth" required>
+	</div>
+	<div class="form-group mx-3">
+		<select class="form-control mb-2" name="facilities" required>
+			<option value="m">M</option>
+			<option value="f">F</option>
+		</select>
+	</div>
+	<div class="form-group mx-3">
 		<select class="form-control mb-2" name="facilities">
 			<?php
 			    while($row = $result->fetch_assoc()) {
