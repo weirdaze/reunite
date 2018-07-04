@@ -18,8 +18,8 @@
 	        ?>
 
 			<div class="row">
-				<div class="prevArrow col-1"><i class="fa fa-chevron-left fa-3x"></i></div>
-				<div class="col">
+				<!-- <div class="prevArrow col-1"><i class="fa fa-chevron-left fa-3x"></i></div> -->
+				<div class="col-sm">
 					<div class="d-flex align-items-center justify-content-center mb-3">
 						<img src="media/photo/<?php echo $row['photo']; ?>" height="250" />
 					</div>
@@ -32,7 +32,7 @@
 					    <source src="media/video/SampleVideo_1280x720_5mb.mp4" type="video/mp4">
 					</video>
 				</div>
-				<div id="personDetails" class="col" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $_GET['gender']; ?>">
+				<div id="personDetails" class="col-sm" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $_GET['gender']; ?>">
 					<table class="table">
 						<tr>
 							<th>Sex:</th>
@@ -69,7 +69,7 @@
 						</tr>
 					</table>
 				</div>
-				<div class="nextArrow col-1"><i class="fa fa-chevron-right fa-3x"></i></div>
+				<!-- <div class="nextArrow col-1"><i class="fa fa-chevron-right fa-3x"></i></div> -->
 			</div>
 
 	        <?php
@@ -81,3 +81,8 @@
 
 ?>
 
+<script>
+	$(document).ready(function(){
+		$("#uid").tooltip();
+	});
+</script>

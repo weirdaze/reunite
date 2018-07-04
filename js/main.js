@@ -19,12 +19,12 @@ $(document).ready(function(){
 			$(".modal").modal("show");
 		}
 		var complete = function(){
-			$(".modal-title").text(name + " (UID: "+uid+")");
+			$(".modal-title").html(name + " <a id='uid' data-toggle='tooltip' title='UID: " + uid + "'><i class='far fa-id-badge'></i></a>");
 			gender == "male" ? $("#claimMember").text("Es mi Papa!") : $("#claimMember").text("Es mi Mma!");
 		}
 		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},before,complete);
 	});
-	$(document).on("click",".prevArrow, .nextArrow",function(){
+	/*$(document).on("click",".prevArrow, .nextArrow",function(){
 		var uid = $("#personDetails").data("uid");
 		var gender = $("#personDetails").data("gender");
 		var direction = 1;
@@ -34,9 +34,9 @@ $(document).ready(function(){
 			$(".modal-title").text("");
 		}
 		var complete = function(){
-			$(".modal-title").text("Juan Doe (UID: "+newUid+")");
+			$(".modal-title").text("Juan Doe <span class='small'>(UID: "+newUid+")</span>");
 			gender == 1 ? $("#claimMember").text("Es mi hijo!") : $("#claimMember").text("Es mi padre!");
 		}
 		updateContent(".modal-body","includes/person.php",{"uid": newUid, "gender": gender},before,complete);
-	});
+	});*/
 });
