@@ -19,7 +19,7 @@ $(document).ready(function(){
 			$(".modal").modal("show");
 		}
 		var complete = function(){
-			$(".modal-title").html(name + " <a id='uid' data-toggle='tooltip' title='UID: " + uid + "'><i class='far fa-id-badge'></i></a>");
+			$(".modal-title").html(name + " <a id='uid' data-toggle='tooltip' data-placement='bottom' title='" + uid + "'><i class='far fa-id-badge fa-lg'></i></a>");
 			gender == "male" ? $("#claimMember").text("Es mi Papa!") : $("#claimMember").text("Es mi Mma!");
 		}
 		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},before,complete);
