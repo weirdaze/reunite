@@ -2,8 +2,8 @@
     $facility_name = 'test facility';
 	$address = 'test address';
 	$city = 'test city';
-	$state = 'test state';
-	$zip = 'test zip';
+	$state = 'nj';
+	$zip = '08106';
 	$poc = 'test poc';
 
 	$facility = "'".$facility_name.','.$address.','.$city.','.$state.','.$zip.','.$poc."'";
