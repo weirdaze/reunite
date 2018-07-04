@@ -10,7 +10,7 @@
 </style>
 <?php
     include('config.php');
-    $sql = "SELECT FacilityNumber, FacilityName FROM facilities";
+    $sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities";
 	$result = mysqli_query($db,$sql);
 	
 ?>
@@ -29,7 +29,7 @@
 		<select class="form-control mb-2" name="facilities">
 			<?php
 			    while($row = $result->fetch_assoc()) {
-	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].'</option>';
+	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].' ('.$row['city'].', '.$row['state'].')</option>';
 				}
 			?>
     	</select>
