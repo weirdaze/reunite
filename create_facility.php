@@ -1,11 +1,4 @@
 <?php
-	/*$facility_name = $_POST['facility_name'];
-	$address = $_POST['address'];
-	$city = $_POST['city'];
-	$state = $_POST['state'];
-	$zip = $_POST['zip'];
-	$poc = $_POST['poc'];*/
-    
     $facility_name = 'test facility';
 	$address = 'test address';
 	$city = 'test city';
