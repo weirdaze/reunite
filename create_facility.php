@@ -1,10 +1,11 @@
 <?php
-    $facility_name = 'test facility';
-	$address = 'test address';
-	$city = 'test city';
-	$state = 'nj';
-	$zip = '08106';
-	$poc = 'test poc';
+
+    $facility_name = $_POST["facility_name"];
+	$address = $_POST["address"];
+	$city = $_POST["city"];
+	$state = $_POST["state"];
+	$zip = $_POST["zip"];
+	$poc = $_POST["poc"];
 
 	$facility = "'".$facility_name.','.$address.','.$city.','.$state.','.$zip.','.$poc."'";
     echo $facility;
@@ -12,6 +13,5 @@
 	echo $execStr;
 	$result = exec($execStr);
 	echo $result;
-	echo '\n';
 	//header("Location: index.php");
 ?>
