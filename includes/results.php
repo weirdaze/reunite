@@ -13,7 +13,13 @@
 		include('../config.php');
 		session_start();
 		
-		$sql = "SELECT * FROM person where UPPER(FirstName) like UPPER('%$search_term%') or UPPER(LastName) like UPPER('%$search_term%') order by LastName";
+		$sql = "SELECT * FROM person where ";
+
+		if($gender != ""){
+			$sql = $sql . "sex = '$gender' and ";
+		} 
+
+		$sql =  $sql . "(UPPER(FirstName) like UPPER('%$search_term%') or UPPER(LastName) like UPPER('%$search_term%')) order by LastName";
 
 		$result = mysqli_query($db,$sql);
 		 
@@ -21,7 +27,7 @@
 			while($row = $result->fetch_assoc()) {
 	?>
 			<div class="person d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $row['UID']; ?>" data-gender="<?php echo $row['Sex']; ?>" data-fullname="<?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>">
-				<img src="media/photo/<?php echo $row['photo']; ?>" />
+				<div class="personImg" style="background-image: url('media/photo/<?php echo $row['photo']; ?>');"></div>
 				<div class="caption"><?php echo $row['LastName'] . ", " . $row['FirstName']; ?></div>
 			</div>	
 	<?php

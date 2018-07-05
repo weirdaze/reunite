@@ -9,7 +9,7 @@
 		<div class="card mb-3">
 			<div class="card-body d-flex align-items-center justify-content-center flex-column">
 				<i class="fa fa-male fa-7x"></i>
-				<a class="selectPerson btn btn-primary text-light mt-3" data-gender="male">
+				<a class="selectPerson btn btn-primary text-light mt-3" data-gender="m">
 					Encuentra a mi Papa
 				</a>
 			</div>
@@ -19,7 +19,7 @@
 		<div class="card mb-3">
 			<div class="card-body d-flex align-items-center justify-content-center flex-column">
 				<div><i class="fa fa-female fa-7x"></i></div>
-				<a class="selectPerson btn btn-primary text-light mt-3" data-gender="female">
+				<a class="selectPerson btn btn-primary text-light mt-3" data-gender="f">
 					Encuentra a mi Mama
 				</a>
 			</div>

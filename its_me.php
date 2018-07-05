@@ -1,5 +1,5 @@
 <?php
-	$uid_b = $_POST["uid_b"];
+	/*$uid_b = $_POST["uid_b"];*/
 	$first_name = $_POST["first_name"];
 	$middle_name = $_POST["middle_name"];
 	$last_name = $_POST["last_name"];
@@ -9,7 +9,7 @@
 	$middle_name_q = '';
 	$last_name_q = '';
 	$maternal_last_name_q = '';
-	$dob = '';
+	$dob_q = '';
 
 	include('config.php');
 
@@ -40,7 +40,7 @@
 		$count = $count + 1;
 	}
 
-	echo $count;
+	/*echo $count;*/
 
 	if ($count > 1){
 		$sql = $sql.$where;
@@ -82,20 +82,28 @@
 		}
 	}
 
-	$sql = $sql.$orderBy;
-
-	echo $sql;
-
-	$result = mysqli_query($db,$sql);
-
-	if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
+	include("header.php");
 ?>
-			<div class="person d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $row['UID']; ?>" data-gender="<?php echo $row['Sex']; ?>" data-fullname="<?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>">
-				<img src="media/photo/<?php echo $row['photo']; ?>" />
-				<div class="caption"><?php echo $row['LastName'] . ", " . $row['FirstName']; ?></div>
-			</div>	
+<div class="container">
+	<div id="results">
 	<?php
-			}
-		}
+		$sql = $sql.$orderBy;
+
+		/*echo $sql;*/
+
+		$result = mysqli_query($db,$sql);
+
+		if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
 	?>
+				<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $row['UID']; ?>" data-gender="<?php echo $row['Sex']; ?>" data-fullname="<?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>">
+					<div class="personImg" style="background-image: url('media/photo/<?php echo $row['photo']; ?>');"></div>
+					<div class="caption"><?php echo $row['LastName'] . ", " . $row['FirstName']; ?></div>
+				</div>	
+		<?php
+				}
+			}
+		?>
+	</div>
+</div>
+<?php include("footer.php"); ?>
