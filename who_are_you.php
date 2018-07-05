@@ -1,7 +1,6 @@
 <?php
 	include 'header_login.php';
 	$uid_b = $_POST["uid"];
-
 ?>
 
 <style>
@@ -10,7 +9,7 @@
 	}
 </style>
 <form class="loginBox signin pb-3" method="post" action="its_me.php">
-	<input type="hidden" name="uid_b" value=<?php echo '"'.$uid_b.'"' ?> />
+	<input type="hidden" name="uid_b" value=<?php echo '"'.$uid_b.'"'; ?> />
 	<div class="bg-info text-light p-2 mb-3 lead">Who Are you?</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
