@@ -57,21 +57,7 @@
 			include 'country_select.php';
 		?>	
 	</div>
-	<div class="container">
-	    <div class="row">
-			<input type="hidden" name="count" value="1" />
-        	<div class="control-group" id="fields">
-            	<label class="control-label" for="field1">Nice Multiple Form Fields</label>
-            	<div class="controls" id="profs"> 
-                	<form class="input-append">
-                    	<div id="field"><input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/><button id="b1" class="btn add-more" type="button">+</button></div>
-                	</form>
-            	<br>
-            	<small>Press + to add another form field :)</small>
-            	</div>
-        	</div>
-		</div>
-	</div>
+
 	<div class="form-group mx-3">
 		<label for="photo">Upload picture:</label>
         <input class="form-control mb-2"
@@ -91,8 +77,24 @@
 		<div class="input-icon"><i class="fa fa-lock"></i></div>
 		<input class="form-control mb-2" type="text" name="poc" placeholder="point of contact full name">
 	</div>
+    <div class="container">
+	    <div class="row">
+			<input type="hidden" name="count" value="1" />
+        	<div class="control-group" id="fields">
+            	<label class="control-label" for="field1">Nice Multiple Form Fields</label>
+            	<div class="controls" id="profs"> 
+                	<form class="input-append">
+                    	<div id="field"><input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/><button id="b1" class="btn add-more" type="button">+</button></div>
+                	</form>
+            	<br>
+            	<small>Press + to add another form field :)</small>
+            	</div>
+        	</div>
+		</div>
+	</div>
 	<input class="btn btn-primary mx-3" type="submit" value="Create">
 	<hr class="mx-3" />
+
 </form>
 
 <?php include 'footer_login.php'?>
