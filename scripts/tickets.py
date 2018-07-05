@@ -5,6 +5,7 @@ import appollo
 import os
 import string
 from db_manipulate import id_generator
+from db_matches import db_get_match_id
 
 
 '''
@@ -51,3 +52,26 @@ def create_ticket(match_id, status, updates):
             print(err)
     else:
         cnx.close()
+
+
+def db_get_ticket(match_id):
+    # this function returns the ticket number based on the match_id
+    ticket_number = ""
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query1 = ("SELECT * FROM tickets WHERE Match_ID='" + match_id + "'")
+        cursor.execute(query1)
+        for TicketNumber in cursor:
+            ticket_number = TicketNumber
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()
+    return ticket_number

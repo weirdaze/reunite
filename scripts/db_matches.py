@@ -55,7 +55,7 @@ def db_add_update_match(match):
 
 
 def db_remove_match(match_id):
-    # this function completely deletes a match from the db keyed off the Match_ID
+    # this function completely deletes a match from the db keyed off the 2 UID's
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
@@ -98,6 +98,29 @@ def db_get_match(match_id):
     return match
 
 
+def db_get_match_id(uid_a, uid_b):
+    # this function gets the entire record for the match keyed off the Match_ID and returns a match list object
+    match_id = ""
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query1 = ("SELECT Match_ID FROM matches WHERE UID_A='" + uid_a + "' AND UID_B='" + uid_b + "'")
+        cursor.execute(query1)
+        for Match_ID in cursor:
+            match_id = Match_ID
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()
+    return match_id
+
+
 def submit_claim(uid_a, uid_b, status='claimed'):
     # this function gets kicked of in the sequence of events where someone clicks the claim button
     # first generate the match_id
@@ -108,6 +131,7 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     db_add_update_match(match)
     updates = "created by " + uid_a + " on the app"
     tickets.create_ticket(match_id, "new", updates)
+    return db_get_match_id(uid_a, uid_b)
 
 
 def potential_match():
