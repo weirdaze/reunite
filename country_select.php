@@ -1,6 +1,6 @@
 <?php
 echo '
-<select class="form-control mb-2" name="country" required>
+<select class="form-control mb-2" name="country" placeholder="Country of Origin" required>
 	<option value="AFG">Afghanistan</option>
 	<option value="ALA">Åland Islands</option>
 	<option value="ALB">Albania</option>
