@@ -40,7 +40,7 @@
 		$count = $count + 1;
 	}
 
-	echo $count
+	echo $count;
 
 	if ($count > 0){
 		$sql = $sql.$where;
