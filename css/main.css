@@ -83,6 +83,8 @@ a:hover {
 	height: 38px;
 }
 .custom-file-label {
+	overflow: hidden;
+	white-space: nowrap;
 	text-overflow: ellipsis;
 }
 .showUserSelect {

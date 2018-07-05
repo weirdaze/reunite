@@ -1,4 +1,9 @@
 <?php include 'header.php'; ?>
+	<?php 
+		if(!isset($_SESSION['uid'])){
+			header("Location: who_are_you.php");
+		}
+	?>
 <div class="container py-3">
 	<div id="selectPersonType">
 		<?php include 'includes/userSelect.php'; ?>

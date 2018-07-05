@@ -68,9 +68,13 @@
 	<div class="form-group mx-3">
 		<div class="input-group">
 			<div class="custom-file">
-	       		<input class="custom-file-input mb-2" type="file" id="photo" name="photo" accept="image/*"/>
+	       		<input class="custom-file-input mb-2" type="file" id="photo" name="photo" accept="image/*" multiple/>
+	       		<input type="hidden" name="photos">
 	       		<label class="custom-file-label" for="photo">Upload Photo</label>
 	        </div>
+        </div>
+        <div id="imgThumbnails">
+			
         </div>
 	</div>
 	<div class="form-group mx-3">
@@ -92,7 +96,7 @@
         	<div class="controls" id="profs"> 
             	<div class="input-append">
                 	<div id="field">
-                		<input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/>
+                		<input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/>
                 		<button id="b1" class="btn add-more" type="button">+</button>
                 	</div>
             	</div>
@@ -107,8 +111,25 @@
 <script>
 	$(document).ready(function(){
 		$(".custom-select").select2();
+
 		$("#photo").change(function(){
-			$(this).next("label").text($(this).val());
+			var names = "";
+			var files = $(this).get(0).files;
+		    for(var i=0; i<$(this).get(0).files.length; i++){
+		        names == "" ? names = $(this).get(0).files[i].name : names = names + "," + $(this).get(0).files[i].name;
+		        $("#imgThumbnails").append("<img src='"+$(this).get(0).files[i].name+"' height='60'/>");
+		    }
+		    /*$("#imgThumbnails").html("<i class='fa fa-spinner fa-spin fa-lg'></i>");
+		    $.ajax({
+		    	type: "POST",
+		    	url: "includes/imageuploads.php",
+		    	data: {"images": files},
+		    	success: function(data){
+		    		$(this).next("label").text(names);
+		    	}
+		    });*/
+		    $("#photos").val(names);
+			
 		});
 	    var next = 1;
 	    $(".add-more").click(function(e){
