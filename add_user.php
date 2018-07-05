@@ -71,7 +71,7 @@
             	</div>
         	</div>
 		</div>
-	s</div>
+	</div>
 	<div class="form-group mx-3">
 		<label for="photo">Upload picture:</label>
         <input class="form-control mb-2"
