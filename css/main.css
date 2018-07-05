@@ -22,6 +22,18 @@ a:hover {
 .hidden {
 	display: none;
 }
+#userMenu .dropdown-menu {
+	background: #1d2124;
+}
+#userMenu a:hover {
+	background: #1d2124;
+}
+.menuIcon {
+	display: flex;
+	align-items: center;
+	width: 25px;
+	margin-right: 5px;
+}
 #logout {
 	margin-left: auto;
 }

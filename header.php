@@ -1,4 +1,7 @@
 <?php 
+	if(!isset($admin)){
+		$admin = false;
+	}
 	session_start();
 	if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false){
 		header("Location: login.php");
@@ -29,10 +32,34 @@
 	<body>
 		<header class="bg-dark p-2">
 		    <h1><a class="text-light" href="index.php">Reunite</a></h1>
-		    <div id="userMenu" class="ml-auto">
-			    <span class="text-light"><?php echo $_SESSION['userid']; ?></span>
-			    <br/>
-			    <a href="login.php?logout=1" id="logout" class="text-light">Logout <i class="fa fa-sign-out-alt fa-lg"></i></a>
+		    <div id="userMenu" class="dropdown ml-auto">
+		    	<button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    		<i class="fa fa-user mr-2"></i><?php echo $_SESSION['userid']; ?>
+		    	</button>
+			    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+			    	<?php 
+			    		if(!$admin){
+			    	?>
+				    	<a href="facility.php" class="dropdown-item text-light d-flex align-items-center">
+				    		<span class="menuIcon"><i class="fa fa-cog"></i></span>
+				    		<span class="menuText">Admin Tools</span>
+				    	</a>
+			    	<?php
+			    		}
+			    		else {
+			    	?>
+				    	<a href="index.php" class="dropdown-item text-light d-flex align-items-center">
+				    		<span class="menuIcon"><i class="fa fa-home"></i></span>
+				    		<span class="menuText">Home</span>
+				    	</a>
+			    	<?php
+			    		}
+			    	?>
+				    <a href="login.php?logout=1" class="dropdown-item text-light d-flex align-items-center">
+				    	<span class="menuIcon"><i class="fa fa-sign-out-alt mr-2"></i></span>
+				    	<span class="menuText">Logout</span>
+				    </a>
+				</div>
 			</div>
 		</header>
 			
