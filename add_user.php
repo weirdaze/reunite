@@ -75,7 +75,7 @@
 		<div class="input-icon"><i class="fa fa-lock"></i></div>
 		<input class="form-control mb-2" type="text" name="poc" placeholder="point of contact full name">
 	</div>
-    <div class="container">
+    <div class="form-group mx-3">
 	    <div class="row">
 			<input type="hidden" name="count" value="1" />
         	<div class="control-group" id="fields">
