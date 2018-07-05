@@ -42,12 +42,12 @@
 
 	echo $count;
 
-	if ($count > 0){
+	if ($count > 1){
 		$sql = $sql.$where;
 	}
 	if ($first_name_q != ''){
 		$sql = $sql.$first_name_q;
-		if ($count > 0){
+		if ($count > 1){
 			$count = $count - 1;
 			$sql = $sql.$or;
 		}
@@ -55,28 +55,28 @@
 	}
 	if ($middle_name_q != ''){
 		$sql = $sql.$middle_name_q;
-		if ($count > 0){
+		if ($count > 1){
 			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 	}
 	if ($last_name_q != ''){
 		$sql = $sql.$last_name_q;
-		if ($count > 0){
+		if ($count > 1){
 			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 	}
 	if ($maternal_last_name_q != ''){
 		$sql = $sql.$maternal_last_name_q;
-		if ($count > 0){
+		if ($count > 1){
 			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 	}
 	if ($dob_q != ''){
 		$sql = $sql.$dob_q;
-		if ($count > 0){
+		if ($count > 1){
 			$count = $count - 1;
 			$sql = $sql.$or;
 		}
