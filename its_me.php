@@ -10,8 +10,8 @@
 	include('config.php');
 
 	$sql = "SELECT * FROM person where 
-	        UPPER(FirstName) like UPPER('%$first_name%') or UPPER(LastName) like UPPER('%$last_name%') 
-	        UPPER(MiddleName) like UPPER('%$middle_name%') or UPPER(MaternalLastName) like UPPER('%$maternal_last_name%')
+	        UPPER(FirstName) like UPPER('%$first_name%') or UPPER(LastName) like UPPER('%$last_name%') or
+	        UPPER(MiddleName) like UPPER('%$middle_name%') or UPPER(MaternalLastName) like UPPER('%$maternal_last_name%') or
 	        UPPER(DOB) like UPPER('%$dob%') or UPPER(Sex) like UPPER('%$sex%')
 	        order by LastName";
 	echo $sql;
