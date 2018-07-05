@@ -42,7 +42,6 @@
 		</select>
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon">Current Facility</div>
 		<select class="form-control mb-2" name="current_facility" required>
 			<?php
 			    while($row = $result->fetch_assoc()) {
@@ -52,7 +51,6 @@
     	</select>
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon">Country of Origin</div>
 		<?php
 			include 'country_select.php';
 		?>	
@@ -96,5 +94,31 @@
 	<hr class="mx-3" />
 
 </form>
-
+<script>
+	$(document).ready(function(){
+    var next = 1;
+    $(".add-more").click(function(e){
+        e.preventDefault();
+        var addto = "#field" + next;
+        var addRemove = "#field" + (next);
+        next = next + 1;
+        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+        var newInput = $(newIn);
+        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
+        var removeButton = $(removeBtn);
+        $(addto).after(newInput);
+        $(addRemove).after(removeButton);
+        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+        $("#count").val(next);  
+        
+            $('.remove-me').click(function(e){
+                e.preventDefault();
+                var fieldNum = this.id.charAt(this.id.length-1);
+                var fieldID = "#field" + fieldNum;
+                $(this).remove();
+                $(fieldID).remove();
+            });
+    	});   
+	});
+</script>
 <?php include 'footer_login.php'?>
