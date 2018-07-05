@@ -144,29 +144,12 @@ footer {
 		max-height: none !important;
 		height: 90% !important;
 	}
-	/*.modal-body {
-		overflow: hidden;
-		display: flex;
-	}
-	.modal-body .row {
-		flex: 1;
-		max-height: 100%;
-	}
-	.modal-body .row .col {
-		max-height: 100%;
-		overflow: auto;
-	}
-	.prevArrow, .nextArrow {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}*/
 }
 @media screen and (max-width: 767px) {
 	.modal-title {
 		font-size: 1rem;
 	}
-	/*.prevArrow, .nextArrow {
-		display: none;
-	}*/
+	.formBox {
+		width: 90%;
+	}
 }

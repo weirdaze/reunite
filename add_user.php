@@ -101,7 +101,8 @@
         	</div>
     	</div>
 	</div>
-	<input class="btn btn-primary mx-3" type="submit" value="Create">
+	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Create">
+	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
 </form>
 <script>
 	$(document).ready(function(){
