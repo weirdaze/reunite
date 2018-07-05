@@ -1,6 +1,6 @@
 <?php
 echo '
-<select class="form-control mb-2" name="country" required>
+	<option value="">Choose Country</option>
 	<option value="AFG">Afghanistan</option>
 	<option value="ALA">Åland Islands</option>
 	<option value="ALB">Albania</option>
@@ -249,6 +249,5 @@ echo '
 	<option value="ESH">Western Sahara</option>
 	<option value="YEM">Yemen</option>
 	<option value="ZMB">Zambia</option>
-	<option value="ZWE">Zimbabwe</option>
-</select>'
+	<option value="ZWE">Zimbabwe</option>'
 ?>
