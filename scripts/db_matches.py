@@ -206,8 +206,6 @@ def update_claiming(match):
     update_claiming_field(new_claiming, uid_b)
 
 
-
-
 def append_to_claiming(claiming, uid):
     # this function takes the claiming string, splits it out and then sees if there's a duplicate of the UID it's tryin
     # to append. then it appends it if it's not there and reconstructs the string

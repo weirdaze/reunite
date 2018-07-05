@@ -58,3 +58,47 @@ def create_facility(facility):
             print(err)
     else:
         cnx.close()
+
+
+def db_remove_facility(facility_number):
+    # this function completely deletes a facility from the db keyed off the Match_ID
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query = ("DELETE FROM facilities WHERE FacilityNumber='" + facility_number + "'")
+        cursor.execute(query)
+        cnx.commit()
+        cursor.close()
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()
+
+
+def db_get_facility_info(facility_number):
+    # this function gets the entire record for the facility keyed off the FacilityNumber and returns a match list object
+    facility = []
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query1 = ("SELECT * FROM facilities WHERE FacilityNumber='" + facility_number + "'")
+        cursor.execute(query1)
+        for FacilityNumber, FacilityName, Address, city, state, zip, POC, Status in cursor:
+            facility = [FacilityNumber, FacilityName, Address, city, state, zip, POC, Status]
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()
+    return facility
