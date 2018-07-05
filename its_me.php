@@ -21,23 +21,23 @@
 
 	if ($first_name != ''){
 		$first_name_q = " UPPER(FirstName) like UPPER('%$first_name%') ";
-		$count += 1;
+		$count = $count + 1;
 	}
 	if ($middle_name != ''){
 		$middle_name_q = " UPPER(MiddleName) like UPPER('%$middle_name%') ";
-		$count += 1;
+		$count = $count + 1;
 	}
 	if ($last_name != ''){
 		$last_name_q = " UPPER(LastName) like UPPER('%$last_name%') ";
-		$count += 1;
+		$count = $count + 1;
 	}
 	if ($maternal_last_name != ''){
 		$maternal_last_name_q = " UPPER(MaternalLastName) like UPPER('%$maternal_last_name%') ";
-		$count += 1;
+		$count = $count + 1;
 	}
 	if ($dob != ''){
 		$dob_q = " UPPER(DOB) like UPPER('%$dob%') ";
-		$count += 1;
+		$count = $count + 1;
 	}
 
 	if (count > 0){
@@ -46,7 +46,7 @@
 	if ($first_name_q != ''){
 		$sql = $sql.$first_name_q;
 		if (count > 0){
-			count -= 1;
+			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 
@@ -54,28 +54,28 @@
 	if ($middle_name_q != ''){
 		$sql = $sql.$middle_name_q;
 		if (count > 0){
-			count -= 1;
+			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 	}
 	if ($last_name_q != ''){
 		$sql = $sql.$last_name_q;
 		if (count > 0){
-			count -= 1;
+			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 	}
 	if ($maternal_last_name_q != ''){
 		$sql = $sql.$maternal_last_name_q;
 		if (count > 0){
-			count -= 1;
+			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 	}
 	if ($dob_q != ''){
 		$sql = $sql.$dob_q;
 		if (count > 0){
-			count -= 1;
+			$count = $count - 1;
 			$sql = $sql.$or;
 		}
 	}
