@@ -100,14 +100,17 @@ a:hover {
 	top: 8px;
 	cursor: pointer;
 }
-.person {
+.person, .child {
 	width: 150px;
 	cursor: pointer;
 	margin: 10px;
 }
-.person img {
-	width: 100%;
-	box-sizing: border-box;
+.personImg {
+	width: 150px;
+	height: 150px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .caption {
 	width: 100%;

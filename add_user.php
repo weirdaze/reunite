@@ -38,11 +38,11 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="custom-control custom-radio custom-control-inline">
-			<input type="radio" id="sex_1" name="sex" class="custom-control-input" value="M">
+			<input type="radio" id="sex_1" name="sex" class="custom-control-input" value="m">
 			<label class="custom-control-label" for="sex_1">Male</label>
 		</div>
 		<div class="custom-control custom-radio custom-control-inline">
-			<input type="radio" id="sex_2" name="sex" class="custom-control-input" value="F">
+			<input type="radio" id="sex_2" name="sex" class="custom-control-input" value="f">
 			<label class="custom-control-label" for="sex_2">Female</label>
 		</div>
 	</div>

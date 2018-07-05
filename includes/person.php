@@ -2,7 +2,7 @@
 
 	include('../config.php');
 	session_start();
-
+	
 	$uid = $_GET['uid'];
 
 	$sql = "SELECT * FROM person where uid = '" . $uid . "'";
