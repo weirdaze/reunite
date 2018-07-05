@@ -18,8 +18,8 @@
       <file leaf-file-name="db_manipulate.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db_manipulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="290">
+              <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <marker date="1530657658621" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />
@@ -440,8 +440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db_manipulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        <state relative-caret-position="290">
+          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <marker date="1530657658621" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />

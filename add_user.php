@@ -36,13 +36,13 @@
 		<input class="form-control mb-2" type="date" name="dob" placeholder="Date of Birth" required>
 	</div>
 	<div class="form-group mx-3">
-		<select class="form-control mb-2" name="facilities" required>
-			<option value="m">M</option>
-			<option value="f">F</option>
+		<select class="form-control mb-2" name="sex" required>
+			<option value="M">M</option>
+			<option value="F">F</option>
 		</select>
 	</div>
 	<div class="form-group mx-3">
-		<select class="form-control mb-2" name="facilities">
+		<select class="form-control mb-2" name="current_facility" required>
 			<?php
 			    while($row = $result->fetch_assoc()) {
 	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].' ('.$row['city'].', '.$row['state'].')</option>';
@@ -51,9 +51,11 @@
     	</select>
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-lock"></i></div>
-		<input class="form-control mb-2" type="text" name="city" placeholder="city">
-	</div><div class="form-group mx-3">
+		<?php
+			include 'country_select.php';
+		?>	
+	</div>
+	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-lock"></i></div>
 		<input class="form-control mb-2" type="text" name="state" placeholder="state">
 	</div>
