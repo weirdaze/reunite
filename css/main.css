@@ -85,39 +85,57 @@ a:hover {
 .person:active {
 	box-shadow: 0 0 7px 3px #6C757D;
 }
-.prevArrow, .nextArrow {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+
 footer {
 	margin-top: auto;
 	height: 50px;
 }
- .modal-dialog {
-	width: 90% !important;
-	max-width: none !important;
+.modal-dialog {
 	max-height: none !important;
-	height: 90% !important;
+	height: 98%;
+}
+.modal-body {
+	overflow-y: auto;
 }
 .modal-content {
 	height: 100%;
-}
-.modal-body {
-	overflow: hidden;
-	display: flex;
-}
-.modal-body .row {
-	flex: 1;
-	max-height: 100%;
-}
-.modal-body .row .col {
-	max-height: 100%;
-	overflow: auto;
 }
 #spinner {
 	position: absolute;
 	top: 25%;
 	left: 50%;
 	margin-left: -3.5em;
+}
+@media screen and (min-width: 768px){
+	.modal-dialog {
+		width: 90% !important;
+		max-width: none !important;
+		max-height: none !important;
+		height: 90% !important;
+	}
+	/*.modal-body {
+		overflow: hidden;
+		display: flex;
+	}
+	.modal-body .row {
+		flex: 1;
+		max-height: 100%;
+	}
+	.modal-body .row .col {
+		max-height: 100%;
+		overflow: auto;
+	}
+	.prevArrow, .nextArrow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}*/
+}
+@media screen and (max-width: 767px) {
+	.modal-title {
+		font-size: 1rem;
+	}
+	/*.prevArrow, .nextArrow {
+		display: none;
+	}*/
 }
