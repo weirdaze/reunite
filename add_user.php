@@ -36,14 +36,14 @@
 		<input class="form-control mb-2" type="date" name="dob" placeholder="Date of Birth" required>
 	</div>
 	<div class="form-group mx-3">
-		<select class="form-control mb-2" name="sex" placeholder="sex" required>
+		<select class="form-control mb-2" name="sex" required>
 			<option value="M">M</option>
 			<option value="F">F</option>
 		</select>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon">Current Facility</div>
-		<select class="form-control mb-2" name="current_facility" placeholder="Choose Facility" required>
+		<select class="form-control mb-2" name="current_facility" required>
 			<?php
 			    while($row = $result->fetch_assoc()) {
 	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].' ('.$row['city'].', '.$row['state'].')</option>';
@@ -57,6 +57,21 @@
 			include 'country_select.php';
 		?>	
 	</div>
+	<div class="container">
+	    <div class="row">
+			<input type="hidden" name="count" value="1" />
+        	<div class="control-group" id="fields">
+            	<label class="control-label" for="field1">Nice Multiple Form Fields</label>
+            	<div class="controls" id="profs"> 
+                	<form class="input-append">
+                    	<div id="field"><input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/><button id="b1" class="btn add-more" type="button">+</button></div>
+                	</form>
+            	<br>
+            	<small>Press + to add another form field :)</small>
+            	</div>
+        	</div>
+		</div>
+	s</div>
 	<div class="form-group mx-3">
 		<label for="photo">Upload picture:</label>
         <input class="form-control mb-2"
