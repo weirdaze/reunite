@@ -54,7 +54,7 @@ $(document).ready(function(){
 				url: "processclaim",
 				data: {"uid": uid},
 				success: function(data){
-					$("body").html(data);
+					window.location.href = "index.php";
 				}
 			});
 		}

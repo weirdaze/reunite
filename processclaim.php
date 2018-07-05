@@ -4,6 +4,6 @@
 		$_SESSION['uid'] = $_GET['uid'];
 	}
 
-	/*echo $_SESSION['uid'];*/
-	header("Location: index.php");
+	/*echo $_SESSION['uid'];
+	header("Location: index.php");*/
 ?>
