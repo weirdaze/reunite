@@ -1,5 +1,6 @@
 <?php
-	include 'header_login.php';
+	$admin = true;
+	include 'header.php';
 	// this form is going to be for creating a facility
 ?>
 
