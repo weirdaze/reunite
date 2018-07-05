@@ -1,6 +1,5 @@
 <?php
 	include 'header_login.php';
-	$uid_b = $_POST["uid"];
 ?>
 
 <style>

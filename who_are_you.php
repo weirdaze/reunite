@@ -36,7 +36,7 @@
 			<option value="F">F</option>
 		</select>
 	</div>
-	<input class="btn btn-primary mx-3" type="submit" value="Create">
+	<input class="btn btn-primary mx-3" type="submit" value="Find me">
 	<hr class="mx-3" />
 
 </form>
