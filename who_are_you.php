@@ -30,12 +30,6 @@
     <div class="form-group mx-3">
 		<input class="form-control mb-2" type="date" name="dob" placeholder="Date of Birth">
 	</div>
-	<div class="form-group mx-3">
-		<select class="form-control mb-2" name="sex" required>
-			<option value="M">M</option>
-			<option value="F">F</option>
-		</select>
-	</div>
 	<input class="btn btn-primary mx-3" type="submit" value="Find me">
 	<hr class="mx-3" />
 
