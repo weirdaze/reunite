@@ -118,7 +118,7 @@ def db_get_match_id(uid_a, uid_b):
             print(err)
     else:
         cnx.close()
-    print "db_get_match_id returns " + match_id
+    print "db_get_match_id returns :" + match_id
     return str(match_id)
 
 
@@ -131,12 +131,19 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     print "there is inverse match: " + there_is_inverse_match
 
     if there_is_match != '' and there_is_inverse_match != '':
+
         match_id = id_generator(size=10)
+        print "creating new match_id: " + match_id
         # construct the match list object
         match = [uid_a, uid_b, status, match_id]
+        print "constructing match object: " + str(match)
+        print "entering the match into the matches db"
         db_add_update_match(match)
         updates = "created by " + uid_a + " on the app"
+        print "match entered creating the update: " + updates
+        print "creating ticket with match_id " + match_id + " and updates"
         tickets.create_ticket(match_id, "new", updates)
+
         return db_get_match_id(uid_a, uid_b)
     else:
         return "already-matched"
