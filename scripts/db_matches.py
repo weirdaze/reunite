@@ -130,7 +130,7 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     print "there is a match: " + there_is_match
     print "there is inverse match: " + there_is_inverse_match
 
-    if there_is_match != 'match' and there_is_inverse_match != 'match':
+    if there_is_match == 'match' and there_is_inverse_match == 'match':
 
         match_id = id_generator(size=10)
         print "creating new match_id: " + match_id
