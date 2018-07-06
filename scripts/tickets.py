@@ -5,7 +5,6 @@ import appollo
 import os
 import string
 from db_manipulate import id_generator
-from db_matches import db_get_match_id
 
 
 '''
