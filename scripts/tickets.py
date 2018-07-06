@@ -31,26 +31,28 @@ def create_ticket(match_id, status, updates):
     agent = 'unassigned'
     date_created = datetime.datetime.now()
 
-    try:
-        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
-                                      host=appollo.dbhostname, database=appollo.dbname)
-        cursor = cnx.cursor()
-        query = ("INSERT INTO tickets (TicketNumber, Match_ID, Agent, DateCreated, Status, Updates) "
-                 "VALUES('" + ticket_number + "', '" + match_id + "', '" + agent + "', '" + str(date_created) +
-                 "', '" + status + "', '" + updates + "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
-        print(query)
-        cursor.execute(query)
-        cnx.commit()
-        cursor.close()
-    except mysql.connector.Error as err:
-        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Something is wrong with your user name or password")
-        elif err.errno == errorcode.ER_BAD_DB_ERROR:
-            print("Database does not exist")
+    is_ticket = db_get_ticket(match_id)
+    if is_ticket != '':
+        try:
+            cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                          host=appollo.dbhostname, database=appollo.dbname)
+            cursor = cnx.cursor()
+            query = ("INSERT INTO tickets (TicketNumber, Match_ID, Agent, DateCreated, Status, Updates) "
+                     "VALUES('" + ticket_number + "', '" + match_id + "', '" + agent + "', '" + str(date_created) +
+                     "', '" + status + "', '" + updates + "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
+            print(query)
+            cursor.execute(query)
+            cnx.commit()
+            cursor.close()
+        except mysql.connector.Error as err:
+            if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+                print("Something is wrong with your user name or password")
+            elif err.errno == errorcode.ER_BAD_DB_ERROR:
+                print("Database does not exist")
+            else:
+                print(err)
         else:
-            print(err)
-    else:
-        cnx.close()
+            cnx.close()
 
 
 def db_get_ticket(match_id):

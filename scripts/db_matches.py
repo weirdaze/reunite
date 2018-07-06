@@ -124,14 +124,19 @@ def db_get_match_id(uid_a, uid_b):
 def submit_claim(uid_a, uid_b, status='claimed'):
     # this function gets kicked of in the sequence of events where someone clicks the claim button
     # first generate the match_id
-    match_id = id_generator(size=10)
+    there_is_match = db_get_match_id(uid_a, uid_b)
+    there_is_inverse_match = db_get_match_id(uid_b, uid_a)
 
-    # construct the match list object
-    match = [uid_a, uid_b, status, match_id]
-    db_add_update_match(match)
-    updates = "created by " + uid_a + " on the app"
-    tickets.create_ticket(match_id, "new", updates)
-    return db_get_match_id(uid_a, uid_b)
+    if there_is_match != '' and there_is_inverse_match != '':
+        match_id = id_generator(size=10)
+        # construct the match list object
+        match = [uid_a, uid_b, status, match_id]
+        db_add_update_match(match)
+        updates = "created by " + uid_a + " on the app"
+        tickets.create_ticket(match_id, "new", updates)
+        return db_get_match_id(uid_a, uid_b)
+    else:
+        return "already-matched"
 
 
 def potential_match():
