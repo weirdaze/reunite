@@ -42,7 +42,7 @@
 
 	/*echo $count;*/
 
-	if ($count > 1){
+	if ($count >= 1){
 		$sql = $sql.$where;
 	}
 	if ($first_name_q != ''){
