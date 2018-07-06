@@ -70,11 +70,19 @@
 			<div class="custom-file">
 	       		<input class="custom-file-input mb-2" type="file" id="photo" name="photo" accept="image/*" multiple/>
 	       		<input type="hidden" name="photos">
-	       		<label class="custom-file-label" for="photo">Upload Photo</label>
+	       		<label class="custom-file-label" for="photo">Upload Photos</label>
 	        </div>
         </div>
         <div id="imgThumbnails">
 			
+        </div>
+	</div>
+	<div class="form-group mx-3">
+		<div class="input-group">
+			<div class="custom-file">
+	       		<input class="custom-file-input mb-2" type="file" id="video" name="video" accept="video/*"/>
+	       		<label class="custom-file-label" for="photo">Upload Video</label>
+	        </div>
         </div>
 	</div>
 	<div class="form-group mx-3">
@@ -106,31 +114,34 @@
     	</div>
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Create">
-	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
+	<a href="admintools.php?clear_temp=1" class="btn btn-secondary">Cancel</a>
 </form>
 <script>
 	$(document).ready(function(){
 		$(".custom-select").select2();
 
 		$("#photo").change(function(){
-			var names = "";
-			var files = $(this).get(0).files;
-		    for(var i=0; i<$(this).get(0).files.length; i++){
-		        names == "" ? names = $(this).get(0).files[i].name : names = names + "," + $(this).get(0).files[i].name;
-		        $("#imgThumbnails").append("<img src='"+$(this).get(0).files[i].name+"' height='60'/>");
-		    }
-		    /*$("#imgThumbnails").html("<i class='fa fa-spinner fa-spin fa-lg'></i>");
+		    var img = new FormData();
+		    img.append("image",$(this).get(0).files[0]);
+		    /*console.log($(this).get(0).files[0]);*/
+		    $("#imgThumbnails").append("<i class='fa fa-spinner fa-spin fa-lg'></i>");
 		    $.ajax({
 		    	type: "POST",
 		    	url: "includes/imageuploads.php",
-		    	data: {"images": files},
+		    	processData: false,
+		    	contentType: false,
+		    	data: img,
 		    	success: function(data){
-		    		$(this).next("label").text(names);
+		    		$("#imgThumbnails").find("i").remove();
+		    		$("#imgThumbnails").append(data);
 		    	}
-		    });*/
-		    $("#photos").val(names);
-			
+		    });
 		});
+
+		$("#video").change(function(){
+			$(this).next(".custom-file-label").text($(this).get(0).files[0].name);
+		});
+
 	    var next = 1;
 	    $(".add-more").click(function(e){
 	        e.preventDefault();

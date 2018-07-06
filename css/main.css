@@ -87,6 +87,10 @@ a:hover {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+.thumbnail {
+	height: 60px;
+	margin: 5px;
+}
 .showUserSelect {
 	display: none;
 	cursor: pointer;
