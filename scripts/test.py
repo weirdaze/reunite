@@ -1,8 +1,8 @@
 import db_manipulate
 import db_matches
 
-#uid = db_manipulate.generate_uid('1233', 'ecastill')
-uid = '1233959D7NA60ecastill'
+uid = db_manipulate.generate_uid('1233', 'ecastill')
+#uid = '1233959D7NA60ecastill'
 first_name = 'Juan'
 middle_name = 'Hector'
 last_name = 'Doe'
