@@ -37,7 +37,7 @@ def db_add_update_match(match):
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
         query = ("INSERT INTO matches (UID_A, UID_B, Status, DateMatched, Match_ID) "
-                 "VALUES('" + uid_a + "', '" + uid_b + "', '" + status + "', '" + date_matched + "', '" + match_id +
+                 "VALUES('" + uid_a + "', '" + uid_b + "', '" + status + "', '" + str(date_matched) + "', '" + match_id +
                  "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
         print(query)
         cursor.execute(query)
@@ -118,7 +118,7 @@ def db_get_match_id(uid_a, uid_b):
             print(err)
     else:
         cnx.close()
-    return match_id
+    return str(match_id)
 
 
 def submit_claim(uid_a, uid_b, status='claimed'):
