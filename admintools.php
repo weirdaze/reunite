@@ -1,6 +1,13 @@
 <?php
 	$admin = true;
 	include 'header.php';
+
+	if(isset($_GET['clear_temp'])){
+		$userid = $_SESSION['userid'];
+		foreach(glob("media/photo/temp/*_$userid*") as $filename){
+			unlink($filename);
+		}
+	}
 ?>
 <div class="container">
 	<div class="row">
