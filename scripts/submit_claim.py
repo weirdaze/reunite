@@ -9,5 +9,6 @@ uid_b = split_string[1]
 
 match_id = db_matches.submit_claim(uid_a, uid_b)
 
+
 print "success," + db_get_ticket(match_id)
 
