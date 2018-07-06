@@ -100,7 +100,7 @@ def db_get_match(match_id):
 
 def db_get_match_id(uid_a, uid_b):
     # this function gets the entire record for the match keyed off the Match_ID and returns a match list object
-    match_id = ""
+    match_id = "match"
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
@@ -130,7 +130,7 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     print "there is a match: " + there_is_match
     print "there is inverse match: " + there_is_inverse_match
 
-    if there_is_match is not '' and there_is_inverse_match is not '':
+    if there_is_match != 'match' and there_is_inverse_match != 'match':
 
         match_id = id_generator(size=10)
         print "creating new match_id: " + match_id
