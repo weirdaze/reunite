@@ -117,6 +117,7 @@
 		$("input[name='dob']").change(function(){
 			$(this).removeClass("placeholder");
 		});
+
 		$("#photo").change(function(){
 		    var img = new FormData();
 		    img.append("image",$(this).get(0).files[0]);
