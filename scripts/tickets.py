@@ -32,6 +32,7 @@ def create_ticket(match_id, status, updates):
     date_created = datetime.datetime.now()
 
     is_ticket = db_get_ticket(match_id)
+    print "create_ticket: is_ticket returns: " + is_ticket
     if is_ticket != '':
         try:
             cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,

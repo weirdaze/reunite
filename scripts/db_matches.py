@@ -118,6 +118,7 @@ def db_get_match_id(uid_a, uid_b):
             print(err)
     else:
         cnx.close()
+    print "db_get_match_id returns " + match_id
     return str(match_id)
 
 
@@ -126,6 +127,8 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     # first generate the match_id
     there_is_match = db_get_match_id(uid_a, uid_b)
     there_is_inverse_match = db_get_match_id(uid_b, uid_a)
+    print "there is a match: " + there_is_match
+    print "there is inverse match: " + there_is_inverse_match
 
     if there_is_match != '' and there_is_inverse_match != '':
         match_id = id_generator(size=10)
