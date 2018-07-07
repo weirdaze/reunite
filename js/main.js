@@ -47,16 +47,20 @@ $(document).ready(function(){
 		
 	});
 	$(document).on("click","#claimMember",function(){
-		if($(this).data("claim_type") == "child"){
-			var uid = $("#uid").data("uid");
-			$.ajax({
-				type: "GET",
-				url: "processclaim",
-				data: {"uid": uid},
-				success: function(data){
+		var claim_type = $(this).data("claim_type");
+		var uid = $("#uid").data("uid");
+		$.ajax({
+			type: "GET",
+			url: "processclaim",
+			data: {"uid": uid, "claim_type": claim_type},
+			success: function(data){
+				if(claim_type == "child"){
 					window.location.href = "index.php";
 				}
-			});
-		}
+				else {
+					console.log(data);
+				}
+			}
+		});
 	});
 });
