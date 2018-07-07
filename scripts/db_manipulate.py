@@ -107,7 +107,7 @@ def db_add_update_profile(person, new):
                      "VALUES('" + uid + "', '" + first_name + "', '" + middle_name + "', '" + last_name + "', '" + dob +
                      "', '" + maternal_last_name + "', '" + sex + "', '" + entry_point + "', '" + country +
                      "', '" + last_facility + "', '" + current_facility + "', '" + relatives + "', '" + date_detained +
-                     "', '" + status + "', '" + claiming + "', '" + typed + "', '" + video + "', '" + photo +
+                     "', '" + status + "', '" + claiming + "', '" + typed + "', '" + photo + "', '" + video +
                      "', '" + facility_uid + "', '" + str(init_date) + "')")
             print(query)
             cursor.execute(query)

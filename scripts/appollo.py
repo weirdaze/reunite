@@ -1,6 +1,6 @@
 username = "root"
 password = "R3unite123"
-dbhostname = "localhost"
+dbhostname = "tun1.centerpointcc.net"
 dbusername = "root"
 dbpassword = "R3unite123"
 dbname = "reunite"
