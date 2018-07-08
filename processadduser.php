@@ -12,10 +12,15 @@
 		$country = $_POST['country'];
 		$photo = $_POST['photo'];
 		$video = $_POST['video'];
-		$state = $_POST['state'];
-		$zip = $_POST['zip'];
-		$poc = $_POST['poc'];
-		$relatives = "";
+		$relatives = '';
+		$type = $_POST['type'];
+		$claiming = '';
+		$facility_uid = $_POST['facility_uid'];
+		$entry_point = $_POST['entry_point'];
+		$last_facility = '';
+		$date_detained = $_POST['$\date_detained'];
+		$status = 'new';
+
 
 		foreach($_POST as $key => $value){
 			if(preg_match('/^rel[0-9]*$/',$key)){
@@ -28,7 +33,7 @@
 			}
 		}
 
-		$exec_str = "python /var/www/html/reunite/scripts/add_user.py '$first_name','$middle_name','$last_name','$dob','$maternal_last_name','$sex','entry_point','$country','last_facility','$current_facility','$relatives','date_detained','status','claiming','type','$video','$photo','facility_uid','$admin_username'";
+		$exec_str = "python /var/www/html/reunite/scripts/add_user.py '".$first_name.",".$middle_name.",".$last_name.",".$dob.",".$maternal_last_name.",".$sex.",".$entry_point.",".$country.",".$last_facility.",".$current_facility.",".$relatives.",".$date_detained.",".$status.",".$claiming.",".$type.",".$video.",".$photo.",".$facility_uid.",".$admin_username.'";
 		echo $exec_str;
 		/*$result = exec($exec_str);*/
 		/*echo $result;*/
