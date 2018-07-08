@@ -87,16 +87,26 @@
         </div>
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-address-card"></i></div>
-		<input class="form-control mb-2" type="text" name="state" placeholder="State">
+		<div class="custom-control custom-radio custom-control-inline">
+			<input type="radio" id="type_1" name="type" class="custom-control-input" value="adult" required>
+			<label class="custom-control-label" for="type_1">adult</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+			<input type="radio" id="type_2" name="type" class="custom-control-input" value="child" required>
+			<label class="custom-control-label" for="type_2">child</label>
+		</div>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
-		<input class="form-control mb-2" type="text" name="zip" placeholder="Zip">
+		<input class="form-control mb-2" type="text" name="facility_uid" placeholder="ID from current facility">
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-user"></i></div>
-		<input class="form-control mb-2" type="text" name="poc" placeholder="Point of Contact Full Name">
+		<div class="input-icon"><i class="fa fa-address-card"></i></div>
+		<input class="form-control mb-2" type="text" name="entry_point" placeholder="Point of Entry into USA">
+	</div>
+	<div class="form-group mx-3">
+    	<div class="input-icon"><i class="fa fa-calendar-alt"></i></div>
+		<input class="form-control mb-2 placeholder" type="date" name="date_detained">
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
