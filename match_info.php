@@ -12,7 +12,7 @@
 
 	include('config.php');
 
-	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".uid_a."'";
+	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".$uid_a."'";
 	echo $sql;
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
@@ -24,7 +24,7 @@
 	</div>
 	<br>
 <?php
-	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".uid_b."'";
+	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".$uid_b."'";
 	echo $sql;
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
