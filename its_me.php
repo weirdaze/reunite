@@ -85,7 +85,9 @@
 	include("header.php");
 ?>
 <div class="container">
-	<div id="results">
+
+	<h2 class="text-center my-3"><a id="goBack" href="who_are_you.php" data-toggle="tooltip" data-title="Return to Form"><i class="fa fa-arrow-circle-left"></i></a> Encuéntrate en las imágenes</h2>
+	<div id="results" class="d-flex align-items-center justify-content-center flex-wrap">
 	<?php
 		$sql = $sql.$orderBy;
 
@@ -106,4 +108,7 @@
 		?>
 	</div>
 </div>
+<script>
+	$("#goBack").tooltip();
+</script>
 <?php include("footer.php"); ?>

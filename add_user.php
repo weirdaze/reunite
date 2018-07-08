@@ -1,4 +1,5 @@
 <?php
+	$admin = 1;
 	include 'header.php';
 	// this form is going to be for creating a facility
 ?>
