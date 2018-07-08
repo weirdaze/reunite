@@ -14,7 +14,8 @@
 	include('config.php');
 
 	$sql = "SELECT * FROM person ";
-	$where = " where";
+	$where = " where Type='child' AND";
+	$where_child = " where Type='child' ";
 	$or = ' OR ';
 	$orderBy = "order by LastName";
 	$count = 0;
@@ -45,6 +46,7 @@
 	if ($count >= 1){
 		$sql = $sql.$where;
 	}
+	else{$sql = $sql.$where_child;}
 	if ($first_name_q != ''){
 		$sql = $sql.$first_name_q;
 		if ($count > 1){
