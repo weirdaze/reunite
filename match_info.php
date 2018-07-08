@@ -1,11 +1,19 @@
 <?php
+	include 'header.php';
+?>
+<style>
+	body {
+		background-color: #eee;
+	}
+</style>
+<?php
 	$uid_a = $_GET["uid_a"];
 	$uid_b = $_GET["uid_b"];
 
 	include('config.php');
 
 	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".uid_a."'";
-
+	echo $sql;
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
 ?>
@@ -17,7 +25,7 @@
 	<br>
 <?php
 	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".uid_b."'";
-
+	echo $sql;
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
 ?>
@@ -27,3 +35,4 @@
 		<div class="caption"><?php echo $row['LastName'] . ", " . $row['FirstName']; ?></div>
 	</div>
 	<br>
+<?php include 'footer.php'?>
