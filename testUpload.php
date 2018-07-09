@@ -18,8 +18,10 @@
       }
       
       if(empty($errors)==true) {
-         move_uploaded_file($file_tmp,$_SERVER['DOCUMENT_ROOT'] . 'media/photo'.$file_name);
+         $mypath = $_SERVER['DOCUMENT_ROOT'] . 'media/photo'.$file_name;
+         move_uploaded_file($file_tmp, $mypath);
          echo "Success";
+         echo $mypath;
       }else{
          print_r($errors);
       }
