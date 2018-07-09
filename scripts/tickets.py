@@ -38,9 +38,7 @@ def create_ticket(match_id, status, updates):
             cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                           host=appollo.dbhostname, database=appollo.dbname)
             cursor = cnx.cursor()
-            query = ("INSERT INTO tickets (TicketNumber, Match_ID, Agent, DateCreated, Status, Updates) "
-                     "VALUES('" + ticket_number + "', '" + match_id + "', '" + agent + "', '" + str(date_created) +
-                     "', '" + status + "', '" + updates + "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
+            query = ("INSERT INTO tickets (TicketNumber, Match_ID, Agent, DateCreated, Status, Updates) VALUES('" + ticket_number + "', '" + match_id + "', '" + agent + "', '" + str(date_created) + "', '" + status + "', '" + updates + "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
             print "my create ticket query is: " + query
             cursor.execute(query)
             cnx.commit()

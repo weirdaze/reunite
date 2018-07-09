@@ -15,10 +15,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db_manipulate.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_manipulate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_manipulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="2903">
               <caret line="247" column="29" lean-forward="false" selection-start-line="247" selection-start-column="29" selection-end-line="247" selection-end-column="29" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -127,14 +127,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tickets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="48" column="61" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+            <state relative-caret-position="1010">
+              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
-                <marker date="1530964522038" expanded="true" signature="3218:3273" ph="SELECT * FRO... tickets" />
+                <marker date="1531177040543" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
+                <marker date="1531177040543" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
+                <marker date="1531177040543" expanded="true" signature="3173:3228" ph="SELECT * FRO... tickets" />
               </folding>
             </state>
           </provider>
@@ -179,13 +181,13 @@
         <option value="$PROJECT_DIR$/facilities.py" />
         <option value="$PROJECT_DIR$/submit_claim.py" />
         <option value="$PROJECT_DIR$/db_matches.py" />
-        <option value="$PROJECT_DIR$/tickets.py" />
         <option value="$PROJECT_DIR$/appollo.py" />
         <option value="$PROJECT_DIR$/add_user.py" />
         <option value="$PROJECT_DIR$/generate_uid.py" />
         <option value="$PROJECT_DIR$/rename_upload.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/db_manipulate.py" />
+        <option value="$PROJECT_DIR$/tickets.py" />
       </list>
     </option>
   </component>
@@ -325,7 +327,7 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2644809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04480874" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -408,27 +410,6 @@
             <marker date="1530794347726" expanded="true" signature="2226:2306" ph="INSERT INTO facilities... " />
             <marker date="1530794347726" expanded="true" signature="3379:3448" ph="DELETE FROM facilities... " />
             <marker date="1530794347726" expanded="true" signature="4283:4354" ph="SELECT * FRO... facilities" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/submit_claim.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tickets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="48" column="61" lean-forward="false" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1530964522038" expanded="true" signature="3218:3273" ph="SELECT * FRO... tickets" />
           </folding>
         </state>
       </provider>
@@ -516,7 +497,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db_manipulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="2903">
           <caret line="247" column="29" lean-forward="false" selection-start-line="247" selection-start-column="29" selection-end-line="247" selection-end-column="29" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
@@ -525,6 +506,29 @@
             <marker date="1531156623413" expanded="true" signature="10169:10213" ph="DELETE FROM person... " />
             <marker date="1531156623413" expanded="true" signature="11018:11062" ph="SELECT Devic... wp_client_devices" />
             <marker date="1531156623413" expanded="true" signature="12308:12359" ph="SELECT COUNT... wp_client_vpn" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/submit_claim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tickets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1010">
+          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1531177040543" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
+            <marker date="1531177040543" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
+            <marker date="1531177040543" expanded="true" signature="3173:3228" ph="SELECT * FRO... tickets" />
           </folding>
         </state>
       </provider>
