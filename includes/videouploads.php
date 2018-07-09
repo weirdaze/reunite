@@ -2,7 +2,8 @@
 	session_start();
 	$target_dir = "media/video/temp/";
 	$ext = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
-	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['video']['name']." ".$_SESSION['current_iuser_id']."  video";
+	$current_iuser_id = $_GET['uid'];
+	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['video']['name']." ".$current_iuser_id."  video";
 	echo $execStr;
 	$target_file = $target_dir . basename( $_FILES['video']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
 	$target_file_dir = "/var/www/html/reunite/" . $target_file;

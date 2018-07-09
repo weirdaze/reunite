@@ -164,7 +164,7 @@
 		    $("#vidThumbnails").append("Files set for upload. Please only upload 1 file.");
 		    $.ajax({
 		    	type: "POST",
-		    	url: "includes/videouploads.php",
+		    	url: "includes/videouploads.php?uid=".$uid,
 		    	processData: false,
 		    	contentType: false,
 		    	data: vid,
