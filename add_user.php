@@ -3,35 +3,6 @@
 	include 'header.php';
 	// this form is going to be for creating a facility
 ?>
-<?php
-   if(isset($_FILES['video'])){
-      $errors= array();
-      $file_name = $_FILES['video']['name'];
-      $file_size = $_FILES['video']['size'];
-      $file_tmp = $_FILES['video']['tmp_name'];
-      $file_type = $_FILES['video']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['video']['name'])));
-      
-      $expensions= array("mov","mpeg4","wma","mp4");
-      
-      if(in_array($file_ext,$expensions)=== false){
-         $errors[]="extension not allowed, please choose a MOV or MP4 file.";
-      }
-      
-      if($file_size > 7000000) {
-         $errors[]='File size must be 5 MB or less (less than 30 seconds long)';
-      }
-      
-      if(empty($errors)==true) {
-         $mypath = $_SERVER['DOCUMENT_ROOT'] . '/reunite/media/video/temp/'.$file_name;
-         move_uploaded_file($file_tmp, $mypath);
-         echo "Success";
-         echo $mypath;
-      }else{
-         print_r($errors);
-      }
-   }
-?>
 <style>
 	body {
 		background-color: #eee;
@@ -111,7 +82,11 @@
 			<div class="custom-file">
 	       		<input class="custom-file-input mb-2" type="file" id="video" name="video" accept="video/*"/>
 	       		<label class="custom-file-label placeholder" for="photo">Upload Video</label>
+	       		<input type="hidden" name="videos">
 	        </div>
+        </div>
+        <div id="vidThumbnails">
+			
         </div>
 	</div>
 	<div class="form-group mx-3">
@@ -182,7 +157,29 @@
 		});
 
 		$("#video").change(function(){
-			$(this).next(".custom-file-label").removeClass("placeholder").text($(this).get(0).files[0].name);
+			//$(this).next(".custom-file-label").removeClass("placeholder").text($(this).get(0).files[0].name);
+			var vid = new FormData();
+		    vid.append("video",$(this).get(0).files[0]);
+		    var filename = $(this).get(0).files[0].name;
+		    /*console.log($(this).get(0).files[0]);*/
+		    $("#vidThumbnails").append("Files set for upload. Please only upload 1 file.");
+		    $.ajax({
+		    	type: "POST",
+		    	url: "includes/videouploads.php",
+		    	processData: false,
+		    	contentType: false,
+		    	data: vid,
+		    	success: function(data){
+		    		//$("#vidThumbnails").find("i").remove();
+		    		$("#vidThumbnails").append(data);
+		    		var videoLabel = $("#video").next(".custom-file-label");
+		    		var newText = videoLabel.text();
+		    		newText == "Upload Photos" ? newText = filename : newText = newText + "," + filename;
+		    		videoLabel.removeClass("placeholder").text(newText);
+		    		$("#videos").val(newText);
+		    	}
+		    });
+
 		});
 
 		var count = 1;
