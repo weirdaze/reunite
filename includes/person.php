@@ -29,7 +29,7 @@
 						<i class="fa fa-male fa-3x"></i>
 					</div>
 					<video width="100%" controls>
-					    <source src="media/video/SampleVideo_1280x720_5mb.mp4" type="video/mp4">
+					    <source src="media/video/<?php echo $row['video'] ?>" type="video/mp4">
 					</video>
 				</div>
 				<div id="personDetails" class="col-sm" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $_GET['gender']; ?>">
