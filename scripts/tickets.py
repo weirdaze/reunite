@@ -61,7 +61,7 @@ def db_get_ticket(match_id):
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
-        query1 = ("SELECT * FROM tickets WHERE Match_ID='" + match_id + "'")
+        query1 = ("SELECT TicketNumber FROM tickets WHERE Match_ID='" + match_id + "'")
         cursor.execute(query1)
         for TicketNumber in cursor:
             ticket_number = TicketNumber

@@ -24,8 +24,9 @@ MariaDB [reunite]> describe matches;
 '''
 
 
-def db_add_update_match(match):
+def db_add_update_match(match_str):
     # this function connects to the db and inserts a match or updates the status of a match.
+    match = match_str.split(',')
     uid_a = match[0]
     uid_b = match[1]
     status = match[2]
@@ -135,8 +136,8 @@ def submit_claim(uid_a, uid_b, status='claimed'):
         match_id = id_generator(size=10)
         print "creating new match_id: " + match_id
         # construct the match list object
-        match = [uid_a, uid_b, status, match_id]
-        print "constructing match object: " + str(match)
+        match = uid_a + "," + uid_b + "," + status + "," + match_id
+        print "constructing match object: " + match
         print "entering the match into the matches db"
         db_add_update_match(match)
         updates = "created by " + uid_a + " on the app"
