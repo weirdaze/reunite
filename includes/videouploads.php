@@ -23,7 +23,7 @@
 	    $uploadOk = 0;
 	}
 	// Allow certain file formats
-	if($imageFileType != "mp4" && $imageFileType != "mov" && $imageFileType != "mpeg4" && $imageFileType != "avi" ) {
+	if($videoFileType != "mp4" && $videoFileType != "mov" && $videoFileType != "mpeg4" && $videoFileType != "avi" ) {
 	    echo "Sorry, only mp4, mov, mpeg4 & avi files are allowed.";
 	    $uploadOk = 0;
 	}
