@@ -13,9 +13,8 @@
     $current_facility = $_SESSION['current_facility'];
     $admin_username = $_SESSION['userid'];
     $execStr = "python /var/www/html/reunite/scripts/generate_uid.py ".$current_facility." ".$admin_username;
-    echo $execStr;
     $result = exec($execStr);
-    echo $result;
+    $uid = $result;
 	
 ?>
 <form class="formBox pb-3" method="post" action="processadduser.php">
@@ -52,6 +51,9 @@
 	</div>
 	<div class="form-group mx-3">
 		<input type="hidden" name="current_facility" value="<?php echo $current_facility;?>">
+	</div>
+	<div class="form-group mx-3">
+		<input type="hidden" name="uid" value="<?php echo $uid;?>">
 	</div>
 	<div class="form-group mx-3">
 		<!-- <label class="">Country:</label> -->

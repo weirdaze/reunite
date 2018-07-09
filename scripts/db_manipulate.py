@@ -261,5 +261,6 @@ def rename_media(filename, uid, media_type):
             media_name = uid + "-" + offset + "." + extension
         else:
             break
-    os.rename(filename, media_name)
+    return media_name
+
 

@@ -2,13 +2,15 @@
 	session_start();
 	$target_dir = "media/video/temp/";
 	$ext = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
+	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['video']['name']." ".$uid."  video";
+	echo $execStr;
 	$target_file = $target_dir . basename( $_FILES['video']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
 	$target_file_dir = "/var/www/html/reunite/" . $target_file;
 	$uploadOk = 1;
 	$videoFileType = strtolower($ext);
 	// Check if image file is a actual image or fake image
 	if(isset($_POST["video"])){
-	    $check = getimagesize($_FILES["video"]["tmp_name"]);
+	    $check = filesize($_FILES["video"]["tmp_name"]);
 	    if($check !== false) {
 	        echo "File is a video - " . $check["mime"] . ".";
 	        $uploadOk = 1;
