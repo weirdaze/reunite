@@ -1,15 +1,15 @@
 <?php
 	include 'header.php';
-?>
-<style>
-	body {
-		background-color: #eee;
-	}
-</style>
-<?php
 	include('config.php');
 ?>
-	<br /><table style="width:100%"><tr><th>Match ID</th><th>Claimer</th><th>Claimed</th><th>Status</th></tr>
+	<table class="table">
+		<tr>
+			<th>Preview</th>
+			<th>Match ID</th>
+			<th>Claimer</th>
+			<th>Claimed</th>
+			<th>Status</th>
+		</tr>
 <?php
 		
 	$sql = "SELECT Match_ID, UID_A, UID_B, Status from matches where Status<>'closed'";
@@ -18,16 +18,19 @@
 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
+			$uid_a = $row['UID_A'];
+			$uid_b = $row['UID_B'];
 ?>
 			<tr>
-			<td><a href="match_info.php?<?php echo 'uid_a='.$row['UID_A'].'&'.'uid_b='.$row['UID_B'] ?>"><?php echo $row['Match_ID']; ?></a></td>
-			<td><?php echo $row['UID_A']; ?></td>
-			<td><?php echo $row['UID_B']; ?></td>
-			<td><?php echo $row['Status']; ?></td>
+				<td><a class="previewMatch text-primary ml-3" data-matchID="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><i class="fa fa-eye"></i></a></td>
+				<td><?php echo $row['Match_ID']; ?></td>
+				<td><?php echo $row['UID_A']; ?></td>
+				<td><?php echo $row['UID_B']; ?></td>
+				<td><?php echo $row['Status']; ?></td>
 			</tr>
 <?php
 		}
 	}
 ?>
-		</table>
+	</table>
 <?php include 'footer.php'?>

@@ -1,38 +1,104 @@
 <?php
-	include 'header.php';
-?>
-<style>
-	body {
-		background-color: #eee;
-	}
-</style>
-<?php
-	$uid_a = $_GET["uid_a"];
-	$uid_b = $_GET["uid_b"];
 
-	include('config.php');
+	$uid_a = $_GET['uid_a'];
+	$uid_b = $_GET['uid_b'];
 
-	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".$uid_a."'";
+	include 'config.php';
+
+	$sql = "SELECT UID, FirstName, LastName, Sex, photo, DateDetained, EntryPoint, CurrentFacility, Country, Relatives from person where UID = '".$uid_a."'";
 
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
 ?>
-	
-	<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $row['UID']; ?>" data-gender="<?php echo $row['Sex']; ?>" data-fullname="<?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>">
-		<div class="personImg" style="background-image: url('media/photo/<?php echo $row['photo']; ?>');"></div>
-		<div class="caption"><?php echo $row['LastName'] . ", " . $row['FirstName']; ?></div>
-	</div>
-	<br>
+	<div class="row">
+		<div class="col-sm">
+			<h3><?php echo $row['FirstName'] . " " . $row['LastName']; ?></h3>
+			<div class="d-flex align-items-center justify-content-center mb-3">
+				<img src="media/photo/<?php echo $row['photo']; ?>" height="250" />
+			</div>
+			<table class="table">
+				<tr>
+					<th>Sex:</th>
+					<td><?php echo $row['Sex'] ?></td>
+				</tr>
+				<tr>
+					<th>Date Detained:</th>
+					<td><?php echo $row['DateDetained'] ?></td>
+				</tr>
+				<tr>
+					<th>Entry Point:</th>
+					<td><?php echo $row['EntryPoint'] ?></td>
+				</tr>
+				<tr>
+					<th>Current Facility:</th>
+					<td><?php echo $row['CurrentFacility'] ?></td>
+				</tr>
+				<tr>
+					<th>Country of Origin:</th>
+					<td><?php echo $row['Country'] ?></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<strong>Relatives:</strong>
+						<ul class="list-group mt-2">
+							<?php 
+								$a = explode(',',$row['Relatives']);
+								foreach($a as $v){
+									echo "<li class='list-group-item'>".$v."</li>";
+								}
+							?>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
 <?php
-	$sql = "SELECT UID, FirstName, LastName, Sex, photo from person where UID = '".$uid_b."'";
+	$sql = "SELECT UID, FirstName, LastName, Sex, photo, DateDetained, EntryPoint, CurrentFacility, Country, Relatives from person where UID = '".$uid_b."'";
 
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
 ?>
-
-	<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $row['UID']; ?>" data-gender="<?php echo $row['Sex']; ?>" data-fullname="<?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>">
-		<div class="personImg" style="background-image: url('media/photo/<?php echo $row['photo']; ?>');"></div>
-		<div class="caption"><?php echo $row['LastName'] . ", " . $row['FirstName']; ?></div>
+		<div class="col-sm">
+			<h3><?php echo $row['FirstName'] . " " . $row['LastName']; ?></h3>
+			<div class="d-flex align-items-center justify-content-center mb-3">
+				<img src="media/photo/<?php echo $row['photo']; ?>" height="250" />
+			</div>
+			<table class="table">
+				<tr>
+					<th>Sex:</th>
+					<td><?php echo $row['Sex'] ?></td>
+				</tr>
+				<tr>
+					<th>Date Detained:</th>
+					<td><?php echo $row['DateDetained'] ?></td>
+				</tr>
+				<tr>
+					<th>Entry Point:</th>
+					<td><?php echo $row['EntryPoint'] ?></td>
+				</tr>
+				<tr>
+					<th>Current Facility:</th>
+					<td><?php echo $row['CurrentFacility'] ?></td>
+				</tr>
+				<tr>
+					<th>Country of Origin:</th>
+					<td><?php echo $row['Country'] ?></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<strong>Relatives:</strong>
+						<ul class="list-group mt-2">
+							<?php 
+								$a = explode(',',$row['Relatives']);
+								foreach($a as $v){
+									echo "<li class='list-group-item'>".$v."</li>";
+								}
+							?>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
-	<br>
-<?php include 'footer.php'?>
+
+	<!-- <i class="text-secondary fa fa-exchange-alt fa-3x"></i> -->

@@ -64,4 +64,17 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$(document).on("click",".previewMatch",function(){
+		var matchID = $(this).data("matchid");
+		var uid_a = $(this).data("uid_a");
+		var uid_b = $(this).data("uid_b");
+		var before = function(){
+			$(".modal").modal("show");
+		}
+		var complete = function(){
+			$(".modal-title").html("Match ID: " + matchID);
+			$("#claimMember").hide();
+		}
+		updateContent(".modal-body","match_info.php",{"match_ID": matchID, "uid_a": uid_a, "uid_b": uid_b},before,complete);
+	});
 });

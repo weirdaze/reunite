@@ -26,9 +26,9 @@
 					<span class="menuIcon"><i class="fa fa-file-alt"></i></span>
 					<span class="menuText">Manage Tickets</span>
 				</a>
-				<a class="list-group-item d-flex align-items-center" href="create_ticket.php">
+				<a class="list-group-item d-flex align-items-center" href="display_matches.php">
 					<span class="menuIcon"><i class="fa fa-exchange-alt"></i></span>
-					<span class="menuText">Manage Matches</span>
+					<span class="menuText">View Matches</span>
 				</a>
 			</div>
 		</div>
