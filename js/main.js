@@ -51,7 +51,7 @@ $(document).ready(function(){
 		var uid = $("#uid").data("uid");
 		$.ajax({
 			type: "GET",
-			url: "processclaim",
+			url: "processclaim.php",
 			data: {"uid": uid, "claim_type": claim_type},
 			success: function(data){
 				if(claim_type == "child"){
