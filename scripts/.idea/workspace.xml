@@ -57,8 +57,8 @@
       <file leaf-file-name="db_matches.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_matches.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="146" column="44" lean-forward="false" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
+            <state relative-caret-position="441">
+              <caret line="144" column="51" lean-forward="true" selection-start-line="144" selection-start-column="51" selection-end-line="144" selection-end-column="51" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <marker date="1530898773732" expanded="true" signature="2353:2389" ph="DELETE FROM matches... " />
@@ -117,20 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appollo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appollo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tickets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1010">
+            <state relative-caret-position="1288">
               <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -154,6 +144,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="create_ticket.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/create_ticket.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -168,8 +170,8 @@
       <find>update</find>
       <find>get_match_id</find>
       <find>generate_uid</find>
-      <find>there</find>
       <find>renam</find>
+      <find>there</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -188,6 +190,7 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/db_manipulate.py" />
         <option value="$PROJECT_DIR$/tickets.py" />
+        <option value="$PROJECT_DIR$/create_ticket.py" />
       </list>
     </option>
   </component>
@@ -422,31 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_matches.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="146" column="44" lean-forward="false" selection-start-line="146" selection-start-column="44" selection-end-line="146" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1530898773732" expanded="true" signature="2353:2389" ph="DELETE FROM matches... " />
-            <marker date="1530898773732" expanded="true" signature="2353:2403" ph="DELETE FROM matches... " />
-            <marker date="1530898773732" expanded="true" signature="2353:2406" ph="DELETE FROM matches... " />
-            <marker date="1530898773732" expanded="true" signature="2353:2408" ph="DELETE FROM matches... " />
-            <marker date="1530898773732" expanded="true" signature="3214:3252" ph="SELECT * FRO... person" />
-            <marker date="1530898773732" expanded="true" signature="3214:3269" ph="SELECT * FRO... person" />
-            <marker date="1530898773732" expanded="true" signature="4199:4241" ph="SELECT * FRO... matches" />
-            <marker date="1530898773732" expanded="true" signature="4199:4267" ph="SELECT * FRO... matches" />
-            <marker date="1530898773732" expanded="true" signature="4199:4281" ph="SELECT * FRO... matches" />
-            <marker date="1530898773732" expanded="true" signature="4199:4283" ph="SELECT * FRO... matches" />
-            <marker date="1530898773732" expanded="true" signature="6646:6688" ph="SELECT * FRO... matches" />
-            <marker date="1530898773732" expanded="true" signature="6646:6711" ph="SELECT UID_A... matches" />
-            <marker date="1530898773732" expanded="true" signature="6646:6713" ph="SELECT * FRO... matches" />
-            <marker date="1530898773732" expanded="true" signature="10528:10579" ph="SELECT Claim... person" />
-            <marker date="1530898773732" expanded="true" signature="11374:11444" ph="UPDATE person... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generate_uid.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -522,13 +500,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tickets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1010">
+        <state relative-caret-position="1288">
           <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <marker date="1531177040543" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
             <marker date="1531177040543" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
             <marker date="1531177040543" expanded="true" signature="3173:3228" ph="SELECT * FRO... tickets" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_matches.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="144" column="51" lean-forward="true" selection-start-line="144" selection-start-column="51" selection-end-line="144" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1530898773732" expanded="true" signature="2353:2389" ph="DELETE FROM matches... " />
+            <marker date="1530898773732" expanded="true" signature="2353:2403" ph="DELETE FROM matches... " />
+            <marker date="1530898773732" expanded="true" signature="2353:2406" ph="DELETE FROM matches... " />
+            <marker date="1530898773732" expanded="true" signature="2353:2408" ph="DELETE FROM matches... " />
+            <marker date="1530898773732" expanded="true" signature="3214:3252" ph="SELECT * FRO... person" />
+            <marker date="1530898773732" expanded="true" signature="3214:3269" ph="SELECT * FRO... person" />
+            <marker date="1530898773732" expanded="true" signature="4199:4241" ph="SELECT * FRO... matches" />
+            <marker date="1530898773732" expanded="true" signature="4199:4267" ph="SELECT * FRO... matches" />
+            <marker date="1530898773732" expanded="true" signature="4199:4281" ph="SELECT * FRO... matches" />
+            <marker date="1530898773732" expanded="true" signature="4199:4283" ph="SELECT * FRO... matches" />
+            <marker date="1530898773732" expanded="true" signature="6646:6688" ph="SELECT * FRO... matches" />
+            <marker date="1530898773732" expanded="true" signature="6646:6711" ph="SELECT UID_A... matches" />
+            <marker date="1530898773732" expanded="true" signature="6646:6713" ph="SELECT * FRO... matches" />
+            <marker date="1530898773732" expanded="true" signature="10528:10579" ph="SELECT Claim... person" />
+            <marker date="1530898773732" expanded="true" signature="11374:11444" ph="UPDATE person... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_ticket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
