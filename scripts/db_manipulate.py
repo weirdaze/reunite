@@ -248,7 +248,7 @@ def rename_media(filename, uid, media_type):
     extension = name_split[1]
 
     offset = 1
-    media_name = uid + "-" + offset + "." + extension
+    media_name = uid + "-" + str(offset) + "." + extension
 
     while True:
         offset += 1
@@ -258,7 +258,7 @@ def rename_media(filename, uid, media_type):
             fname = appollo.photo_path + media_name
 
         if os.path.isfile(fname):
-            media_name = uid + "-" + offset + "." + extension
+            media_name = uid + "-" + str(offset) + "." + extension
         else:
             break
     return media_name
