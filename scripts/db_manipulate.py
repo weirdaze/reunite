@@ -245,7 +245,8 @@ def rename_media(filename, uid, media_type):
     # first we split up the filename
     name_split = filename.split('.')
     name = name_split[0]
-    extension = name_split[name_split.__len__() - 1]
+    index = name_split.__len__() - 1
+    extension = name_split[index]
     offset = 1
     media_name = uid + "-" + str(offset) + "." + extension
 
