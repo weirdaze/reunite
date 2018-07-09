@@ -157,10 +157,12 @@
 
 		$("#video").change(function(){
 			//$(this).next(".custom-file-label").removeClass("placeholder").text($(this).get(0).files[0].name);
+			var iuid = $("#videos").val();
+			print(iuid);
 			var vid = new FormData();
 		    vid.append("video",$(this).get(0).files[0]);
 		    var filename = $(this).get(0).files[0].name;
-		    //vid.append("iuid",$("#videos").val());
+		    vid.append("iuid",iuid);
 		    /*console.log($(this).get(0).files[0]);*/
 		    $("#vidThumbnails").append("Files set for upload. Please only upload 1 file.");
 		    $.ajax({
