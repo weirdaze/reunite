@@ -7,13 +7,13 @@
       $file_type = $_FILES['image']['type'];
       $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
       
-      $expensions= array("jpeg","jpg","png");
+      $expensions= array("jpeg","jpg","png","mp4");
       
       if(in_array($file_ext,$expensions)=== false){
          $errors[]="extension not allowed, please choose a JPEG or PNG file.";
       }
       
-      if($file_size > 2097152) {
+      if($file_size > 10097152) {
          $errors[]='File size must be excately 2 MB';
       }
       
