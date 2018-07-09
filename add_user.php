@@ -35,6 +35,7 @@
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
 		<input class="form-control mb-2" type="text" name="maternal_last_name" placeholder="Second Last Name">
 	</div>
+	<label class="mx-3">Date of Birth:</label>
     <div class="form-group mx-3">
     	<div class="input-icon"><i class="fa fa-calendar-alt"></i></div>
 		<input class="form-control mb-2 placeholder" type="date" name="dob" required>
@@ -91,21 +92,22 @@
 	<div class="form-group mx-3">
 		<div class="custom-control custom-radio custom-control-inline">
 			<input type="radio" id="type_1" name="type" class="custom-control-input" value="adult" required>
-			<label class="custom-control-label" for="type_1">adult</label>
+			<label class="custom-control-label" for="type_1">Adult</label>
 		</div>
 		<div class="custom-control custom-radio custom-control-inline">
 			<input type="radio" id="type_2" name="type" class="custom-control-input" value="child" required>
-			<label class="custom-control-label" for="type_2">child</label>
+			<label class="custom-control-label" for="type_2">Child</label>
 		</div>
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-address-card"></i></div>
+		<div class="input-icon"><i class="fa fa-building"></i></div>
 		<input class="form-control mb-2" type="text" name="facility_uid" placeholder="ID from current facility">
 	</div>
 	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-address-card"></i></div>
+		<div class="input-icon"><i class="fa fa-map-marker-alt"></i></div>
 		<input class="form-control mb-2" type="text" name="entry_point" placeholder="Point of Entry into USA">
 	</div>
+	<label class="mx-3">Date Detained:</label>
 	<div class="form-group mx-3">
     	<div class="input-icon"><i class="fa fa-calendar-alt"></i></div>
 		<input class="form-control mb-2 placeholder" type="date" name="date_detained">
@@ -123,7 +125,9 @@
 </form>
 <script>
 	$(document).ready(function(){
-		$(".custom-select").select2();
+		$(".custom-select").select2({
+			placeholder: "Choose Country"
+		});
 
 		$("#addRelative, #removeRelative").tooltip();
 
