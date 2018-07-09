@@ -4,6 +4,7 @@
 	$ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
 	$target_file = $target_dir . basename( $_FILES['image']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
 	$target_file_dir = "../" . $target_file;
+	echo $target_file_dir;
 	$uploadOk = 1;
 	$imageFileType = strtolower($ext);
 	// Check if image file is a actual image or fake image
