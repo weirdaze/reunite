@@ -3,7 +3,35 @@
 	include 'header.php';
 	// this form is going to be for creating a facility
 ?>
-
+<?php
+   if(isset($_FILES['video'])){
+      $errors= array();
+      $file_name = $_FILES['video']['name'];
+      $file_size = $_FILES['video']['size'];
+      $file_tmp = $_FILES['video']['tmp_name'];
+      $file_type = $_FILES['video']['type'];
+      $file_ext=strtolower(end(explode('.',$_FILES['video']['name'])));
+      
+      $expensions= array("mov","mpeg4","wma","mp4");
+      
+      if(in_array($file_ext,$expensions)=== false){
+         $errors[]="extension not allowed, please choose a MOV or MP4 file.";
+      }
+      
+      if($file_size > 7000000) {
+         $errors[]='File size must be 5 MB or less (less than 30 seconds long)';
+      }
+      
+      if(empty($errors)==true) {
+         $mypath = $_SERVER['DOCUMENT_ROOT'] . '/reunite/media/video/temp/'.$file_name;
+         move_uploaded_file($file_tmp, $mypath);
+         echo "Success";
+         echo $mypath;
+      }else{
+         print_r($errors);
+      }
+   }
+?>
 <style>
 	body {
 		background-color: #eee;
