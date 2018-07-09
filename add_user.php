@@ -14,7 +14,7 @@
     $admin_username = $_SESSION['userid'];
     $execStr = "python /var/www/html/reunite/scripts/generate_uid.py ".$current_facility." ".$admin_username;
     $result = exec($execStr);
-    $uid = $result;
+    $iuid = $result;
 	
 ?>
 <form class="formBox pb-3" method="post" action="processadduser.php">
@@ -53,7 +53,7 @@
 		<input type="hidden" name="current_facility" value="<?php echo $current_facility;?>">
 	</div>
 	<div class="form-group mx-3">
-		<input type="hidden" name="uid" value="<?php echo $uid;?>">
+		<input type="hidden" name="uid" value="<?php echo $iuid;?>">
 	</div>
 	<div class="form-group mx-3">
 		<!-- <label class="">Country:</label> -->
@@ -164,7 +164,7 @@
 		    $("#vidThumbnails").append("Files set for upload. Please only upload 1 file.");
 		    $.ajax({
 		    	type: "POST",
-		    	url: "includes/videouploads.php?uid=".$uid,
+		    	url: "includes/videouploads.php?iuid=".$iuid,
 		    	processData: false,
 		    	contentType: false,
 		    	data: vid,
