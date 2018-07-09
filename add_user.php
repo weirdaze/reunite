@@ -81,7 +81,7 @@
 			<div class="custom-file">
 	       		<input class="custom-file-input mb-2" type="file" id="video" name="video" accept="video/*"/>
 	       		<label class="custom-file-label placeholder" for="photo">Upload Video</label>
-	       		<input type="hidden" name="videos" value="<?php echo $iuid; ?>">
+	       		<input type="hidden" name="videos">
 	        </div>
         </div>
         <div id="vidThumbnails">
@@ -132,9 +132,11 @@
 		});
 
 		$("#photo").change(function(){
+			var iuid = $("#uid").val();
 		    var img = new FormData();
 		    img.append("image",$(this).get(0).files[0]);
 		    var filename = $(this).get(0).files[0].name;
+		    img.append("iuid",iuid);
 		    /*console.log($(this).get(0).files[0]);*/
 		    $("#imgThumbnails").append("<i class='fa fa-spinner fa-spin fa-lg'></i>");
 		    $.ajax({
