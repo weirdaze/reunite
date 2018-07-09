@@ -10,7 +10,7 @@
 		$sex = $_POST['sex'];
 		$current_facility = $_POST['current_facility'];
 		$country = $_POST['country'];
-		$photo = $_POST['photo'];
+		$photo = $_POST['photo1'];
 		$video = $_POST['video'];
 		$relatives = '';
 		$type = $_POST['type'];
