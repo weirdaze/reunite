@@ -1,6 +1,6 @@
 <?php
 echo '
-	<option value="">Choose Country</option>
+	<option></option>
 	<option value="AFG">Afghanistan</option>
 	<option value="ALA">Åland Islands</option>
 	<option value="ALB">Albania</option>

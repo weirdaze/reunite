@@ -58,7 +58,7 @@
 	</div>
 	<div class="form-group mx-3">
 		<select class="custom-select form-control mb-2" name="current_facility" required>
-			<option value="">Choose Facility</option>
+			<option></option>
 			<?php
 				$sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities";
 				$result = mysqli_query($db,$sql);
@@ -115,6 +115,10 @@
 	$(".switchLogin").click(function(){
 		$(".signin, .signup").toggleClass("hidden");
 		$(".alert").slideUp(300);
+	});
+
+	$(".custom-select").select2({
+		placeholder: "Choose Facility"
 	});
 </script>
 
