@@ -21,7 +21,7 @@ entry_point = split_string[6]
 country = split_string[7]
 last_facility = split_string[8]
 current_facility = split_string[9]
-relatives = split_string[10]
+relatives = split_string[10].replace(';', ',')
 date_detained = split_string[11]
 status = split_string[12]
 claiming = split_string[13]
@@ -30,7 +30,7 @@ video = split_string[15]
 photo = split_string[16]
 facility_uid = split_string[17]
 admin_username = split_string[18]
-uid = generate_uid(current_facility, admin_username)
+uid = split_string[19]
 
 person = [uid, first_name, middle_name, last_name, dob, maternal_last_name, sex, entry_point, country, last_facility,
           current_facility, relatives, date_detained, status, claiming, typed, video, photo, facility_uid]

@@ -1,6 +1,8 @@
 <?php
 	include 'header_login.php';
 	$showForm = 1;
+	$sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities";
+	$result = mysqli_query($db,$sql);
 ?>
 
 <style>
@@ -54,6 +56,16 @@
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-lock"></i></div>
 		<input class="form-control mb-2" type="password" name="password" placeholder="Password">
+	</div>
+	<div class="form-group mx-3">
+		<select class="custom-select form-control mb-2" name="current_facility" required>
+			<option value="">Choose Facility</option>
+			<?php
+			    while($row = $result->fetch_assoc()) {
+	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].' ('.$row['city'].', '.$row['state'].')</option>';
+				}
+			?>
+    	</select>
 	</div>
 	<input class="btn btn-primary mx-3" type="submit" value="Sign In">
 	<hr class="mx-3" />

@@ -1,7 +1,7 @@
 <?php
 	$admin = 1;
 	include 'header.php';
-	// this form is going to be for creating a facility
+	// this form is going to be for creating a user
 ?>
 <style>
 	body {
@@ -10,8 +10,12 @@
 </style>
 <?php
     include('config.php');
-    $sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities";
-	$result = mysqli_query($db,$sql);
+    $current_facility = $_SESSION['current_facility'];
+    $admin_username = $_SESSION['userid'];
+    $execStr = "python /var/www/html/reunite/scripts/generate_uid.py ".$current_facility." ".$admin_username;
+    echo $execStr;
+    $result = exec($execStr);
+    echo $result;
 	
 ?>
 <form class="formBox pb-3" method="post" action="processadduser.php">
@@ -47,14 +51,7 @@
 		</div>
 	</div>
 	<div class="form-group mx-3">
-		<select class="custom-select form-control mb-2" name="current_facility" required>
-			<option value="">Choose Facility</option>
-			<?php
-			    while($row = $result->fetch_assoc()) {
-	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].' ('.$row['city'].', '.$row['state'].')</option>';
-				}
-			?>
-    	</select>
+		<input type="hidden" name="current_facility" value="<?php echo $current_facility;?>">
 	</div>
 	<div class="form-group mx-3">
 		<!-- <label class="">Country:</label> -->

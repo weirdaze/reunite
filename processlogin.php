@@ -4,6 +4,7 @@
 	if(isset($_POST['username'])){
 		$username = $_POST['username'];
    		$password = $_POST['password'];
+   		$current_facility = $_POST['current_facility'];
 
    		$sql = "SELECT UserID, password FROM admin WHERE UserID = '$username'";
 		$result = mysqli_query($db,$sql);
@@ -17,6 +18,7 @@
 				session_start();
 				$_SESSION['logged_in'] = true;
 				$_SESSION['userid'] = $username;
+				$_SESSION['current_facility'] = $current_facility;
 				header("Location: index.php");
 			}
 			else {
