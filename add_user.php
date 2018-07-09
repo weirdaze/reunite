@@ -151,12 +151,14 @@
 		    	data: img,
 		    	success: function(data){
 		    		$("#imgThumbnails").find("i").remove();
-		    		$("#imgThumbnails").append("data");
+		    		$("#imgThumbnails").append(data);
 		    		var photoLabel = $("#photo").next(".custom-file-label");
 		    		var newText = photoLabel.text();
 		    		newText == "Upload Photos" ? newText = filename : newText = newText + "," + filename;
 		    		photoLabel.removeClass("placeholder").text(newText);
 		    		$("#photos").val(newText);
+		    		var imageName = $("#imageName").val();
+		    		$("#photo").val(imageName);
 		    	}
 		    });
 		});
