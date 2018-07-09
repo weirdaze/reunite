@@ -21,6 +21,8 @@
 		$date_detained = $_POST['$date_detained'];
 		$status = 'new';
 
+		if($date_detained == ''){$date_detained = '9999-12-31'; }
+
 
 		foreach($_POST as $key => $value){
 			if(preg_match('/^rel[0-9]*$/',$key)){
