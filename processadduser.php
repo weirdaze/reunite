@@ -11,7 +11,7 @@
 		$current_facility = $_POST['current_facility'];
 		$country = $_POST['country'];
 		$photo = $_POST['photo1'];
-		$video = $_POST['video'];
+		$video = $_POST['video1'];
 		$relatives = '';
 		$type = $_POST['type'];
 		$claiming = '';
