@@ -23,7 +23,7 @@ photo = 'Boy1.png'
 facility_uid = '855252312308'
 person = [uid, first_name, middle_name, last_name, dob, maternal_last_name, sex, entry_point, country, last_facility,
           current_facility, relatives, date_detained, status, claiming, typed, video, photo, facility_uid]
-db_manipulate.db_add_update_profile(person, True)
+#db_manipulate.db_add_update_profile(person, True)
 
 #print db_manipulate.db_get_person_info('1233959D7NA60ecastill')
 
@@ -32,3 +32,10 @@ db_manipulate.db_add_update_profile(person, True)
 #newid = "jesus"
 
 #print db_matches.append_to_claiming(claiming, newid)
+
+
+myString = 'Screen Shot 2018-06-20 at 1.21.11 PM.png'
+my_split = myString.split(".")
+print my_split
+print my_split.__len__()
+print my_split.__len__() - 1
