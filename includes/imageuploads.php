@@ -42,7 +42,7 @@
 		}
 	    if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file_dir)){
 	        // echo "The file ". basename($_FILES["image"]["name"]) . " has been uploaded.";
-	        echo "<img class='thumbnail' src='$target_file'/> <input type=hidden name='imageName' id='imageName' value='$result1'/>";
+	        echo "<img class='thumbnail' src='$target_file'/>";
 	    } 
 	    else {
 	        echo "Sorry, there was an error uploading your file.";
