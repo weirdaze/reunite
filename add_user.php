@@ -81,7 +81,7 @@
 			<div class="custom-file">
 	       		<input class="custom-file-input mb-2" type="file" id="video" name="video" accept="video/*"/>
 	       		<label class="custom-file-label placeholder" for="photo">Upload Video</label>
-	       		<input type="hidden" name="videos">
+	       		<input type="hidden" name="videos" value="<?php echo $iuid; ?>">
 	        </div>
         </div>
         <div id="vidThumbnails">
@@ -160,11 +160,12 @@
 			var vid = new FormData();
 		    vid.append("video",$(this).get(0).files[0]);
 		    var filename = $(this).get(0).files[0].name;
+		    vid.append("iuid",$("#videos").val());
 		    /*console.log($(this).get(0).files[0]);*/
 		    $("#vidThumbnails").append("Files set for upload. Please only upload 1 file.");
 		    $.ajax({
 		    	type: "POST",
-		    	url: "includes/videouploads.php?iuid=".$iuid,
+		    	url: "includes/videouploads.php",
 		    	processData: false,
 		    	contentType: false,
 		    	data: vid,
