@@ -53,7 +53,7 @@
 		<input type="hidden" name="current_facility" value="<?php echo $current_facility;?>">
 	</div>
 	<div class="form-group mx-3">
-		<input type="hidden" name="uid" value="<?php echo $iuid;?>">
+		<input type="hidden" name="uid" id="uid" value="<?php echo $iuid;?>">
 	</div>
 	<div class="form-group mx-3">
 		<!-- <label class="">Country:</label> -->
@@ -157,8 +157,7 @@
 
 		$("#video").change(function(){
 			//$(this).next(".custom-file-label").removeClass("placeholder").text($(this).get(0).files[0].name);
-			var iuid = $("#videos").val();
-			document.write(iuid);
+			var iuid = $("#uid").val();
 			var vid = new FormData();
 		    vid.append("video",$(this).get(0).files[0]);
 		    var filename = $(this).get(0).files[0].name;
