@@ -5,7 +5,9 @@
 	$current_iuser_id = $_POST["iuid"];
 	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['image']['name']." ".$current_iuser_id."  photo";
 	//$target_file = $target_dir . basename( $_FILES['image']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
+	echo $execStr;
 	$result1 = exec($execStr);
+	echo $result1;
 	$target_file = $target_dir . $result1;
 	$target_file_dir = "/var/www/html/reunite/" . $target_file;
 	$uploadOk = 1;
