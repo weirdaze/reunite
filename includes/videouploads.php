@@ -4,10 +4,8 @@
 	$ext = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
 	$current_iuser_id = $_POST["iuid"];
 	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['video']['name']." ".$current_iuser_id."  video";
-	//echo $execStr;
-	$result1 = exec($execStr);
-	//echo "newFileName is ".$result1;
 	//$target_file = $target_dir . basename( $_FILES['video']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
+	$result1 = exec($execStr);
 	$target_file = $target_dir . $result1;
 	$target_file_dir = "/var/www/html/reunite/" . $target_file;
 	$uploadOk = 1;

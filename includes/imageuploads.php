@@ -2,7 +2,11 @@
 	session_start();
 	$target_dir = "media/photo/temp/";
 	$ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-	$target_file = $target_dir . basename( $_FILES['image']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
+	$current_iuser_id = $_POST["iuid"];
+	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['image']['name']." ".$current_iuser_id."  photo";
+	//$target_file = $target_dir . basename( $_FILES['image']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
+	$result1 = exec($execStr);
+	$target_file = $target_dir . $result1;
 	$target_file_dir = "/var/www/html/reunite/" . $target_file;
 	$uploadOk = 1;
 	$imageFileType = strtolower($ext);
