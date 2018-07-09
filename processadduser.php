@@ -18,8 +18,9 @@
 		$facility_uid = $_POST['facility_uid'];
 		$entry_point = $_POST['entry_point'];
 		$last_facility = '';
-		$date_detained = $_POST['$date_detained'];
+		$date_detained = $_POST['date_detained'];
 		$status = 'new';
+		$uid = $_POST['uid'];
 
 		if($date_detained == ''){$date_detained = '9999-12-31'; }
 
@@ -35,7 +36,7 @@
 			}
 		}
 
-		$exec_str = "python /var/www/html/reunite/scripts/add_user.py '".$first_name.",".$middle_name.",".$last_name.",".$dob.",".$maternal_last_name.",".$sex.",".$entry_point.",".$country.",".$last_facility.",".$current_facility.",".$relatives.",".$date_detained.",".$status.",".$claiming.",".$type.",".$video.",".$photo.",".$facility_uid.",".$admin_username."'";
+		$exec_str = "python /var/www/html/reunite/scripts/add_user.py '".$first_name.",".$middle_name.",".$last_name.",".$dob.",".$maternal_last_name.",".$sex.",".$entry_point.",".$country.",".$last_facility.",".$current_facility.",".$relatives.",".$date_detained.",".$status.",".$claiming.",".$type.",".$video.",".$photo.",".$facility_uid.",".$admin_username.",".$uid."'";
 		echo $exec_str;
 		$result = exec($exec_str);
 		echo "user added result: " . $result;
