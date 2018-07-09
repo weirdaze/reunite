@@ -157,6 +157,8 @@
 		    		newText == "Upload Photos" ? newText = filename : newText = newText + "," + filename;
 		    		photoLabel.removeClass("placeholder").text(newText);
 		    		$("#photos").val(newText);
+		    		var imageName = $("#imageName").val();
+		    		$("#photo").val(imageName);
 		    	}
 		    });
 		});

@@ -1,13 +1,11 @@
 <?php
 	session_start();
-	$target_dir = "media/photo/temp/";
+	$target_dir = "media/photo/";
 	$ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
 	$current_iuser_id = $_POST["iuid"];
 	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['image']['name']." ".$current_iuser_id."  photo";
 	//$target_file = $target_dir . basename( $_FILES['image']['name'],'.' . $ext) . "_" . $_SESSION['userid'] . '.' . $ext;
-	echo $execStr;
 	$result1 = exec($execStr);
-	echo $result1;
 	$target_file = $target_dir . $result1;
 	$target_file_dir = "/var/www/html/reunite/" . $target_file;
 	$uploadOk = 1;
@@ -44,7 +42,7 @@
 		}
 	    if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file_dir)){
 	        // echo "The file ". basename($_FILES["image"]["name"]) . " has been uploaded.";
-	        echo "<img class='thumbnail' src='$target_file'/>";
+	        echo "<img class='thumbnail' src='$target_file'/> <input type=hidden name='imageName' id='imageName' value='$result1'/>";
 	    } 
 	    else {
 	        echo "Sorry, there was an error uploading your file.";

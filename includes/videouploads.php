@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$target_dir = "media/video/temp/";
+	$target_dir = "media/video/";
 	$ext = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
 	$current_iuser_id = $_POST["iuid"];
 	$execStr = "python /var/www/html/reunite/scripts/rename_upload.py ".$_FILES['video']['name']." ".$current_iuser_id."  video";
