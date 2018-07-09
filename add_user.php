@@ -158,7 +158,7 @@
 		$("#video").change(function(){
 			//$(this).next(".custom-file-label").removeClass("placeholder").text($(this).get(0).files[0].name);
 			var iuid = $("#videos").val();
-			print(iuid);
+			document.write(iuid);
 			var vid = new FormData();
 		    vid.append("video",$(this).get(0).files[0]);
 		    var filename = $(this).get(0).files[0].name;
