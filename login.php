@@ -1,8 +1,7 @@
 <?php
 	include 'header_login.php';
 	$showForm = 1;
-	$sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities";
-	$result = mysqli_query($db,$sql);
+	include('config.php');
 ?>
 
 <style>
@@ -61,6 +60,8 @@
 		<select class="custom-select form-control mb-2" name="current_facility" required>
 			<option value="">Choose Facility</option>
 			<?php
+				$sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities";
+				$result = mysqli_query($db,$sql);
 			    while($row = $result->fetch_assoc()) {
 	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].' ('.$row['city'].', '.$row['state'].')</option>';
 				}
