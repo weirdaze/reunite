@@ -121,12 +121,12 @@
         <entry file="file://$PROJECT_DIR$/tickets.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="688">
-              <caret line="76" column="42" lean-forward="false" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+              <caret line="76" column="60" lean-forward="false" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
-                <marker date="1531178466601" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
-                <marker date="1531178466601" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
-                <marker date="1531178466601" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
+                <marker date="1531178543799" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
+                <marker date="1531178543799" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
+                <marker date="1531178543799" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
               </folding>
             </state>
           </provider>
@@ -536,12 +536,12 @@
     <entry file="file://$PROJECT_DIR$/tickets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
-          <caret line="76" column="42" lean-forward="false" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+          <caret line="76" column="60" lean-forward="false" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
-            <marker date="1531178466601" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
-            <marker date="1531178466601" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
-            <marker date="1531178466601" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
+            <marker date="1531178543799" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
+            <marker date="1531178543799" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
+            <marker date="1531178543799" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
           </folding>
         </state>
       </provider>
