@@ -18,7 +18,7 @@
       }
       
       if(empty($errors)==true) {
-         $mypath = $_SERVER['DOCUMENT_ROOT'] . '/reunite/media/video/'.$file_name;
+         $mypath = $_SERVER['DOCUMENT_ROOT'] . '/reunite/media/video/temp/'.$file_name;
          move_uploaded_file($file_tmp, $mypath);
          echo "Success";
          echo $mypath;
