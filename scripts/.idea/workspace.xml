@@ -11,22 +11,22 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/scripts$db_manipulate.coverage" NAME="db_manipulate Coverage Results" MODIFIED="1530206897699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/scripts$test.coverage" NAME="test Coverage Results" MODIFIED="1531155946209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scripts$test.coverage" NAME="test Coverage Results" MODIFIED="1531156386794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="db_manipulate.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db_manipulate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="248" column="33" lean-forward="true" selection-start-line="248" selection-start-column="33" selection-end-line="248" selection-end-column="33" />
+            <state relative-caret-position="319">
+              <caret line="249" column="33" lean-forward="false" selection-start-line="249" selection-start-column="33" selection-end-line="249" selection-end-column="33" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
-                <marker date="1531156217949" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />
-                <marker date="1531156217949" expanded="true" signature="10169:10211" ph="DELETE FROM wp_client_vpn... " />
-                <marker date="1531156217949" expanded="true" signature="10169:10213" ph="DELETE FROM person... " />
-                <marker date="1531156217949" expanded="true" signature="11018:11062" ph="SELECT Devic... wp_client_devices" />
-                <marker date="1531156217949" expanded="true" signature="12308:12359" ph="SELECT COUNT... wp_client_vpn" />
+                <marker date="1531156467713" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />
+                <marker date="1531156467713" expanded="true" signature="10169:10211" ph="DELETE FROM wp_client_vpn... " />
+                <marker date="1531156467713" expanded="true" signature="10169:10213" ph="DELETE FROM person... " />
+                <marker date="1531156467713" expanded="true" signature="11018:11062" ph="SELECT Devic... wp_client_devices" />
+                <marker date="1531156467713" expanded="true" signature="12308:12359" ph="SELECT COUNT... wp_client_vpn" />
               </folding>
             </state>
           </provider>
@@ -84,8 +84,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="472">
+              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -364,11 +364,11 @@
           <caret line="184" column="14" lean-forward="true" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="14" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
-            <marker date="1531156217949" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />
-            <marker date="1531156217949" expanded="true" signature="10169:10211" ph="DELETE FROM wp_client_vpn... " />
-            <marker date="1531156217949" expanded="true" signature="10169:10213" ph="DELETE FROM person... " />
-            <marker date="1531156217949" expanded="true" signature="11018:11062" ph="SELECT Devic... wp_client_devices" />
-            <marker date="1531156217949" expanded="true" signature="12308:12359" ph="SELECT COUNT... wp_client_vpn" />
+            <marker date="1531156467713" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />
+            <marker date="1531156467713" expanded="true" signature="10169:10211" ph="DELETE FROM wp_client_vpn... " />
+            <marker date="1531156467713" expanded="true" signature="10169:10213" ph="DELETE FROM person... " />
+            <marker date="1531156467713" expanded="true" signature="11018:11062" ph="SELECT Devic... wp_client_devices" />
+            <marker date="1531156467713" expanded="true" signature="12308:12359" ph="SELECT COUNT... wp_client_vpn" />
           </folding>
         </state>
       </provider>
@@ -506,8 +506,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="472">
+          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -516,15 +516,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db_manipulate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="248" column="33" lean-forward="true" selection-start-line="248" selection-start-column="33" selection-end-line="248" selection-end-column="33" />
+        <state relative-caret-position="319">
+          <caret line="249" column="33" lean-forward="false" selection-start-line="249" selection-start-column="33" selection-end-line="249" selection-end-column="33" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
-            <marker date="1531156217949" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />
-            <marker date="1531156217949" expanded="true" signature="10169:10211" ph="DELETE FROM wp_client_vpn... " />
-            <marker date="1531156217949" expanded="true" signature="10169:10213" ph="DELETE FROM person... " />
-            <marker date="1531156217949" expanded="true" signature="11018:11062" ph="SELECT Devic... wp_client_devices" />
-            <marker date="1531156217949" expanded="true" signature="12308:12359" ph="SELECT COUNT... wp_client_vpn" />
+            <marker date="1531156467713" expanded="true" signature="6175:6361" ph="INSERT INTO person... " />
+            <marker date="1531156467713" expanded="true" signature="10169:10211" ph="DELETE FROM wp_client_vpn... " />
+            <marker date="1531156467713" expanded="true" signature="10169:10213" ph="DELETE FROM person... " />
+            <marker date="1531156467713" expanded="true" signature="11018:11062" ph="SELECT Devic... wp_client_devices" />
+            <marker date="1531156467713" expanded="true" signature="12308:12359" ph="SELECT COUNT... wp_client_vpn" />
           </folding>
         </state>
       </provider>

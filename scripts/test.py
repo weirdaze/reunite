@@ -38,4 +38,6 @@ myString = 'Screen Shot 2018-06-20 at 1.21.11 PM.png'
 my_split = myString.split(".")
 print my_split
 print my_split.__len__()
-print my_split.__len__() - 1
+index = my_split.__len__() - 1
+print index
+print my_split[index]
