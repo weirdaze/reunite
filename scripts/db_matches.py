@@ -144,7 +144,8 @@ def submit_claim(uid_a, uid_b, status='claimed'):
         print "match entered creating the update: " + updates
         print "creating ticket with match_id " + match_id + " and updates"
         tickets.create_ticket(match_id, "new", updates)
-
+        match_var = uid_a + "," + uid_b
+        update_claiming(match_var)
         return db_get_match_id(uid_a, uid_b)
     else:
         return "already-matched"
@@ -221,14 +222,15 @@ def potential_match():
         match_id = match[2]
         status = "potential-match"
 
-        match_var = [uid_a, uid_b, status, match_id]
+        match_var = uid_a + "," + uid_b + "," + status + "," + match_id
         db_add_update_match(match_var)
         update_claiming(match_var)
         tickets.create_ticket(match_id, "new", "created by potential-match algorithm")
 
 
-def update_claiming(match):
+def update_claiming(match_str):
     # this function will go and update the "claiming" column of the person table and add the new UID
+    match = match_str.split(',')
     uid_a = match[0]
     uid_b = match[1]
 
