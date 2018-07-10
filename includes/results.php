@@ -19,7 +19,7 @@
 			$sql = $sql . "sex = '$gender' and ";
 		} 
 
-		$sql =  $sql . "(UPPER(FirstName) like UPPER('%$search_term%') or UPPER(LastName) like UPPER('%$search_term%')) order by LastName";
+		$sql =  $sql . "(UPPER(FirstName) like UPPER('%$search_term%') or UPPER(LastName) like UPPER('%$search_term%')) and type='Adult' order by LastName";
 
 		$result = mysqli_query($db,$sql);
 		 
