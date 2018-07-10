@@ -12,6 +12,7 @@
 			<th>Claimer</th>
 			<th>Claimed</th>
 			<th>Status</th>
+			<th>Status</th>
 		</tr>
 <?php
 		
