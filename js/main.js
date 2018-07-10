@@ -58,8 +58,7 @@ $(document).ready(function(){
 					window.location.href = "index.php";
 				}
 				else {
-					console.log(data);
-					alert(data);
+					window.location.href = "claim_success.php?uid="+uid;
 				}
 			}
 		});

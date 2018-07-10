@@ -30,6 +30,16 @@
 					<span class="menuIcon"><i class="fa fa-exchange-alt"></i></span>
 					<span class="menuText">View Matches</span>
 				</a>
+				<?php
+					if(isset($_SESSION['uid'])){
+				?>
+				<a class="list-group-item d-flex align-items-center" href="clear_user.php">
+					<span class="menuIcon"><i class="fa fa-user-times"></i></span>
+					<span class="menuText">Clear Current User</span>
+				</a>
+				<?php
+					}
+				?>
 			</div>
 		</div>
 	</div>
