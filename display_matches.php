@@ -15,7 +15,7 @@
 		</tr>
 <?php
 		
-	$sql = "SELECT Match_ID, UID_A, UID_B, DateMatched, Status from matches where Status<>'closed' ORDER BY DateMatched";
+	$sql = "SELECT Match_ID, UID_A, UID_B, DateMatched, Status from matches where Status<>'closed' ORDER BY DateMatched DESC";
 
 	$result = mysqli_query($db,$sql);
 
