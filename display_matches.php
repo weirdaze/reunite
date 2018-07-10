@@ -12,7 +12,7 @@
 			<th>Claimer</th>
 			<th>Claimed</th>
 			<th>Status</th>
-			<th>Status</th>
+			<th>Date Created</th>
 		</tr>
 <?php
 		
