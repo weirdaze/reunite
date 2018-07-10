@@ -54,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_matches.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_matches.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_matches.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
+            <state relative-caret-position="-673">
               <caret line="149" column="9" lean-forward="true" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -117,16 +117,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tickets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="34" column="58" lean-forward="true" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+            <state relative-caret-position="758">
+              <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
-                <marker date="1531178543799" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
-                <marker date="1531178543799" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
-                <marker date="1531178543799" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
+                <marker date="1531226056323" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
+                <marker date="1531226056323" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
+                <marker date="1531226056323" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
               </folding>
             </state>
           </provider>
@@ -190,8 +190,8 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/db_manipulate.py" />
         <option value="$PROJECT_DIR$/create_ticket.py" />
-        <option value="$PROJECT_DIR$/tickets.py" />
         <option value="$PROJECT_DIR$/db_matches.py" />
+        <option value="$PROJECT_DIR$/tickets.py" />
       </list>
     </option>
   </component>
@@ -489,19 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tickets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="34" column="58" lean-forward="true" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1531178543799" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
-            <marker date="1531178543799" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
-            <marker date="1531178543799" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generate_uid.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -524,7 +511,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db_matches.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
+        <state relative-caret-position="-673">
           <caret line="149" column="9" lean-forward="true" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
@@ -543,6 +530,19 @@
             <marker date="1531181001439" expanded="true" signature="6771:6838" ph="SELECT * FRO... matches" />
             <marker date="1531181001439" expanded="true" signature="10709:10760" ph="SELECT Claim... person" />
             <marker date="1531181001439" expanded="true" signature="11555:11625" ph="UPDATE person... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tickets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="81" column="4" lean-forward="false" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1531226056323" expanded="true" signature="2032:2113" ph="INSERT INTO tickets... " />
+            <marker date="1531226056323" expanded="true" signature="2032:2296" ph="INSERT INTO tickets... " />
+            <marker date="1531226056323" expanded="true" signature="3173:3239" ph="SELECT * FRO... tickets" />
           </folding>
         </state>
       </provider>

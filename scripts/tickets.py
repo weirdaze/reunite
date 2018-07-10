@@ -76,3 +76,7 @@ def db_get_ticket(match_id):
         cnx.close()
     print "this is the ticket number: " + str(ticket_number)
     return str(ticket_number)
+
+def assign_ticket(admin_username):
+    # this takes the userId of the person that's signed in and updates it in the ticket Agent column
+    
