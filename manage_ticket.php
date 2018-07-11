@@ -11,19 +11,19 @@
 	$agent = $row['Agent'];
 	$status = $row['Status'];
 
-	echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
+	//echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
 
-	$sql2 = "SELECT UID_A, UID_B, DateMatched from matches where MatchID='".$match_id."'";
-	echo $sql2;
+	$sql2 = "SELECT UID_A, UID_B, DateMatched from matches where Match_ID='".$match_id."'";
+	//echo $sql2;
 	$result2 = mysqli_query($db,$sql2);
 	$row2 = $result2->fetch_assoc();
 	$uid_a = $row2['UID_A'];
 	$uid_b = $row2['UID_B'];
 	$date_matched = $row2['DateMatched'];
 
-	echo "uida,uidb,datematched: ".$uid_a.", ".$uid_b.", ".$date_matched;
+	//echo "uida,uidb,datematched: ".$uid_a.", ".$uid_b.", ".$date_matched;
 
-/*
+
 	$sql3 = "SELECT FirstName, LastName, photo from person where UID='".$uid_a."'";
 
 	$result3 = mysqli_query($db,$sql3);
@@ -101,5 +101,5 @@
 			</div>
 <?php
 		}
-	}*/
+	}
 ?>
