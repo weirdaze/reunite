@@ -4,15 +4,15 @@
 	include 'config.php';
 
 	$sql = "SELECT TicketNumber, Match_ID, Agent, Status from tickets where TicketNumber='".$ticket_number."'";
-	echo $sql;
+	//echo $sql;
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
 	$match_id = $row['Match_ID'];
 	$agent = $row['Agent'];
 	$status = $row['Status'];
 
-	echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
-/*
+	//echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
+
 	$sql2 = "SELECT UID_A, UID_B, DateMatched from matches where MatchID='".$match_id."'";
 
 	$result2 = mysqli_query($db,$sql2);
@@ -99,5 +99,5 @@
 			</div>
 <?php
 		}
-	}*/
+	}
 ?>
