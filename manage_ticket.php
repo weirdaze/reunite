@@ -1,27 +1,30 @@
 <?php
+	include 'header.php';
+?>
+<style>
+	body {
+		background-color: #eee;
+	}
+</style>
+
+<?php
 	$ticket_number = $_GET['ticket_number'];
-	//echo $ticket_number;
 	include 'config.php';
 
 	$sql = "SELECT TicketNumber, Match_ID, Agent, Status from tickets where TicketNumber='".$ticket_number."'";
-	//echo $sql;
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
 	$match_id = $row['Match_ID'];
 	$agent = $row['Agent'];
 	$status = $row['Status'];
 
-	//echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
 
 	$sql2 = "SELECT UID_A, UID_B, DateMatched from matches where Match_ID='".$match_id."'";
-	//echo $sql2;
 	$result2 = mysqli_query($db,$sql2);
 	$row2 = $result2->fetch_assoc();
 	$uid_a = $row2['UID_A'];
 	$uid_b = $row2['UID_B'];
 	$date_matched = $row2['DateMatched'];
-
-	//echo "uida,uidb,datematched: ".$uid_a.", ".$uid_b.", ".$date_matched;
 
 
 	$sql3 = "SELECT FirstName, LastName, photo from person where UID='".$uid_a."'";
@@ -58,7 +61,7 @@
 
 	</div>
 <hr>
-
+<h2>Match Info</h2>
 	<div>
 		<div>
 			<div>
@@ -82,6 +85,17 @@
 	</div>
 
 <hr>
+<h2>Ticket History</h2>
+
+<h3> Add update to ticket </h3>
+<form class="formBox pb-3" method="post" action="update_ticket.php">
+	<div class="bg-info text-light p-2 mb-3 lead">Create Ticket</div>
+	<div class="form-group mx-3">
+		<div class="input-icon"><i class="fa fa-id-card"></i></div>
+		<textarea name="update" id="updates" rows="10" cols="30"></textarea>
+	</div>
+	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Update Ticket">
+</form>
 <?php
 		
 	$sql5 = "SELECT Updates, DateUpdated, userid from ticket_history where TicketNumber='".$ticket_number."' ORDER BY DateUpdated DESC";
