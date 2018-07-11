@@ -3,7 +3,7 @@
 	//echo $ticket_number;
 	include 'config.php';
 
-	$sql = "SELECT TicketNumber, Match_ID, Agent, Status, from tickets where TicketNumber='".$ticket_number."'";
+	$sql = "SELECT TicketNumber, Match_ID, Agent, Status from tickets where TicketNumber='".$ticket_number."'";
 	echo $sql;
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
