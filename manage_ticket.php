@@ -11,10 +11,10 @@
 	$agent = $row['Agent'];
 	$status = $row['Status'];
 
-	//echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
+	echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
 
 	$sql2 = "SELECT UID_A, UID_B, DateMatched from matches where MatchID='".$match_id."'";
-
+	echo $sql2;
 	$result2 = mysqli_query($db,$sql2);
 	$row2 = $result2->fetch_assoc();
 	$uid_a = $row2['UID_A'];
