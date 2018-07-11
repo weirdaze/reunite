@@ -47,7 +47,7 @@
 		<?php 
 			echo $agent; 
 			if($agent != $_SESSION['userid']){
-				<a href='index.php'>Assign to me</a>
+				echo "<a href='index.php'>Assign to me</a>";
 			}
 		?>
 
@@ -60,7 +60,7 @@
 				<?php echo $uid_a_ln.", ".$uid_a_ln." (".$uid_a.")"; ?>
 			</div>
 			<div>
-				<img src='<?php echo $uid_a_photo ?>'/>
+				<img src='<?php echo $uid_a_photo; ?>'/>
 			</div>
 		</div>
 		<div>
@@ -68,11 +68,11 @@
 				<?php echo $uid_b_ln.", ".$uid_b_ln." (".$uid_b.")"; ?>
 			</div>
 			<div>
-				<img src='<?php echo $uid_b_photo ?>'/>
+				<img src='<?php echo $uid_b_photol; ?>'/>
 			</div>
 		</div>
 		<div>
-			Matched on <?php echo $date_matched ?>
+			Matched on <?php echo $date_matched; ?>
 		</div>
 	</div>
 
