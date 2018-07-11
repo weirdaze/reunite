@@ -21,13 +21,16 @@
 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
-			$uid_a = $row['UID_A'];
-			$uid_b = $row['UID_B'];
+			$sql2 = "SELECT UID_A, UID_B from matches where Match_ID='$row['Match_ID']'";
+			$result2 = mysqli_query($db,$sql2);
+			$row2 = $result2->fetch_assoc()
+			$uid_a = $row2['UID_A'];
+			$uid_b = $row2['UID_B'];
 ?>
 			<tr>
 				<td>eye</td>
 				<td><?php echo $row['TicketNumber']; ?></td>
-				<td><?php echo $row['Match_ID']; ?></td>
+				<td><a class="previewMatch text-primary ml-3" data-matchID="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><?php echo $row['Match_ID']; ?></a></td>
 				<td><?php echo $row['Agent']; ?></td>
 				<td><?php echo $row['Status']; ?></td>
 			</tr>
