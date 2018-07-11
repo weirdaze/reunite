@@ -21,7 +21,9 @@
 	$uid_b = $row2['UID_B'];
 	$date_matched = $row2['DateMatched'];
 
+	echo "uida,uidb,datematched: ".$uid_a.", ".$uid_b.", ".$date_matched;
 
+/*
 	$sql3 = "SELECT FirstName, LastName, photo from person where UID='".$uid_a."'";
 
 	$result3 = mysqli_query($db,$sql3);
@@ -99,5 +101,5 @@
 			</div>
 <?php
 		}
-	}
+	}*/
 ?>
