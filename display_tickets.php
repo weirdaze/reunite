@@ -31,7 +31,7 @@
 			<tr>
 				<td>eye</td>
 				<td><?php echo $row['TicketNumber']; ?></td>
-				<td><a class="previewMatch text-primary ml-3" data-matchID="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><?php echo $row['Match_ID']; echo $uid_a.",".$uid_b.",".$sql2 ?></a></td>
+				<td><a class="previewMatch text-primary ml-3" data-matchID="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row2['UID_A']; ?>" data-uid_b="<?php echo $row2['UID_B']; ?>"><?php echo $row['Match_ID']; ?></a></td>
 				<td><?php echo $row['Agent']; ?></td>
 				<td><?php echo $row['Status']; ?></td>
 			</tr>
