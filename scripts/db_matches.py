@@ -134,15 +134,10 @@ def submit_claim(uid_a, uid_b, status='claimed'):
     if there_is_match == 'match' and there_is_inverse_match == 'match':
 
         match_id = id_generator(size=10)
-        print "creating new match_id: " + match_id
         # construct the match list object
         match = uid_a + "," + uid_b + "," + status + "," + match_id
-        print "constructing match object: " + match
-        print "entering the match into the matches db"
         db_add_update_match(match)
         updates = "created by " + uid_a + " on the app"
-        print "match entered creating the update: " + updates
-        print "creating ticket with match_id " + match_id + " and updates"
         tickets.create_ticket(match_id, "new", updates)
         match_var = uid_a + "," + uid_b
         update_claiming(match_var)
