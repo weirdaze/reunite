@@ -4,10 +4,9 @@
 ?>
 	<div class="col-1">
 		<a href="admintools.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
-		<p><a href=display_tickets.php>all tickets</a> | <a href=display_tickets.php?assigned=me>my tickets</a></p>
 	</div>
-	<div class="col-2">
-		<p><a href=display_tickets.php>all tickets</a> | <a href=display_tickets.php?assigned=me>my tickets</a></p>
+	<div>
+		<a href=display_tickets.php>all tickets</a> | <a href=display_tickets.php?assigned=me>my tickets</a>
 	</div>
 	<table class="table">
 		<tr>
