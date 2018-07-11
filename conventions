@@ -25,6 +25,7 @@ potential-match - this means that the algorithm has determined that these people
 ticket status
 new - has been newly created
 assigned - has been assigned for an agent to work it
+in-progress - the assigned person has started working on it
 reconciled - match has been found but not reunited
 closed - family has been confirmed reunited
 

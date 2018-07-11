@@ -15,7 +15,7 @@
 		</tr>
 <?php
 		
-	$sql = "SELECT TicketNumber, Match_ID, Agent, Status, Updates from tickets where Status<>'closed'";
+	$sql = "SELECT TicketNumber, Match_ID, Agent, Status from tickets where Status<>'closed'";
 
 	$result = mysqli_query($db,$sql);
 
@@ -25,10 +25,10 @@
 			$uid_b = $row['UID_B'];
 ?>
 			<tr>
-				<td><a class="previewMatch text-primary ml-3" data-ticketnumber="<?php echo $row['TicketNumber']; ?>" data-matchID="<?php echo $row['Match_ID']; ?>" data-agent="<?php echo $row['Agent']; ?>"><i class="fa fa-eye"></i></a></td>
+				<td>eye</td>
+				<td><?php echo $row['TicketNumber']; ?></td>
 				<td><?php echo $row['Match_ID']; ?></td>
-				<td><?php echo $row['UID_A']; ?></td>
-				<td><?php echo $row['UID_B']; ?></td>
+				<td><?php echo $row['Agent']; ?></td>
 				<td><?php echo $row['Status']; ?></td>
 			</tr>
 <?php
