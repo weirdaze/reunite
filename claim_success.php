@@ -12,7 +12,7 @@
 	?>
 	
 	<div class="d-flex align-items-center justify-content-end my-3">
-		<a href="clear_user" class="btn btn-secondary mr-2">Clear User</a>
+		<a href="clear_user.php" class="btn btn-secondary mr-2">Clear User</a>
 		<a href="index.php" class="btn btn-primary">Claim Another Person</a>
 	</div>
 </div>
