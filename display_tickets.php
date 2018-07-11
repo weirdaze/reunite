@@ -2,11 +2,10 @@
 	include 'header.php';
 	include('config.php');
 ?>
-	<div class="col-1">
-		<a href="admintools.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
-	</div>
-	<div>
-		<a href=display_tickets.php>all tickets</a> | <a href=display_tickets.php?assigned=me>my tickets</a>
+	<div class="d-flex justify-content-end mb-3">
+		<a class="btn btn-secondary ml-2" href="admintools.php"><i class="fa fa-chevron-left"></i> Back</a>
+		<a class="btn btn-info mr-2 ml-auto" href="display_tickets.php"><i class="fa fa-tags"></i> All Tickets</a>
+		<a class="btn btn-info mr-2" href="display_tickets.php?assigned=me"><i class="fa fa-tag"></i> My Tickets</a>
 	</div>
 	<table class="table">
 		<tr>
@@ -18,7 +17,13 @@
 		</tr>
 <?php
 	
-	$assigned_to = $_GET['assigned'];
+	if(isset($_GET['assigned'])){
+		$assigned_to = $_GET['assigned'];
+	}
+	else {
+		$assigned_to = "";
+	}
+	
 	$userid = $_SESSION['userid'];
 
 	if($assigned_to == 'me'){
@@ -41,9 +46,9 @@
 			$uid_b = $row2['UID_B'];
 ?>
 			<tr>
-				<td>eye</td>
+				<td><a class="editTicket text-primary ml-2" data-ticket_id="<?php echo $row['TicketNumber'] ?>"><i class="fa fa-edit"></i></a></td>
 				<td><?php echo $row['TicketNumber']; ?></td>
-				<td><a class="previewMatch text-primary ml-3" data-matchID="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row2['UID_A']; ?>" data-uid_b="<?php echo $row2['UID_B']; ?>"><?php echo $row['Match_ID']; ?></a></td>
+				<td><a class="previewMatch text-primary mr-2" data-toggle="tooltip" data-title="Preview Match" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row2['UID_A']; ?>" data-uid_b="<?php echo $row2['UID_B']; ?>"><i class="fa fa-eye"></i></a><?php echo $row['Match_ID']; ?></td>
 				<td><?php echo $row['Agent']; ?></td>
 				<td><?php echo $row['Status']; ?></td>
 			</tr>
@@ -52,4 +57,7 @@
 	}
 ?>
 	</table>
+<script>
+	$(".previewMatch").tooltip();
+</script>
 <?php include 'footer.php'?>

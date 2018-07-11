@@ -8,7 +8,7 @@ $(document).ready(function(){
 			$("#selectPersonType").slideUp(500);
 			$("#searchInput").attr("data-gender",gender);
 		}
-		updateContent("#results","includes/results.php",{"gender": gender, "search_term": search_term},"",complete);
+		updateContent("#results","includes/results.php",{"gender": gender, "search_term": search_term},"",complete,"");
 	});
 	$(document).on("click",".showUserSelect",function(){
 		$("#selectPersonType").slideDown(500);
@@ -19,20 +19,37 @@ $(document).ready(function(){
 		var uid = $(this).data("uid");
 		var gender = $(this).data("gender");
 		var name = $(this).data("fullname");
+		var claim_type = "adult";
+		child ? claim_type = "child" : "";
 		var before = function(){
 			$(".modal").modal("show");
 		}
 		var complete = function(){
 			$(".modal-title").html(name + " <a id='uid' data-uid='"+uid+"' data-toggle='tooltip' data-placement='bottom' title='" + uid + "'><i class='far fa-id-badge fa-lg'></i></a>");
 			if(child){
-				$("#claimMember").attr("data-claim_type","child").text("¡Este soy yo!");
+				$("#modalSubmit").text("¡Este soy yo!");
 			}
 			else {
-				gender == "m" ? $("#claimMember").text("¡Es mi Papa!") : $("#claimMember").text("¡Es mi Mama!");
+				gender == "m" ? $("#modalSubmit").text("¡Es mi Papa!") : $("#modalSubmit").text("¡Es mi Mama!");
 			}
 			
 		}
-		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},before,complete);
+		var modalsubmit = function(){
+			$.ajax({
+				type: "GET",
+				url: "processclaim.php",
+				data: {"uid": uid, "claim_type": claim_type},
+				success: function(data){
+					if(child){
+						window.location.href = "index.php";
+					}
+					else {
+						window.location.href = "claim_success.php?uid="+uid;
+					}
+				}
+			});
+		}
+		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},before,complete,modalsubmit);
 	});
 	$(document).on("keyup","#searchInput",function(){
 		clearTimeout(timeout);
@@ -42,38 +59,36 @@ $(document).ready(function(){
 			var complete = function() {
 				$("#selectPersonType").slideUp(500);
 			}
-			updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val()},"",complete);
+			updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val()},"",complete,"");
 		},1000);
 		
 	});
-	$(document).on("click","#claimMember",function(){
-		var claim_type = $(this).data("claim_type");
-		var uid = $("#uid").data("uid");
-		$.ajax({
-			type: "GET",
-			url: "processclaim.php",
-			data: {"uid": uid, "claim_type": claim_type},
-			success: function(data){
-				if(claim_type == "child"){
-					window.location.href = "index.php";
-				}
-				else {
-					window.location.href = "claim_success.php?uid="+uid;
-				}
-			}
-		});
-	});
 	$(document).on("click",".previewMatch",function(){
-		var matchID = $(this).data("matchid");
+		var match_id = $(this).data("match_id");
 		var uid_a = $(this).data("uid_a");
 		var uid_b = $(this).data("uid_b");
 		var before = function(){
 			$(".modal").modal("show");
+			$("#modalSubmit").hide();
 		}
 		var complete = function(){
-			$(".modal-title").html("Match ID: " + matchID);
-			$("#claimMember").hide();
+			$(".modal-title").html("Match ID: " + match_id);
 		}
-		updateContent(".modal-body","match_info.php",{"match_ID": matchID, "uid_a": uid_a, "uid_b": uid_b},before,complete);
+		updateContent(".modal-body","match_info.php",{"uid_a": uid_a, "uid_b": uid_b},before,complete,"");
+	});
+	$(document).on("click",".editTicket",function(){
+		var ticket_id = $(this).data("ticket_id");
+		var before = function(){
+			$(".modal").modal("show");
+			$("#modalSubmit").show();
+		}
+		var complete = function(){
+			$(".modal-title").html("Ticket No. " + ticket_id);
+			$("#modalSubmit").text("Update Ticket");
+		}
+		var modalsubmit = function(){
+			alert("ticket edit submitted");
+		}
+		updateContent(".modal-body","edit_ticket.php",{"ticket_id": ticket_id},before,complete,modalsubmit);
 	});
 });

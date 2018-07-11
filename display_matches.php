@@ -40,7 +40,7 @@
 
 ?>
 			<tr>
-				<td><a class="previewMatch text-primary ml-3" data-matchID="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><i class="fa fa-eye"></i></a></td>
+				<td><a class="previewMatch text-primary ml-3" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><i class="fa fa-eye"></i></a></td>
 				<td><?php echo $row['Match_ID']; ?></td>
 				<td><?php echo $uid_a_ln.", ".$uid_a_fn." (".$row['UID_A'].")"; ?></td>
 			    <td><?php echo $uid_b_ln.", ".$uid_b_fn." (".$row['UID_B'].")"; ?></td>
