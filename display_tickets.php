@@ -21,9 +21,9 @@
 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
-			$sql2 = "SELECT UID_A, UID_B from matches where Match_ID='$row['Match_ID']'";
+			$sql2 = "SELECT UID_A, UID_B from matches where Match_ID='".$row['Match_ID']."'";
 			$result2 = mysqli_query($db,$sql2);
-			$row2 = $result2->fetch_assoc()
+			$row2 = $result2->fetch_assoc();
 			$uid_a = $row2['UID_A'];
 			$uid_b = $row2['UID_B'];
 ?>
