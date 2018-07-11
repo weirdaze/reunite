@@ -150,7 +150,7 @@ def insert_history_event(event_str):
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
-        query = ("INSERT INTO ticket_history (TicketNumber, userid, Updates, DateUpdted) "
+        query = ("INSERT INTO ticket_history (TicketNumber, userid, Updates, DateUpdated) "
                  "VALUES('" + ticket_number + "', '" + username + "', '" + updates + "', '" + str(date_updated) +
                  "')")
         cursor.execute(query)
