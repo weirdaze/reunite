@@ -65,7 +65,7 @@
 				<?php echo $uid_a_ln.", ".$uid_a_fn." (".$uid_a.")"; ?>
 			</div>
 			<div>
-				<img src='<?php echo $uid_a_photo; ?>'/>
+				<img src="media/photo/<?php echo $uid_a_photo; ?>" height="250" />
 			</div>
 		</div>
 		<div>
@@ -73,7 +73,7 @@
 				<?php echo $uid_b_ln.", ".$uid_b_fn." (".$uid_b.")"; ?>
 			</div>
 			<div>
-				<img src='<?php echo $uid_b_photo; ?>'/>
+				<img src="media/photo/<?php echo $uid_b_photo; ?>" height="250" />
 			</div>
 		</div>
 		<div>
@@ -84,7 +84,7 @@
 <hr>
 <?php
 		
-	$sql5 = "SELECT Updates, DateUpdated, userid from ticket_history where TicketNumber='".$ticket_number."'";
+	$sql5 = "SELECT Updates, DateUpdated, userid from ticket_history where TicketNumber='".$ticket_number."' ORDER BY DateUpdated DESC";
 
 	$result5 = mysqli_query($db,$sql5);
 
