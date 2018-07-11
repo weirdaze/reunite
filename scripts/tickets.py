@@ -142,8 +142,8 @@ def insert_history_event(event_str):
     # the event_str should be "TicketNumber,Updates,userid"
     event = event_str.split(',')
     ticket_number = event[0]
-    updates = event[2]
-    username = event[1]
+    updates = event[1]
+    username = event[2]
     date_updated = datetime.datetime.now()
 
     try:
