@@ -50,7 +50,7 @@
 		Status: <?php echo $status; ?><a href='index.php'>(change-dd)</a>
 		Assigned: 
 		<?php 
-			echo $agent; 
+			echo $agent." logged in user: ".$_SESSION['userid'];
 			if($agent != $_SESSION['userid']){
 				echo "<a href='index.php'>Assign to me</a>";
 			}
@@ -62,7 +62,7 @@
 	<div>
 		<div>
 			<div>
-				<?php echo $uid_a_ln.", ".$uid_a_ln." (".$uid_a.")"; ?>
+				<?php echo $uid_a_ln.", ".$uid_a_fn." (".$uid_a.")"; ?>
 			</div>
 			<div>
 				<img src='<?php echo $uid_a_photo; ?>'/>
@@ -70,10 +70,10 @@
 		</div>
 		<div>
 			<div>
-				<?php echo $uid_b_ln.", ".$uid_b_ln." (".$uid_b.")"; ?>
+				<?php echo $uid_b_ln.", ".$uid_b_fn." (".$uid_b.")"; ?>
 			</div>
 			<div>
-				<img src='<?php echo $uid_b_photol; ?>'/>
+				<img src='<?php echo $uid_b_photo; ?>'/>
 			</div>
 		</div>
 		<div>
