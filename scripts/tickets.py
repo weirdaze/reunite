@@ -109,7 +109,7 @@ def assign_ticket(ticket_number, admin_username, userid):
             print(err)
     else:
         cnx.close()
-    update = "@" + userid + "assigned the ticket to " + admin_username
+    update = "@" + userid + " assigned the ticket to " + admin_username
     insert_history_event(ticket_number + "," + update + "," + userid)
 
 
@@ -133,7 +133,7 @@ def change_status(ticket_number, status, userid):
             print(err)
     else:
         cnx.close()
-    update = "@" + userid + "changed status to " + status
+    update = "@" + userid + " changed status to " + status
     insert_history_event(ticket_number + "," + update + "," + userid)
 
 
