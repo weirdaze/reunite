@@ -107,7 +107,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tickets.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
@@ -128,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_history_event.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_history_event.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_history_event.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="243">
+              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -199,8 +199,8 @@
         <option value="$PROJECT_DIR$/db_manipulate.py" />
         <option value="$PROJECT_DIR$/create_ticket.py" />
         <option value="$PROJECT_DIR$/db_matches.py" />
-        <option value="$PROJECT_DIR$/test_history_event.py" />
         <option value="$PROJECT_DIR$/tickets.py" />
+        <option value="$PROJECT_DIR$/test_history_event.py" />
       </list>
     </option>
   </component>
@@ -543,16 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_history_event.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tickets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -568,6 +558,16 @@
             <marker date="1531307131018" expanded="true" signature="5023:5115" ph="UPDATE tickets... " />
             <marker date="1531307131018" expanded="true" signature="5023:5117" ph="UPDATE tickets... " />
             <marker date="1531307131018" expanded="true" signature="6018:6103" ph="UPDATE tickets... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_history_event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
