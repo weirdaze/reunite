@@ -1,6 +1,7 @@
 <?php
 	$ticket_number = $_GET['ticket_number'];
-	echo $ticket_number;
+	//echo $ticket_number;
+	include 'config.php';
 
 	$sql = "SELECT TicketNumber, Match_ID, Agent, Status, from tickets where TicketNumber='".$ticket_number."'";
 
@@ -10,9 +11,7 @@
 	$agent = $row['Agent'];
 	$status = $row['Status'];
 
-	echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
-
-/*
+	//echo "matchid,agent,status: ".$match_id.", ".$agent.", ".$status;
 
 	$sql2 = "SELECT UID_A, UID_B, DateMatched from matches where MatchID='".$match_id."'";
 
@@ -100,5 +99,5 @@
 			</div>
 <?php
 		}
-	}*/
+	}
 ?>
