@@ -1,6 +1,7 @@
 <?php
 	$ticket_number = $_GET['ticket_number'];
-
+	echo $ticket_number;
+/*
 	$sql = "SELECT TicketNumber, Match_ID, Agent, Status, from tickets where TicketNumber='".$ticket_number."'";
 
 	$result = mysqli_query($db,$sql);
@@ -96,5 +97,5 @@
 			</div>
 <?php
 		}
-	}
+	}*/
 ?>
