@@ -5,17 +5,29 @@
 	<div class="col-1">
 		<a href="admintools.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
 	</div>
+	<div>
+		<p><a href=display_tickets.php>all tickets</a> | <a href=display_tickets.php?assigned=me>my tickets</a></p>
+	</div>
 	<table class="table">
 		<tr>
-			<th>Preview</th>
+			<th>Edit</th>
 			<th>Ticket No.</th>
 			<th>Match ID</th>
 			<th>Agent</th>
 			<th>Status</th>
 		</tr>
 <?php
-		
-	$sql = "SELECT TicketNumber, Match_ID, Agent, Status from tickets where Status<>'closed'";
+	
+	$assigned_to = $_GET['assigned'];
+	$userid = $_SESSION['userid'];
+
+	if($assigned_to == 'me'){
+		$sql = "SELECT TicketNumber, Match_ID, Agent, Status FROM tickets WHERE Status<>'closed' AND Agent='$userid'";
+	}
+	else{
+		$sql = "SELECT TicketNumber, Match_ID, Agent, Status FROM tickets WHERE Status<>'closed'";
+	}
+	
 
 	$result = mysqli_query($db,$sql);
 
