@@ -51,7 +51,7 @@
 		    	<a class="dropdown-item" href="#">Closed</a>
 		  	</div>
 		</div>
-		<div class="mx-auto" style="width: 200px;"></div>
+		<div class="mx-auto"></div>
 		<div class="dropdown show">
 		 	<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    	Assigned: <?php echo $agent; ?>
