@@ -27,7 +27,6 @@
 				<td><?php echo $row['FacilityName']; ?></td>
 				<td><?php echo $row['city']; ?></td>
 			    <td><?php echo $row['state']; ?></td>
-				<td><?php echo $row['zip']; ?></td>
 				<td><?php echo $row['last_updated']; ?></td>
 			</tr>
 <?php
