@@ -1,14 +1,6 @@
 <?php
-	include 'header.php';
-?>
-<style>
-	body {
-		background-color: #eee;
-	}
-</style>
-
-<?php
-	$ticket_number = $_GET['ticket_number'];
+	session_start();
+	$ticket_number = $_GET['ticket_id'];
 	include 'config.php';
 
 	$sql = "SELECT TicketNumber, Match_ID, Agent, Status from tickets where TicketNumber='".$ticket_number."'";
@@ -47,23 +39,33 @@
 	$uid_b_photo = $row4['photo'];
 
 ?>
-
-	<div>
-		Ticket <?php echo $ticket_number."(".$match_id.")"; ?>
-		Status: <?php echo $status; ?><a href='index.php'>(change-dd)</a>
-		Assigned: 
-		<?php 
-			echo $agent." logged in user: ".$_SESSION['userid'];
-			if($agent != $_SESSION['userid']){
-				echo "<a href='index.php'>Assign to me</a>";
-			}
-		?>
-
+	<div class="d-flex align-items-center justify-content-center">
+		<div class="card mx-3">
+			<div class="card-header lead">
+				Status
+			</div>
+			<div class="card-body">
+				<?php echo $status; ?>
+			</div>
+			<div class="card-footer">
+				<a class="btn btn-info" href='index.php'>Change Status</a>
+			</div>
+		</div>
+		<div class="card mx-3">
+			<div class="card-header lead">
+				Assigned to
+			</div>
+			<div class="card-body">
+				<?php echo $agent; ?>
+			</div>
+			<div class="card-footer">
+				<a class='btn btn-info' href='index.php'>Assign to me</a>
+			</div>
+		</div>
 	</div>
-<hr>
-<h2>Match Info</h2>
-	<div>
-		<div>
+	<h2>Match Info</h2>
+	<div class="row">
+		<div class="col">
 			<div>
 				<?php echo $uid_a_ln.", ".$uid_a_fn." (".$uid_a.")"; ?>
 			</div>
@@ -71,7 +73,7 @@
 				<img src="media/photo/<?php echo $uid_a_photo; ?>" height="250" />
 			</div>
 		</div>
-		<div>
+		<div class="col">
 			<div>
 				<?php echo $uid_b_ln.", ".$uid_b_fn." (".$uid_b.")"; ?>
 			</div>
@@ -79,23 +81,19 @@
 				<img src="media/photo/<?php echo $uid_b_photo; ?>" height="250" />
 			</div>
 		</div>
+	</div>
 		<div>
 			Matched on <?php echo $date_matched; ?>
 		</div>
-	</div>
 
 <hr>
 <h2>Ticket History</h2>
 
-<h3> Add update to ticket </h3>
-<form class="formBox pb-3" method="post" action="update_ticket.php">
-	<div class="bg-info text-light p-2 mb-3 lead">Create Ticket</div>
-	<div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-id-card"></i></div>
-		<textarea name="update" id="updates" rows="10" cols="30"></textarea>
-	</div>
-	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Update Ticket">
-</form>
+<h3>Add update to ticket</h3>
+<div class="form-group mx-3">
+	<div class="input-icon"><i class="fa fa-id-card"></i></div>
+	<textarea class="form-control" name="update" id="updates"></textarea>
+</div>
 <?php
 		
 	$sql5 = "SELECT Updates, DateUpdated, userid from ticket_history where TicketNumber='".$ticket_number."' ORDER BY DateUpdated DESC";
