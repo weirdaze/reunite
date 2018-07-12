@@ -49,7 +49,7 @@
 					<!-- <a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change"> -->
 			</div>
 			<div class="card-footer">
-				<select class="custom-select form-control mb-2" name="status" onchange="updateStatus()" required>
+				<select class="custom-select form-control mb-2" name="status" id="status" onchange="updateStatus()">
 					<option></option>
 					<option>in-progress</option>
 					<option>matched</option>
@@ -61,6 +61,7 @@
 				<div class="form-group mx-3">
 					<input type="hidden" name="ticket_number" id="ticket_number" value="<?php echo $ticket_number;?>">
 				</div>
+				<p id="demo"></p>
 			</div>
 		</div>
 		<div class="card mx-3">
@@ -97,7 +98,12 @@
 		<div>
 			Matched on <?php echo $date_matched; ?>
 		</div>
-
+<script>
+function updateStatus() {
+    var x = document.getElementById("status").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
 <hr>
 <h2>Ticket History</h2>
 
