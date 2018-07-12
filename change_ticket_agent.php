@@ -1,0 +1,9 @@
+<?php
+	$ticket_number = $_GET['ticket_number'];
+	$userid = $_SESSION['userid'];
+
+	$execStr = "python /var/www/html/reunite/scripts/change_ticket_agent.py ".$ticket_number." ".$userid;
+	$result = exec($execStr);
+
+	header("Location: display_tickets.php");
+?>

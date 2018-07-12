@@ -24,12 +24,16 @@
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
 		<input class="form-control mb-2" type="text" name="city" placeholder="City">
 	</div><div class="form-group mx-3">
-		<div class="input-icon"><i class="fa fa-address-card"></i></div>
-		<input class="form-control mb-2" type="text" name="state" placeholder="State">
+		<!-- <label class="">Country:</label> -->
+		<select class="custom-select form-control mb-2" name="state" required>
+			<?php
+				include 'state_select.php';
+			?>
+		</select>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
-		<input class="form-control mb-2" type="text" name="zip" placeholder="Zip">
+		<input class="form-control mb-2" type="text" name="zip" placeholder="Zip" maxlength="5">
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
