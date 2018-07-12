@@ -39,41 +39,26 @@
 	$uid_b_photo = $row4['photo'];
 
 ?>
-	<div class="d-flex align-items-center justify-content-center">
-		<div class="card mx-3">
-			<div class="card-header lead">
-				Status
-			</div>
-			<div class="card-body">
-				<?php echo $status; ?> 
-					<!-- <a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change"> -->
-			</div>
-			<div class="card-footer">
-				<select class="custom-select form-control mb-2" name="status" id="status" onchange="updateStatus()">
-					<option></option>
-					<option>in-progress</option>
-					<option>matched</option>
-					<option>closed</option>
-				</select>
-				<div class="form-group mx-3">
-					<input type="hidden" name="userid" id="userid" value="<?php echo $_SESSION['userid'];?>">
-				</div>
-				<div class="form-group mx-3">
-					<input type="hidden" name="ticket_number" id="ticket_number" value="<?php echo $ticket_number;?>">
-				</div>
-				<p id="demo"></p>
-			</div>
+	<div class="d-flex align-items-left justify-content-center">
+		<div class="dropdown show">
+		 	<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    	Status: <?php echo $status; ?>
+		  	</a>
+
+		  	<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		    	<a class="dropdown-item" href="#">in-progress</a>
+		    	<a class="dropdown-item" href="#">matched</a>
+		    	<a class="dropdown-item" href="#">closed</a>
+		  	</div>
 		</div>
-		<div class="card mx-3">
-			<div class="card-header lead">
-				Assigned to
-			</div>
-			<div class="card-body">
-				<?php echo $agent; ?>
-			</div>
-			<div class="card-footer">
-				<a class='btn btn-info' href='index.php'>Assign to me</a>
-			</div>
+		<div class="dropdown show">
+		 	<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    	Assigned: <?php echo $agent; ?>
+		  	</a>
+
+		  	<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		    	<a class="dropdown-item" href="#">Assign to me</a>
+		  	</div>
 		</div>
 	</div>
 	<h2>Match Info</h2>
