@@ -3,7 +3,7 @@
 	include('config.php');
 ?>
 	<div class="col-1">
-		<a href="admintools.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
+		<a href="facility.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
 	</div>
 	<table class="table">
 		<tr>
