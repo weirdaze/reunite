@@ -46,11 +46,12 @@
 		  	</a>
 
 		  	<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-		    	<a class="dropdown-item" href="#">in-progress</a>
-		    	<a class="dropdown-item" href="#">matched</a>
-		    	<a class="dropdown-item" href="#">closed</a>
+		    	<a class="dropdown-item" href="#">In-Progress</a>
+		    	<a class="dropdown-item" href="#">Matched</a>
+		    	<a class="dropdown-item" href="#">Closed</a>
 		  	</div>
 		</div>
+		<div class="mx-auto" style="width: 200px;"></div>
 		<div class="dropdown show">
 		 	<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    	Assigned: <?php echo $agent; ?>
