@@ -18,7 +18,6 @@
 	$sql = "SELECT FacilityName, city, State, Zip, last_updated from facilities ORDER BY FacilityName ASC";
 
 	$result = mysqli_query($db,$sql);
-
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 
@@ -36,4 +35,5 @@
 	}
 ?>
 	</table>
+	<?php echo "Number of Facilities: ".$result->num_rows; ?>
 <?php include 'footer.php'?>
