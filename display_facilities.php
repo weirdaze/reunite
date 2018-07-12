@@ -15,7 +15,7 @@
 		</tr>
 <?php
 		
-	$sql = "SELECT FacilityName, city, State, Zip, last_updated from facilities ORDER BY FacilityName ASC";
+	$sql = "SELECT FacilityName, city, state, zip, last_updated from facilities ORDER BY FacilityName ASC";
 
 	$result = mysqli_query($db,$sql);
 	if ($result->num_rows > 0) {
