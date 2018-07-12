@@ -70,18 +70,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="add_user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_user.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tickets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tickets.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-345">
@@ -127,11 +115,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="change_ticket_agent.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/change_ticket_agent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test_history_event.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_history_event.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            <state relative-caret-position="297">
+              <caret line="11" column="52" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="52" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -200,6 +200,7 @@
         <option value="$PROJECT_DIR$/db_matches.py" />
         <option value="$PROJECT_DIR$/test_history_event.py" />
         <option value="$PROJECT_DIR$/tickets.py" />
+        <option value="$PROJECT_DIR$/change_ticket_agent.py" />
       </list>
     </option>
   </component>
@@ -447,7 +448,7 @@
         <state relative-caret-position="472">
           <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,16 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_history_event.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tickets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-345">
@@ -566,6 +557,26 @@
             <marker date="1531314144169" expanded="true" signature="5023:5115" ph="UPDATE tickets... " />
             <marker date="1531314144169" expanded="true" signature="5023:5117" ph="UPDATE tickets... " />
             <marker date="1531314144169" expanded="true" signature="6019:6104" ph="UPDATE tickets... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_history_event.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="52" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/change_ticket_agent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

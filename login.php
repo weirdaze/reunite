@@ -60,7 +60,7 @@
 		<select class="custom-select form-control mb-2" name="current_facility" required>
 			<option></option>
 			<?php
-				$sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities";
+				$sql = "SELECT FacilityNumber, FacilityName, city, state FROM facilities ORDER BY FacilityName ASC";
 				$result = mysqli_query($db,$sql);
 			    while($row = $result->fetch_assoc()) {
 	        		echo '<option value="'.$row['FacilityNumber'].'">'.$row['FacilityName'].' ('.$row['city'].', '.$row['state'].')</option>';
