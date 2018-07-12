@@ -44,28 +44,24 @@
 			<div class="card-header lead">
 				Status
 			</div>
-			<div>
-			<!-- <div class="card-body"> -->
-				<!-- <?php //echo $status; ?> -->
-				<form class="formBox pb-3" method="post" action="change_ticket_status.php">
-					<select class="custom-select form-control mb-2" name="status" required>
-						<option></option>
-						<option>in-progress</option>
-						<option>matched</option>
-						<option>closed</option>
-					</select>
-					<div class="form-group mx-3">
-						<input type="hidden" name="userid" value="<?php echo $_SESSION['userid'];?>">
-					</div>
-					<div class="form-group mx-3">
-						<input type="hidden" name="ticket_number" value="<?php echo $ticket_number;?>">
-					</div>
-					<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
-				</form>
+			<div class="card-body">
+				<?php echo $status; ?> 
+					<!-- <a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change"> -->
 			</div>
-			<!-- <div class="card-footer">
-						<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
-			</div> -->
+			<div class="card-footer">
+				<select class="custom-select form-control mb-2" name="status" onchange="updateStatus()" required>
+					<option></option>
+					<option>in-progress</option>
+					<option>matched</option>
+					<option>closed</option>
+				</select>
+				<div class="form-group mx-3">
+					<input type="hidden" name="userid" id="userid" value="<?php echo $_SESSION['userid'];?>">
+				</div>
+				<div class="form-group mx-3">
+					<input type="hidden" name="ticket_number" id="ticket_number" value="<?php echo $ticket_number;?>">
+				</div>
+			</div>
 		</div>
 		<div class="card mx-3">
 			<div class="card-header lead">
