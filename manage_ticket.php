@@ -55,11 +55,12 @@
 					</select>
 					<input type="hidden" name="userid" value="<?php echo $_SESSION['userid'];?>">
 					<input type="hidden" name="ticket_number" value="<?php echo $ticket_number;?>">
-					<div class="card-footer">
-						<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
-					</div>
+					<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
 				</form>
 			</div>
+			<!-- <div class="card-footer">
+						<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
+			</div> -->
 		</div>
 		<div class="card mx-3">
 			<div class="card-header lead">
