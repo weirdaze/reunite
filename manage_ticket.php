@@ -53,8 +53,13 @@
 						<option>matched</option>
 						<option>closed</option>
 					</select>
-					<input type="hidden" name="userid" value="<?php echo $_SESSION['userid'];?>">
-					<input type="hidden" name="ticket_number" value="<?php echo $ticket_number;?>">
+					<div class="form-group mx-3">
+						<input type="hidden" name="userid" value="<?php echo $_SESSION['userid'];?>">
+					</div>
+					<div class="form-group mx-3">
+						<input type="hidden" name="ticket_number" value="<?php echo $ticket_number;?>">
+					</div>
+					
 					<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
 				</form>
 			</div>
