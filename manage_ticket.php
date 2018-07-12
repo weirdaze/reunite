@@ -44,7 +44,8 @@
 			<div class="card-header lead">
 				Status
 			</div>
-			<div class="card-body">
+			<div>
+			<!-- <div class="card-body"> -->
 				<!-- <?php //echo $status; ?> -->
 				<form class="formBox pb-3" method="post" action="change_ticket_status.php">
 					<select class="custom-select form-control mb-2" name="status" required>
@@ -59,7 +60,6 @@
 					<div class="form-group mx-3">
 						<input type="hidden" name="ticket_number" value="<?php echo $ticket_number;?>">
 					</div>
-					
 					<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
 				</form>
 			</div>
