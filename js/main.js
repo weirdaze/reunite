@@ -89,6 +89,6 @@ $(document).ready(function(){
 		var modalsubmit = function(){
 			alert("ticket edit submitted");
 		}
-		updateContent(".modal-body","edit_ticket.php",{"ticket_id": ticket_id},before,complete,modalsubmit);
+		updateContent(".modal-body","manage_ticket.php",{"ticket_id": ticket_id},before,complete,modalsubmit);
 	});
 });

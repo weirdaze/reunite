@@ -8,7 +8,7 @@
 </style>
 
 <?php
-	$ticket_number = $_GET['ticket_number'];
+	$ticket_number = $_GET['ticket_id'];
 	include 'config.php';
 
 	$sql = "SELECT TicketNumber, Match_ID, Agent, Status from tickets where TicketNumber='".$ticket_number."'";
