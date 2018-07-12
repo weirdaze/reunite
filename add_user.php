@@ -121,7 +121,7 @@
 		<a id="addRelative" class="btn btn-secondary mr-3 text-light" data-toggle="tooltip" data-title="Add Relative"><i class="fa fa-user-plus"></i></a>
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Create">
-	<a href="admintools.php?clear_temp=1" class="btn btn-secondary">Cancel</a>
+	<a href="admintools.php?clear_temp=1" class="btn btn-secondary">Cancel</a>	
 </form>
 <script>
 	$(document).ready(function(){
