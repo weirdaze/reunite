@@ -45,10 +45,20 @@
 				Status
 			</div>
 			<div class="card-body">
-				<?php echo $status; ?>
-			</div>
-			<div class="card-footer">
-				<a class="btn btn-info" href='index.php'>Change Status</a>
+				<!-- <?php //echo $status; ?> -->
+				<form class="formBox pb-3" method="post" action="change_ticket_status.php">
+					<select class="custom-select form-control mb-2" name="status" required>
+						<option></option>
+						<option>in-progress</option>
+						<option>matched</option>
+						<option>closed</option>
+					</select>
+					<input type="hidden" name="userid" value="<?php echo $_SESSION['userid'];?>">
+					<input type="hidden" name="ticket_number" value="<?php echo $ticket_number;?>">
+					<div class="card-footer">
+						<a class="btn btn-primary ml-3 mr-2" type="submit" name="submit" value="Change">
+					</div>
+				</form>
 			</div>
 		</div>
 		<div class="card mx-3">

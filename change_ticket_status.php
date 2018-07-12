@@ -6,5 +6,5 @@
 	$execStr = "python /var/www/html/reunite/scripts/change_ticket_status.py ".$ticket_number." ".$userid." ".$status;
 	$result = exec($execStr);
 
-	//header("Location: display_tickets.php");
+	header("Location: display_tickets.php");
 ?>
