@@ -49,6 +49,7 @@
 		<input class="form-control mb-2" type="text" name="poc" placeholder="Notes" pattern="[0-9A-Za-z :/?&)(.#-]+">
 		<small><p class="bg-warning" id="poc1"></p></small>
 	</div>
+	<small><p class="bg-warning" id="message1">commas or apostrophes are not allowed as inputs</p></small>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Create">
 	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
 </form>
