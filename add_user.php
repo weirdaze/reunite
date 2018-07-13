@@ -22,22 +22,22 @@
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
 		<input class="form-control mb-2" type="text" name="first_name" placeholder="First Name" required>
-		<p id="first_name"></p>
+		<small><p class="bg-warning" id="first_name1"></p></small>
 	</div>
     <div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
 		<input class="form-control mb-2" type="text" name="middle_name" placeholder="Middle Name">
-		<p id="middle_name"></p>
+		<small><p class="bg-warning" id="middle_name1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
 		<input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name" required>
-		<p id="last_name"></p>
+		<small><p class="bg-warning" id="last_name1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
 		<input class="form-control mb-2" type="text" name="maternal_last_name" placeholder="Second Last Name">
-		<p id="maternal_last_name"></p>
+		<small><p class="bg-warning" id="maternal_last_name1"></p></small>
 	</div>
 	<label class="mx-3">Date of Birth:</label>
     <div class="form-group mx-3">
@@ -106,12 +106,12 @@
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-building"></i></div>
 		<input class="form-control mb-2" type="text" name="facility_uid" placeholder="ID from current facility">
-		<p id="facility_uid"></p>
+		<small><p class="bg-warning" id="facility_uid1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-map-marker-alt"></i></div>
 		<input class="form-control mb-2" type="text" name="entry_point" placeholder="Point of Entry into USA">
-		<p id="entry_point"></p>
+		<small><p class="bg-warning" id="entry_point1"></p></small>
 	</div>
 	<label class="mx-3">Date Detained:</label>
 	<div class="form-group mx-3">
@@ -132,16 +132,37 @@
 </form>
 <script>
 	function validateForm() {
-    	var firstname = document.forms["adduser"]["first_name"].value;
-    	var lastname = document.forms["adduser"]["last_name"].value;
-    	var maternallastname = document.forms["adduser"]["maternal_last_name"].value;
-    	var facilityuid = document.forms["adduser"]["facility_uid"].value;
-    	var entrypoint = document.forms["adduser"]["entry_point"].value;
+    	var first_name = document.forms["adduser"]["first_name"].value;
+    	var middle_name = document.forms["adduser"]["middle_name"].value;
+    	var last_name = document.forms["adduser"]["last_name"].value;
+    	var maternal_lastname = document.forms["adduser"]["maternal_last_name"].value;
+    	var facility_uid = document.forms["adduser"]["facility_uid"].value;
+    	var entry_point = document.forms["adduser"]["entry_point"].value;
 
-    	if (firstname == "") {
-        	document.getElementById("first_name").innerHTML = "First Name is required";
+    	if (first_name.includes("'") || first_name.includes(",")) {
+        	document.getElementById("first_name1").innerHTML = "input cannot contain apostrophes or commas";
         	return false;
-    	}
+    	} 
+    	if (middle_name.includes("'") || middle_name.includes(",")) {
+        	document.getElementById("middle_name1").innerHTML = "input cannot contain apostrophes or commas";
+        	return false;
+    	} 
+    	if (last_name.includes("'") || last_name.includes(",")) {
+        	document.getElementById("last_name1").innerHTML = "input cannot contain apostrophes or commas";
+        	return false;
+    	} 
+    	if (maternal_lastname.includes("'") || maternal_lastname.includes(",")){
+        	document.getElementById("maternal_lastname1").innerHTML = "invalid zip code or commas";
+        	return false;
+    	} 
+    	if (facility_uid.includes("'") || facility_uid.includes(",")) {
+        	document.getElementById("facility_uid1").innerHTML = "input cannot contain apostrophes or commas";
+        	return false;
+    	} 
+    	if (entry_point.includes("'") || entry_point.includes(",")) {
+        	document.getElementById("entry_point1").innerHTML = "input cannot contain apostrophes or commas";
+        	return false;
+    	} 
 
 	}
 	$(document).ready(function(){
