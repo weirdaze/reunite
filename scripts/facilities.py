@@ -129,8 +129,8 @@ def update_facility(facility):
         query = ("INSERT INTO facilities (FacilityNumber, FacilityName, Address, city, state, zip, POC) "
                  "VALUES('" + facility_number + "', '" + facility_name + "', '" + address + "', '" + city +
                  "', '" + state + "', '" + str(zip) + "', '" + poc +
-                 "') ON DUPLICATE KEY UPDATE FacilityName='" + facility_name + "' Address='" + address +
-                 "' city='" + city + "' state='" + state + "' zip='" + str(zip) + "' POC='" + poc + "'")
+                 "') ON DUPLICATE KEY UPDATE FacilityName='" + facility_name + "', Address='" + address +
+                 "', city='" + city + "', state='" + state + "', zip='" + str(zip) + "', POC='" + poc + "'")
         print(query)
         cursor.execute(query)
         cnx.commit()
