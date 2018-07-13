@@ -130,7 +130,7 @@ def update_facility(facility):
                  "VALUES('" + facility_number + "', '" + facility_name + "', '" + address + "', '" + city +
                  "', '" + state + "', '" + str(zip) + "', '" + poc +
                  "') ON DUPLICATE KEY UPDATE FacilityName='" + facility_name + "' Address='" + address +
-                 "' city='" + city + "' state='" + state + "' zip='" + zip + "' POC='" + poc + "'")
+                 "' city='" + city + "' state='" + state + "' zip='" + str(zip) + "' POC='" + poc + "'")
         print(query)
         cursor.execute(query)
         cnx.commit()
