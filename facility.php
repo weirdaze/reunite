@@ -41,7 +41,7 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
-		<input class="form-control mb-2" type="text" name="zip" placeholder="Zip" maxlength="5" pattern="/(^\d{5}$)|(^\d{5}-\d{4}$)/">
+		<input class="form-control mb-2" type="text" name="zip" placeholder="Zip" maxlength="5" pattern="^[0-9]{5}(?:-[0-9]{4})?$">
 		<small><p class="bg-warning" id="zip1"></p></small>
 	</div>
 	<div class="form-group mx-3">
