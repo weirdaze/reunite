@@ -12,7 +12,7 @@
 <form class="formBox pb-3" method="post" action="create_facility.php" name="createfacility" onsubmit="return validateForm()">
 	<div class="bg-info text-light p-2 mb-3 lead">
 		<div>
-			Create Facility <small><u><a class="text-warning" href="display_facilities.php"> (View Facilities)</a></u></small>
+			Create Facility <small><a class="text-warning" href="display_facilities.php"> (View Facilities)</a></small>
 		</div>
 	</div>
 
