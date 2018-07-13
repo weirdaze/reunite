@@ -73,26 +73,24 @@
     	var zip = document.forms["updatefacility"]["zip"].value;
     	var poc = document.forms["updatefacility"]["poc"].value;
 
-    	if (facility_name.includes("'")) {
-        	document.getElementById("facility_name1").innerHTML = "input cannot contain apostrophes";
-        	return false;
-    	}
-    	if (address.includes("'")) {
-        	document.getElementById("address1").innerHTML = "input cannot contain apostrophes";
+    	if (facility_name.includes("'") || facility_name.includes(",")) {
+        	document.getElementById("facility_name1").innerHTML = "input cannot contain apostrophes or commas";
         	return false;
     	} 
-    	if (city.includes("'")) {
-        	document.getElementById("city1").innerHTML = "input cannot contain apostrophes";
+    	if (address.includes("'") || address.includes(",")) {
+        	document.getElementById("address1").innerHTML = "input cannot contain apostrophes or commas";
         	return false;
     	} 
-    	if (zip != ""){
-    		if (isNaN(zip) || zip < 1 || zip > 99999) {
-        		document.getElementById("zip1").innerHTML = "invalid zip code";
-        		return false;
-    		}
+    	if (city.includes("'") || city.includes(",")) {
+        	document.getElementById("city1").innerHTML = "input cannot contain apostrophes or commas";
+        	return false;
     	} 
-    	if (poc.includes("'")) {
-        	document.getElementById("poc1").innerHTML = "input cannot contain apostrophes";
+    	if (zip.includes("'") || zip.includes(",")){
+        	document.getElementById("zip1").innerHTML = "invalid zip code or commas";
+        	return false;
+    	} 
+    	if (poc.includes("'") || poc.includes(",")) {
+        	document.getElementById("poc1").innerHTML = "input cannot contain apostrophes or commas";
         	return false;
     	} 
 	}
