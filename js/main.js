@@ -104,6 +104,6 @@ $(document).ready(function(){
 		var modalsubmit = function(){
 			alert("facility edit submitted");
 		}
-		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},before,complete);
+		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},before,complete,"");
 	});
 });
