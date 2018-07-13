@@ -11,8 +11,8 @@
 	$facility = "'".$facility_name.','.$address.','.$city.','.$state.','.$zip.','.$poc.','.$facility_number."'";
 	$execStr = 'python /var/www/html/reunite/scripts/update_facility.py '.$facility;
 	$result = exec($execStr);
-	//echo $execStr;
+	echo $execStr;
 	//echo $result;
 	//echo "created facility: ".$facility_name;
-	header("Location: display_facilities.php");
+	//header("Location: display_facilities.php");
 ?>
