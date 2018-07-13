@@ -34,8 +34,6 @@ def create_facility(facility):
     city = features[2]
     state = features[3]
     zip = features[4]
-    if zip == '':
-        zip = 0
     status = 'active'
     poc = features[5]
 
@@ -117,8 +115,6 @@ def update_facility(facility):
     city = features[2]
     state = features[3]
     zip = features[4]
-    if zip == '':
-        zip = 0
     poc = features[5]
     facility_number = features[6]
 
