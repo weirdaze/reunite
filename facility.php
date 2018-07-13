@@ -9,7 +9,7 @@
 	}
 </style>
 
-<form class="formBox pb-3" method="post" action="create_facility.php" name="createfacility" onsubmit="return validateForm()">
+<form class="formBox pb-3" method="post" action="create_facility.php" name="createfacility">
 	<div class="bg-info text-light p-2 mb-3 lead">
 		<div>
 			Create Facility <small><a class="text-warning" href="display_facilities.php"> (View Facilities)</a></small>
@@ -23,7 +23,7 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
-		<input class="form-control mb-2" type="text" name="address" placeholder="Address" pattern="[A-Z][A-Za-z -]+">
+		<input class="form-control mb-2" type="text" name="address" placeholder="Address" pattern="[0-9]+[ -][0-9A-Za-z .#-]+">
 		<small><p class="bg-warning" id="address1"></p></small>
 	</div>
 	<div class="form-group mx-3">
