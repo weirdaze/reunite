@@ -14,6 +14,9 @@
 	$city = $row['city'];
 	$state = $row['state'];
 	$zip = $row['zip'];
+	if($zip == '0'){
+		$zip = '';
+	}
 	$facility_number = $row['FacilityNumber'];
 ?>
 <form class="formBox pb-3" method="post" action="update_facility.php" name="updatefacility" onsubmit="return validateForm()">
@@ -42,10 +45,11 @@
 	</div>
 	<div class="form-group mx-3">
 		<!-- <label class="">State:</label> -->
-		<select class="custom-select form-control mb-2" name="state" value="<?php echo $state; ?>"required>
+		<select class="custom-select form-control mb-2" name="state" required>
 			<?php
 				include 'state_select.php';
 			?>
+			<option value="<?php echo $state; ?>" selected="selected"><?php echo $state; ?></optsion>
 		</select>
 	</div>
 	<div class="form-group mx-3">
