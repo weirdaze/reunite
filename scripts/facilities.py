@@ -45,7 +45,7 @@ def create_facility(facility):
         cursor = cnx.cursor()
         query = ("INSERT INTO facilities (FacilityNumber, FacilityName, Address, city, state, zip, Status, POC) "
                  "VALUES('" + facility_number + "', '" + facility_name + "', '" + address + "', '" + city +
-                 "', '" + state + "', '" + zip + "', '" + status + "', '" + poc +
+                 "', '" + state + "', '" + str(zip) + "', '" + status + "', '" + poc +
                  "') ON DUPLICATE KEY UPDATE Status='" + status + "'")
         print(query)
         cursor.execute(query)
