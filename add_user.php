@@ -21,7 +21,7 @@
 	<div class="bg-info text-light p-2 mb-3 lead">Register New User</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
-		<input class="form-control mb-2" type="text" name="first_name" placeholder="First Name" onkeydown="return validateForm()" required>
+		<input class="form-control mb-2" type="text" name="first_name" placeholder="First Name" onkeypress="return validateForm()" oninput="return validateForm()" onpropertychange="return validateForm()" required>
 		<small><p class="bg-warning" id="first_name1"></p></small>
 	</div>
     <div class="form-group mx-3">
