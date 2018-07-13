@@ -30,7 +30,7 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-building"></i></div>
-		<input class="form-control mb-2" type="text" name="facility_name" value="<?php echo $facility_name; ?>" pattern="[A-Za-z0-9 &#.-]+" required>
+		<input class="form-control mb-2" type="text" name="facility_name" value="<?php echo $facility_name; ?>" pattern="[A-Za-z0-9 &#.-]+"  required>
 		<small><p class="bg-warning" id="facility_name1"></p></small>
 	</div>
 	<div class="form-group mx-3">
