@@ -14,17 +14,17 @@
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-building"></i></div>
 		<input class="form-control mb-2" type="text" name="facility_name" placeholder="Name of the facility" required>
-		<p id="facility_name1"></p>
+		<small><p class="bg-warning" id="facility_name1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
 		<input class="form-control mb-2" type="text" name="address" placeholder="Address">
-		<p id="address1"></p>
+		<small><p class="bg-warning" id="address1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
 		<input class="form-control mb-2" type="text" name="city" placeholder="City" required>
-		<p id="city1"></p>
+		<small><p class="bg-warning" id="city1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<!-- <label class="">State:</label> -->
@@ -37,12 +37,12 @@
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
 		<input class="form-control mb-2" type="text" name="zip" placeholder="Zip" maxlength="5">
-		<p id="zip1"></p>
+		<small><p class="bg-warning" id="zip1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
 		<input class="form-control mb-2" type="text" name="poc" placeholder="Point of contact full name">
-		<small><p class="bg-danger" id="poc1"></p></small>
+		<small><p class="bg-warning" id="poc1"></p></small>
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Create">
 	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
