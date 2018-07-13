@@ -99,7 +99,7 @@ $(document).ready(function(){
 		}
 		var complete = function(){
 			$(".modal-title").html("Facility Name: " + facility_name);
-			$("#modalSubmit").text("Update Facility");
+			$("#modalSubmit").text("Use button above");
 		}
 		var modalsubmit = function(){
 			alert("facility edit submitted");

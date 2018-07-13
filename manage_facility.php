@@ -19,7 +19,7 @@
 	}
 	$facility_number = $row['FacilityNumber'];
 ?>
-<form class="formBox pb-3" method="post" action="update_facility.php" name="updatefacility" onsubmit="return validateForm()">
+<form class="formBox pb-3" method="post" action="update_facility.php" name="updatefacility">
 	<div class="bg-info text-light p-2 mb-3 lead">
 		<div>
 			Update Facility <small><a class="text-warning" href="display_facilities.php"> (View Facilities)</a></small>
@@ -66,7 +66,7 @@
 		<small><p class="bg-warning" id="message1">commas or apostrophes are not allowed as inputs</p></small>
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Update">
-	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
+	<a href="display_facilities.php" class="btn btn-secondary">Cancel</a>
 </form>
 <script>
 	function validateForm() {
