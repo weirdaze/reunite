@@ -49,7 +49,7 @@
 			<?php
 				include 'state_select.php';
 			?>
-			<option value="<?php echo $state; ?>" selected="selected"><?php echo $state; ?></optsion>
+			<option value="<?php echo $state; ?>" selected="selected"><?php echo $state; ?></option>
 		</select>
 	</div>
 	<div class="form-group mx-3">
