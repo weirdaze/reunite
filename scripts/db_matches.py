@@ -232,14 +232,15 @@ def update_claiming(match_str):
     # first we get the "claiming" that belongs to uid_a and and then uid_b
     # for each of them, we look at the List and if it's not already there, we add it to the list
     claiming = get_claiming(uid_a)
-
+    print "claiming A is: " + claiming + " how about that"
     # now we append to claiming and update the filed in the db
-    new_claiming = append_to_claiming(claiming)
+    new_claiming = append_to_claiming(claiming, uid_b)
     update_claiming_field(new_claiming, uid_a)
 
     # now we do the same for UID_B
     claiming = get_claiming(uid_b)
-    new_claiming = append_to_claiming(claiming)
+    print "claiming B is: " + claiming + " how about that"
+    new_claiming = append_to_claiming(claiming, uid_a)
     update_claiming_field(new_claiming, uid_b)
 
 
@@ -249,16 +250,21 @@ def append_to_claiming(claiming, uid):
 
     claims = claiming.split(',')
     new_claims = ""
-    if uid not in claims:
-        claims.append(uid)
-
-    count = 0
-    for item in claims:
-        if count == 0:
-            new_claims += item
-            count += 1
-        else:
-            new_claims += "," + item
+    print "this is the length of claims " + str(len(claims))
+    print "this is the content of claims "
+    print claims
+    if claims[0] != '':
+        if uid not in claims:
+            claims.append(uid)
+        count = 0
+        for item in claims:
+            if count == 0:
+                new_claims = item
+                count += 1
+            else:
+                new_claims = new_claims + "," + item
+    else:
+        new_claims = uid
     return new_claims
 
 
@@ -282,7 +288,10 @@ def get_claiming(uid):
             print(err)
     else:
         cnx.close()
-    return claiming
+    if len(claiming) == 0:
+        return ''
+    else:
+        return claiming[0]
 
 
 def update_claiming_field(claiming, uid):
@@ -291,7 +300,7 @@ def update_claiming_field(claiming, uid):
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
-        query = ("UPDATE person SET Claiming='" + claiming + "' WHERE UID='" + uid + "')")
+        query = ("UPDATE person SET Claiming='" + claiming + "' WHERE UID='" + uid + "'")
         cursor.execute(query)
         cnx.commit()
         cursor.close()
