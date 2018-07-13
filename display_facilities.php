@@ -23,7 +23,7 @@
 
 ?>
 			<tr>
-				<td><a class="previewMatch text-primary ml-3" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><i class="fa fa-eye"></i></a></td>
+				<td><a class="editFacility text-primary ml-2" data-facility_name="<?php echo $row['FacilityName'] ?>"><i class="fa fa-edit"></i></a></td>
 				<td><?php echo $row['FacilityName']; ?></td>
 				<td><?php echo $row['city']; ?></td>
 			    <td><?php echo $row['state']; ?></td>

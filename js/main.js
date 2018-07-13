@@ -91,4 +91,19 @@ $(document).ready(function(){
 		}
 		updateContent(".modal-body","manage_ticket.php",{"ticket_id": ticket_id},before,complete,modalsubmit);
 	});
+	$(document).on("click",".editFacility",function(){
+		var facility_name = $(this).data("facility_name");
+		var before = function(){
+			$(".modal").modal("show");
+			$("#modalSubmit").show();
+		}
+		var complete = function(){
+			$(".modal-title").html("Facility Name: " + facility_name);
+			$("#modalSubmit").text("Update Facility");
+		}
+		var modalsubmit = function(){
+			alert("facility edit submitted");
+		}
+		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},before,complete,modalsubmit);
+	});
 });
