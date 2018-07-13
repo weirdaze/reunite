@@ -10,7 +10,15 @@
 </style>
 
 <form class="formBox pb-3" method="post" action="create_facility.php" name="createfacility" onsubmit="return validateForm()">
-	<div class="bg-info text-light p-2 mb-3 lead">Create Facility</div>
+	<div class="bg-info text-light p-2 mb-3 lead">
+		<div>
+			Create Facility
+		</div>
+		<div>
+			<small><a href="display_facilities.php">View Facilities</a></small>
+		</div>
+	</div>
+
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-building"></i></div>
 		<input class="form-control mb-2" type="text" name="facility_name" placeholder="Name of the facility" required>
