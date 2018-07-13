@@ -42,7 +42,7 @@
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
 		<input class="form-control mb-2" type="text" name="poc" placeholder="Point of contact full name">
-		<h6><p color="red" id="poc1"></p></h6>
+		<small><p class="bg-danger" id="poc1"></p></small>
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Create">
 	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
