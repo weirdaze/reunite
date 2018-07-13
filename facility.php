@@ -67,9 +67,11 @@
         	document.getElementById("city1").innerHTML = "input cannot contain apostrophes";
         	return false;
     	}
-    	if (isNaN(zip) || zip < 1 || zip > 99999) {
-        	document.getElementById("zip1").innerHTML = "invalid zip code";
-        	return false;
+    	if (zip != ""){
+    		if (isNaN(zip) || zip < 1 || zip > 99999) {
+        		document.getElementById("zip1").innerHTML = "invalid zip code";
+        		return false;
+    		}
     	}
     	if (poc.includes("'")) {
         	document.getElementById("poc1").innerHTML = "input cannot contain apostrophes";
