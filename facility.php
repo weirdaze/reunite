@@ -13,7 +13,7 @@
 	<div class="bg-info text-light p-2 mb-3 lead">Create Facility</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-building"></i></div>
-		<input class="form-control mb-2" type="text" name="facility_name" placeholder="Name of the facility">
+		<input class="form-control mb-2" type="text" name="facility_name" placeholder="Name of the facility" required>
 		<p id="facility_name1"></p>
 	</div>
 	<div class="form-group mx-3">
@@ -23,7 +23,7 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-address-card"></i></div>
-		<input class="form-control mb-2" type="text" name="city" placeholder="City">
+		<input class="form-control mb-2" type="text" name="city" placeholder="City" required>
 		<p id="city1"></p>
 	</div>
 	<div class="form-group mx-3">
@@ -42,7 +42,7 @@
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
 		<input class="form-control mb-2" type="text" name="poc" placeholder="Point of contact full name">
-		<p id="poc1"></p>
+		<h6><p color="red" id="poc1"></p></h6>
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Create">
 	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
@@ -67,12 +67,12 @@
         	document.getElementById("city1").innerHTML = "input cannot contain apostrophes";
         	return false;
     	}
-    	if (poc.includes("'")) {
-        	document.getElementById("poc1").innerHTML = "input cannot contain apostrophes";
-        	return false;
-    	}
     	if (isNaN(zip) || zip < 1 || zip > 99999) {
         	document.getElementById("zip1").innerHTML = "invalid zip code";
+        	return false;
+    	}
+    	if (poc.includes("'")) {
+        	document.getElementById("poc1").innerHTML = "input cannot contain apostrophes";
         	return false;
     	}
 	}
