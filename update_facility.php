@@ -14,5 +14,5 @@
 	echo $execStr;
 	//echo $result;
 	//echo "created facility: ".$facility_name;
-	//header("Location: display_facilities.php");
+	header("Location: display_facilities.php");
 ?>
