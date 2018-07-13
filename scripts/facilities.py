@@ -104,3 +104,43 @@ def db_get_facility_info(facility_number):
     else:
         cnx.close()
     return facility
+
+
+def update_facility(facility):
+    # this function takes in the facility string and breaks it up and inputs it into the db
+    # the string should be formatted in this manner: 'FacilityName,address,city,state,zip,poc'
+
+    features = facility.split(',')
+
+    facility_name = features[0]
+    address = features[1]
+    city = features[2]
+    state = features[3]
+    zip = features[4]
+    if zip == '':
+        zip = 0
+    poc = features[5]
+    facility_number = features[6]
+
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query = ("INSERT INTO facilities (FacilityNumber, FacilityName, Address, city, state, zip, POC) "
+                 "VALUES('" + facility_number + "', '" + facility_name + "', '" + address + "', '" + city +
+                 "', '" + state + "', '" + str(zip) + "', '" + poc +
+                 "') ON DUPLICATE KEY UPDATE FacilityName='" + facility_name + "' Address='" + address +
+                 "' city='" + city + "' state='" + state + "' zip='" + zip + "' POC='" + poc + "'")
+        print(query)
+        cursor.execute(query)
+        cnx.commit()
+        cursor.close()
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()

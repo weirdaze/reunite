@@ -1,19 +1,9 @@
 <?php
-	$admin = true;
-	include 'header.php';
-	// this form is going to be for creating a facility
-?>
-<style>
-	body {
-		background-color: #eee;
-	}
-</style>
-<?php
 	session_start();
 	$facility_name = $_GET['facility_name'];
 	include 'config.php';
 
-	$sql = "SELECT FacilityName, Address, POC, Status, city, state, zip, POC from facilities where FacilityName='".$facility_name."'";
+	$sql = "SELECT FacilityNumber FacilityName, Address, POC, Status, city, state, zip, POC from facilities where FacilityName='".$facility_name."'";
 	$result = mysqli_query($db,$sql);
 	$row = $result->fetch_assoc();
 
@@ -24,14 +14,17 @@
 	$city = $row['city'];
 	$state = $row['state'];
 	$zip = $row['zip'];
+	$facility_number = $row['FacilityNumber'];
 ?>
-<form class="formBox pb-3" method="post" action="create_facility.php" name="updatefacility" onsubmit="return validateForm()">
+<form class="formBox pb-3" method="post" action="update_facility.php" name="updatefacility" onsubmit="return validateForm()">
 	<div class="bg-info text-light p-2 mb-3 lead">
 		<div>
 			Update Facility <small><a class="text-warning" href="display_facilities.php"> (View Facilities)</a></small>
 		</div>
 	</div>
-
+	<div class="form-group mx-3">
+		<input type="hidden" name="facility_number" value="<?php echo $facility_number; ?>">
+	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-building"></i></div>
 		<input class="form-control mb-2" type="text" name="facility_name" value="<?php echo $facility_name; ?>" required>
@@ -100,4 +93,3 @@
     	} 
 	}
 </script>
-<?php include 'footer.php'?>
