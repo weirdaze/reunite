@@ -34,6 +34,8 @@ def create_facility(facility):
     city = features[2]
     state = features[3]
     zip = features[4]
+    if zip == '':
+        zip = 0
     status = 'active'
     poc = features[5]
 
