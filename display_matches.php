@@ -2,7 +2,8 @@
 	include 'header.php';
 	include('config.php');
 ?>
-	<div class="col-1">
+<div class="container">
+	<div class="col-1 mb-3">
 		<a href="admintools.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
 	</div>
 	<table class="table">
@@ -24,7 +25,7 @@
 		while($row = $result->fetch_assoc()) {
 			$uid_a = $row['UID_A'];
 			$uid_b = $row['UID_B'];
-			$date_matched = $row['DateMatched'];
+			$date_matched = date("m/d/Y",strtotime($row['DateMatched']));
 			
 			$sql2 = "SELECT FirstName, LastName from person where UID='$uid_a'";
 			$result2 = mysqli_query($db,$sql2);
@@ -40,16 +41,22 @@
 
 ?>
 			<tr>
-				<td><a class="previewMatch text-primary ml-3" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><i class="fa fa-eye"></i></a></td>
+				<td>
+					<a class="previewMatch text-primary ml-3" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><i class="fa fa-eye"></i></a>
+				</td>
 				<td><?php echo $row['Match_ID']; ?></td>
-				<td><?php echo $uid_a_ln.", ".$uid_a_fn." (".$row['UID_A'].")"; ?></td>
-			    <td><?php echo $uid_b_ln.", ".$uid_b_fn." (".$row['UID_B'].")"; ?></td>
+				<td><?php echo "<a class='uid text-primary' data-toggle='tooltip' data-title='".$row['UID_A']."'><i class='far fa-id-badge'></i></a> ".$uid_a_ln.", ".$uid_a_fn; ?></td>
+			    <td><?php echo "<a class='uid text-primary' data-toggle='tooltip' data-title='".$row['UID_B']."'><i class='far fa-id-badge'></i></a> ".$uid_b_ln.", ".$uid_b_fn; ?></td>
 				<td><?php echo $row['Status']; ?></td>
-				<td><?php echo $row['DateMatched']; ?></td>
+				<td><?php echo $date_matched; ?></td>
 			</tr>
 <?php
 		}
 	}
 ?>
 	</table>
+</div>
+<script>
+	$(".uid").tooltip();
+</script>
 <?php include 'footer.php'?>

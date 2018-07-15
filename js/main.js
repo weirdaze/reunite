@@ -87,7 +87,12 @@ $(document).ready(function(){
 			$("#modalSubmit").text("Update Ticket");
 		}
 		var modalsubmit = function(){
-			alert("ticket edit submitted");
+			var ticket_number = $("#ticketNo").data("ticket_number");
+			var update = $("#updates").val();
+			/*console.log(update);*/
+			$.post("update_ticket_status.php",{"ticket_number": ticket_number, "update": update},function(){
+				window.location.href = "display_tickets.php";
+			});
 		}
 		updateContent(".modal-body","manage_ticket.php",{"ticket_id": ticket_id},before,complete,modalsubmit);
 	});
@@ -105,5 +110,19 @@ $(document).ready(function(){
 			alert("facility edit submitted");
 		}
 		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},before,complete,modalsubmit);
+	});
+	$(document).on("click",".changeStatus",function(){
+		var status = $(this).data("status");
+		var ticket_number = $("#ticketNo").data("ticket_number");
+		$.post("change_ticket_status.php",{"status": status, "ticket_number": ticket_number},function(){
+			$("#changeStatus").text("Status: " + status);
+		});
+	});
+	$(document).on("click","#assignMe",function(){
+		var userid = $("#assignMe").data("userid");
+		var ticket_number = $("#ticketNo").data("ticket_number");
+		$.post("change_ticket_agent.php",{"ticket_number": ticket_number},function(){
+			$("#changeAgent").text("Status: " + userid);
+		});
 	});
 });

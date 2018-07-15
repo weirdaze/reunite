@@ -1,8 +1,9 @@
 <?php
 	include 'header.php';
-	include('config.php');
+	include 'config.php';
 ?>
-	<div class="d-flex justify-content-end mb-3">
+<div class="container">
+	<div class="d-flex align-items-center mb-3">
 		<a class="btn btn-secondary ml-2" href="admintools.php"><i class="fa fa-chevron-left"></i> Back</a>
 		<a class="btn btn-info mr-2 ml-auto" href="display_tickets.php"><i class="fa fa-tags"></i> All Tickets</a>
 		<a class="btn btn-info mr-2" href="display_tickets.php?assigned=me"><i class="fa fa-tag"></i> My Tickets</a>
@@ -46,17 +47,26 @@
 			$uid_b = $row2['UID_B'];
 ?>
 			<tr>
-				<td><a class="editTicket text-primary ml-2" data-ticket_id="<?php echo $row['TicketNumber'] ?>"><i class="fa fa-edit"></i></a></td>
+				<td>
+					<a class="editTicket text-primary ml-2" data-ticket_id="<?php echo $row['TicketNumber'] ?>"><i class="fa fa-edit"></i></a>
+				</td>
 				<td><?php echo $row['TicketNumber']; ?></td>
-				<td><a class="previewMatch text-primary mr-2" data-toggle="tooltip" data-title="Preview Match" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row2['UID_A']; ?>" data-uid_b="<?php echo $row2['UID_B']; ?>"><i class="fa fa-eye"></i></a><?php echo $row['Match_ID']; ?></td>
-				<td><?php echo $row['Agent']; ?></td>
-				<td><?php echo $row['Status']; ?></td>
+				<td>
+					<a class="previewMatch text-primary mr-2" data-toggle="tooltip" data-title="Preview Match" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row2['UID_A']; ?>" data-uid_b="<?php echo $row2['UID_B']; ?>"><i class="fa fa-eye"></i></a><?php echo $row['Match_ID']; ?>
+				</td>
+				<td>
+					<?php echo $row['Agent']; ?>
+				</td>
+				<td>
+					<?php echo $row['Status']; ?>
+				</td>
 			</tr>
 <?php
 		}
 	}
 ?>
-	</table>
+		</table>
+</div>
 <script>
 	$(".previewMatch").tooltip();
 </script>
