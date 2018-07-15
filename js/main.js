@@ -122,7 +122,7 @@ $(document).ready(function(){
 		var userid = $("#assignMe").data("userid");
 		var ticket_number = $("#ticketNo").data("ticket_number");
 		$.post("change_ticket_agent.php",{"ticket_number": ticket_number},function(){
-			$("#changeAgent").text("Status: " + userid);
+			$("#changeAgent").text("Assigned to: " + userid);
 		});
 	});
 });

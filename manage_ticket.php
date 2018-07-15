@@ -53,7 +53,7 @@
 		</div>
 		<div class="dropdown">
 		 	<button class="btn btn-secondary dropdown-toggle" role="button" id="changeAgent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    	Assigned: <?php echo $agent; ?>
+		    	Assigned to: <?php echo $agent; ?>
 		  	</button>
 
 		  	<div class="dropdown-menu" aria-labelledby="changeAgent">
