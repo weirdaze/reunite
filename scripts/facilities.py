@@ -29,9 +29,9 @@ def create_facility(facility_name, address, city, state, zip, poc, user_id):
     facility_number = id_generator(size=8)
     status = 'active'
 
-    updates = ("Facility Created. Facility Data: FacilityName='" + facility_name +
-               "', Address='" + address + "', city='" + city + "', state='" + state + "', zip='" + str(zip) +
-               "', POC='" + poc + "'")
+    updates = ("Facility Created. Facility Data: FacilityName=" + facility_name +
+               ", Address=" + address + ", city=" + city + ", state=" + state + ", zip=" + str(zip) +
+               ", POC=" + poc)
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
