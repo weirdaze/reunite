@@ -23,20 +23,15 @@ MariaDB [reunite]> describe facilities;
 '''
 
 
-def create_facility(facility):
+def create_facility(facility_name, address, city, state, zip, poc, user_id):
     # this function takes in the facility string and breaks it up and inputs it into the db
     # the string should be formatted in this manner: 'FacilityName,address,city,state,zip,poc'
     facility_number = id_generator(size=8)
-    features = facility.split(',')
-
-    facility_name = features[0]
-    address = features[1]
-    city = features[2]
-    state = features[3]
-    zip = features[4]
     status = 'active'
-    poc = features[5]
 
+    updates = ("Facility Created. Facility Data: FacilityName='" + facility_name +
+               "', Address='" + address + "', city='" + city + "', state='" + state + "', zip='" + str(zip) +
+               "', POC='" + poc + "'")
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
@@ -58,6 +53,8 @@ def create_facility(facility):
             print(err)
     else:
         cnx.close()
+
+    insert_facility_event(facility_number, updates, user_id)
 
 
 def db_remove_facility(facility_number):
@@ -104,20 +101,12 @@ def db_get_facility_info(facility_number):
     return facility
 
 
-def update_facility(facility):
+def update_facility(facility_name, address, city, state, zip, poc, facility_number, user_id):
     # this function takes in the facility string and breaks it up and inputs it into the db
     # the string should be formatted in this manner: 'FacilityName,address,city,state,zip,poc'
-
-    features = facility.split(',')
-
-    facility_name = features[0]
-    address = features[1]
-    city = features[2]
-    state = features[3]
-    zip = features[4]
-    poc = features[5]
-    facility_number = features[6]
-
+    updates = ("update executed for facility. New Facility Data: FacilityName='" + facility_name +
+               "', Address='" + address + "', city='" + city + "', state='" + state + "', zip='" + str(zip) +
+               "', POC='" + poc + "'")
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
@@ -128,6 +117,35 @@ def update_facility(facility):
                  "') ON DUPLICATE KEY UPDATE FacilityName='" + facility_name + "', Address='" + address +
                  "', city='" + city + "', state='" + state + "', zip='" + str(zip) + "', POC='" + poc + "'")
         print(query)
+        cursor.execute(query)
+        cnx.commit()
+        cursor.close()
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()
+
+    insert_facility_event(facility_number, updates, user_id)
+
+
+def insert_facility_event(facility_number, updates_pre, username):
+    # this function inserts an event in the facility_history table
+    # the event_str should be "TicketNumber,Updates,userid"
+    date_updated = datetime.datetime.now()
+    updates = "facility " + facility_number + "was modified by @" + user_id + ": '" + updates_pre + "'"
+
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query = ("INSERT INTO facility_history (FacilityNumber, userid, Updates, DateUpdated) "
+                 "VALUES('" + facility_number + "', '" + username + "', '" + updates + "', '" + str(date_updated) +
+                 "')")
         cursor.execute(query)
         cnx.commit()
         cursor.close()
