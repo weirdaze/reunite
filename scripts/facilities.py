@@ -132,7 +132,7 @@ def insert_facility_event(facility_number, updates_pre, user_id):
     # this function inserts an event in the facility_history table
     # the event_str should be "TicketNumber,Updates,userid"
     date_updated = datetime.datetime.now()
-    updates = "facility " + facility_number + "was modified by @" + user_id + ": " + updates_pre
+    updates = "facility " + facility_number + " was modified by @" + user_id + ": " + updates_pre
 
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
