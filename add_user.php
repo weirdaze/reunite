@@ -21,22 +21,22 @@
 	<div class="bg-info text-light p-2 mb-3 lead">Register New User</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
-		<input class="form-control mb-2" type="text" name="first_name" placeholder="First Name" required>
+		<input class="form-control mb-2" type="text" name="first_name" placeholder="First Name" pattern="[A-Za-z -]+" required>
 		<small><p class="bg-warning" id="first_name1"></p></small>
 	</div>
     <div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
-		<input class="form-control mb-2" type="text" name="middle_name" placeholder="Middle Name">
+		<input class="form-control mb-2" type="text" name="middle_name" placeholder="Middle Name" pattern="[A-Za-z -]+">
 		<small><p class="bg-warning" id="middle_name1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
-		<input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name" required>
+		<input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name" pattern="[A-Za-z -]+" required>
 		<small><p class="bg-warning" id="last_name1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-id-card"></i></div>
-		<input class="form-control mb-2" type="text" name="maternal_last_name" placeholder="Second Last Name">
+		<input class="form-control mb-2" type="text" name="maternal_last_name" placeholder="Second Last Name" pattern="[A-Za-z -]+">
 		<small><p class="bg-warning" id="maternal_last_name1"></p></small>
 	</div>
 	<label class="mx-3">Date of Birth:</label>
@@ -105,12 +105,12 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-building"></i></div>
-		<input class="form-control mb-2" type="text" name="facility_uid" placeholder="ID from current facility">
+		<input class="form-control mb-2" type="text" name="facility_uid" placeholder="ID from current facility" pattern="[A-Za-z0-9 &#.-]+">
 		<small><p class="bg-warning" id="facility_uid1"></p></small>
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-map-marker-alt"></i></div>
-		<input class="form-control mb-2" type="text" name="entry_point" placeholder="Point of Entry into USA">
+		<input class="form-control mb-2" type="text" name="entry_point" placeholder="Point of Entry into USA" pattern="[A-Za-z0-9 &#.-,]+">
 		<small><p class="bg-warning" id="entry_point1"></p></small>
 	</div>
 	<label class="mx-3">Date Detained:</label>
@@ -120,7 +120,7 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
-		<input class="form-control mb-2" type="text" name="rel1" placeholder="Relative Full Name (Relation)">
+		<input class="form-control mb-2" type="text" name="rel1" placeholder="Relative Full Name (Relation)" pattern="[A-Za-z -,)(]+">
 		<p id="rel1"></p>
 	</div>
 	<div class="d-flex align-items-center justify-content-end">
