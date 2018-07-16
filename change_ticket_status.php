@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$ticket_number = $_POST['ticket_number'];
 	$userid = $_SESSION['userid'];
 	$status = $_POST['status']

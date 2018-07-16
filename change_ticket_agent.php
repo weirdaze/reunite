@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$ticket_number = $_POST['ticket_number'];
 	$userid = $_SESSION['userid'];
 	// echo "this is the user ID:".$userid;
