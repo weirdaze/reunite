@@ -59,7 +59,7 @@
 	</div>
 	<div class="form-group mx-3">
 		<div class="input-icon"><i class="fa fa-user"></i></div>
-		<input class="form-control mb-2" type="text" name="poc" placeholder="Notes" value="<?php echo $poc; ?>" pattern="[0-9A-Za-z :,/?&)(.#-]+">
+		<input class="form-control mb-2" type="text" name="poc" placeholder="Notes" value="<?php echo $poc; ?>" pattern="[0-9A-Za-z :,!@%*/?&)(.#-]+">
 		<small><p class="bg-warning" id="poc1"></p></small>
 	</div>
 	<div class="form-group mx-3">
