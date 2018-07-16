@@ -143,6 +143,11 @@ a:hover {
 .person:active {
 	box-shadow: 0 0 7px 3px #6C757D;
 }
+#loadMore {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+}
 
 footer {
 	margin-top: auto;
@@ -159,10 +164,9 @@ footer {
 	height: 100%;
 }
 #spinner {
-	position: absolute;
-	top: 25%;
-	left: 50%;
-	margin-left: -3.5em;
+	width: 100%;
+	margin-top: 15px;
+	text-align: center;
 }
 @media screen and (min-width: 768px){
 	.modal-dialog {

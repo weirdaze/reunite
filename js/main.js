@@ -8,7 +8,7 @@ $(document).ready(function(){
 			$("#selectPersonType").slideUp(500);
 			$("#searchInput").attr("data-gender",gender);
 		}
-		updateContent("#results","includes/results.php",{"gender": gender, "search_term": search_term},"",complete,"");
+		updateContent("#results","includes/results.php",{"gender": gender, "search_term": search_term},"overwrite","",complete,"");
 	});
 	$(document).on("click",".showUserSelect",function(){
 		$("#selectPersonType").slideDown(500);
@@ -49,19 +49,25 @@ $(document).ready(function(){
 				}
 			});
 		}
-		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},before,complete,modalsubmit);
+		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},"overwrite",before,complete,modalsubmit);
 	});
 	$(document).on("keyup","#searchInput",function(){
 		clearTimeout(timeout);
 		timeout = setTimeout(function(){
-			var gender = $("#searchInput").data("gender");
+			var gender = $("#searchInput").attr("data-gender");
 			$(".showUserSelect").show();
 			var complete = function() {
 				$("#selectPersonType").slideUp(500);
 			}
-			updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val()},"",complete,"");
+			updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val()},"overwrite","",complete,"");
 		},1000);
-		
+	});
+
+	$(document).on("click","#loadMore",function(){
+		var gender = $("#searchInput").attr("data-gender");
+		var page = $(this).attr("data-page");
+		$(this).remove();
+		updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val(), "page": page},"append","","","");
 	});
 	$(document).on("click",".previewMatch",function(){
 		var match_id = $(this).data("match_id");
@@ -74,7 +80,7 @@ $(document).ready(function(){
 		var complete = function(){
 			$(".modal-title").html("Match ID: " + match_id);
 		}
-		updateContent(".modal-body","match_info.php",{"uid_a": uid_a, "uid_b": uid_b},before,complete,"");
+		updateContent(".modal-body","match_info.php",{"uid_a": uid_a, "uid_b": uid_b},"overwrite",before,complete,"");
 	});
 	$(document).on("click",".editTicket",function(){
 		var ticket_id = $(this).data("ticket_id");
@@ -95,7 +101,7 @@ $(document).ready(function(){
 				window.location.href = "display_tickets.php";
 			});
 		}
-		updateContent(".modal-body","manage_ticket.php",{"ticket_id": ticket_id},before,complete,modalsubmit);
+		updateContent(".modal-body","manage_ticket.php",{"ticket_id": ticket_id},"overwrite",before,complete,modalsubmit);
 	});
 	$(document).on("click",".editFacility",function(){
 		var facility_name = $(this).data("facility_name");
@@ -110,7 +116,7 @@ $(document).ready(function(){
 		var modalsubmit = function(){
 			alert("facility edit submitted");
 		}
-		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},before,complete,modalsubmit);
+		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},"overwrite",before,complete,modalsubmit);
 	});
 	$(document).on("click",".changeStatus",function(){
 		var status = $(this).data("status");

@@ -20,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="results">
+	<div id="results" class="d-flex align-items-center justify-content-center flex-wrap">
 		
 	</div>
 </div>

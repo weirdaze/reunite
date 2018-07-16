@@ -10,6 +10,8 @@
 	$last_name_q = '';
 	$maternal_last_name_q = '';
 	$dob_q = '';
+	$page = 0;
+	$limit = $page + 20;
 
 	include('config.php');
 
@@ -17,7 +19,7 @@
 	$where = " where Type='child' AND";
 	$where_child = " where Type='child' ";
 	$or = ' OR ';
-	$orderBy = "order by LastName";
+	$orderBy = "order by LastName LIMIT $page,$limit";
 	$count = 0;
 
 	if ($first_name != ''){
