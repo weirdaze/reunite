@@ -104,19 +104,14 @@ def db_get_facility_info(facility_number):
 def update_facility(facility_name, address, city, state, zip, poc, facility_number, user_id):
     # this function takes in the facility string and breaks it up and inputs it into the db
     # the string should be formatted in this manner: 'FacilityName,address,city,state,zip,poc'
-    updates = ("update executed for facility. New Facility Data: FacilityName='" + facility_name +
-               "', Address='" + address + "', city='" + city + "', state='" + state + "', zip='" + str(zip) +
-               "', POC='" + poc + "'")
+    updates = ("update executed for facility. New Facility Data: FacilityName=" + facility_name +
+               ", Address=" + address + ", city=" + city + ", state=" + state + ", zip=" + str(zip) +
+               ", POC=" + poc)
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
-        query = ("INSERT INTO facilities (FacilityNumber, FacilityName, Address, city, state, zip, POC) "
-                 "VALUES('" + facility_number + "', '" + facility_name + "', '" + address + "', '" + city +
-                 "', '" + state + "', '" + str(zip) + "', '" + poc +
-                 "') ON DUPLICATE KEY UPDATE FacilityName='" + facility_name + "', Address='" + address +
-                 "', city='" + city + "', state='" + state + "', zip='" + str(zip) + "', POC='" + poc + "'")
-        print(query)
+        query = ("INSERT INTO facilities (FacilityNumber, FacilityName, Address, city, state, zip, POC) VALUES('" + facility_number + "', '" + facility_name + "', '" + address + "', '" + city + "', '" + state + "', '" + str(zip) + "', '" + poc + "') ON DUPLICATE KEY UPDATE FacilityName='" + facility_name + "', Address='" + address + "', city='" + city + "', state='" + state + "', zip='" + str(zip) + "', POC='" + poc + "'")
         cursor.execute(query)
         cnx.commit()
         cursor.close()
@@ -133,18 +128,18 @@ def update_facility(facility_name, address, city, state, zip, poc, facility_numb
     insert_facility_event(facility_number, updates, user_id)
 
 
-def insert_facility_event(facility_number, updates_pre, username):
+def insert_facility_event(facility_number, updates_pre, user_id):
     # this function inserts an event in the facility_history table
     # the event_str should be "TicketNumber,Updates,userid"
     date_updated = datetime.datetime.now()
-    updates = "facility " + facility_number + "was modified by @" + user_id + ": '" + updates_pre + "'"
+    updates = "facility " + facility_number + "was modified by @" + user_id + ": " + updates_pre
 
     try:
         cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
         query = ("INSERT INTO facility_history (FacilityNumber, userid, Updates, DateUpdated) "
-                 "VALUES('" + facility_number + "', '" + username + "', '" + updates + "', '" + str(date_updated) +
+                 "VALUES('" + facility_number + "', '" + user_id + "', '" + updates + "', '" + str(date_updated) +
                  "')")
         cursor.execute(query)
         cnx.commit()
