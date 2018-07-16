@@ -84,7 +84,8 @@ $(document).ready(function(){
 		}
 		var complete = function(){
 			$(".modal-title").html("Ticket No. " + ticket_id);
-			$("#modalSubmit").text("Update Ticket");
+			$("#modalSubmit").text("Done");
+			$("#modalBack").hide();
 		}
 		var modalsubmit = function(){
 			var ticket_number = $("#ticketNo").data("ticket_number");
@@ -123,6 +124,15 @@ $(document).ready(function(){
 		var ticket_number = $("#ticketNo").data("ticket_number");
 		$.post("change_ticket_agent.php",{"ticket_number": ticket_number},function(){
 			$("#changeAgent").text("Assigned to: " + userid);
+		});
+	});
+	$(document).on("click","#saveNotes",function(){
+		var ticket_number = $("#ticketNo").data("ticket_number");
+		var update = $("#updates").val();
+		$("#ticketHistory").html("<div class='d-flex align-items-center justify-content-center'><i class='fa fa-spinner fa-spin fa-3x mt-3'></i></div>");
+		$.get("includes/tickethistory.php",{"ticket_number": ticket_number, "update_notes": "1", "update": update},function(data){
+			console.log(data);
+			$("#ticketHistory").html(data);
 		});
 	});
 });

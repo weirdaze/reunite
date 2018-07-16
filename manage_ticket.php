@@ -82,33 +82,19 @@
 	</div>
 
 	<h3>Ticket Notes</h3>
-	<div class="form-group mr-3">
-		<textarea class="form-control" name="update" id="updates"></textarea>
+	<div class="form-group">
+		<textarea class="form-control mb-3" name="update" id="updates"></textarea>
+		
+	</div>
+	<div class="text-right">
+		<button id="saveNotes" class="btn btn-primary">Save Notes</button>
 	</div>
 
-	<h3>Ticket History</h3>
-	<ul class="list-group">
-<?php
-		
-	$sql5 = "SELECT Updates, DateUpdated, userid from ticket_history where TicketNumber='".$ticket_number."' ORDER BY DateUpdated DESC";
 
-	$result5 = mysqli_query($db,$sql5);
-
-	if ($result5->num_rows > 0) {
-		while($row5 = $result5->fetch_assoc()) {
-?>
-		<li class="list-group-item d-flex aling-items-center">
-			<span><?php echo $row5['Updates']; ?></span>
-			<span class="ml-auto"><?php echo $row5['DateUpdated']."(".$row5['userid'].")"; ?></span>
-		</li>
-<?php
-		}
-	}
-	else {
-		echo "<li class='list-group-item'>No Ticket History</li>";
-	}
-?>
-	</ul>
+	<div id="ticketHistory">
+		<?php include 'includes/tickethistory.php' ?>
+	</div>
+	
 <script>
 	$(".uid").tooltip();
 </script>

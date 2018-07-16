@@ -16,7 +16,7 @@
 						
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+						<button id="modalBack" type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
 						<button id="modalSubmit" type="button" class="btn btn-primary" data-claim_type="adult">Submit</button>
 					</div>
 				</div>
