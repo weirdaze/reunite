@@ -20,7 +20,7 @@
 				</a>
 				<a class="list-group-item d-flex align-items-center" href="facility.php">
 					<span class="menuIcon"><i class="fa fa-building"></i></span>
-					<span class="menuText">Create Facility</span>
+					<span class="menuText">Manage Facilities</span>
 				</a>
 				<a class="list-group-item d-flex align-items-center" href="display_tickets.php">
 					<span class="menuIcon"><i class="fa fa-file-alt"></i></span>
