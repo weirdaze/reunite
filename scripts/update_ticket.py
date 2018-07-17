@@ -7,3 +7,5 @@ update = sys.argv[3]
 
 if update != '':
     insert_history_event(ticket_number, update, userid)
+else:
+    print ''
