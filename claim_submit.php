@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
     $uid_a = $_POST["uid_a"];
 	$uid_b = $_POST["uid_b"];
 	$user_id = $_SESSION["userid"];
