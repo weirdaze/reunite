@@ -87,8 +87,10 @@ def db_get_ticket(match_id):
             print(err)
     else:
         cnx.close()
-    print "this is the ticket number: " + str(ticket_number)
-    return str(ticket_number)
+    if ticket_number != '':
+        return ticket_number[0]
+    else:
+        return ticket_number
 
 
 def assign_ticket(ticket_number, admin_username, userid):
