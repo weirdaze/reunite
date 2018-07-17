@@ -119,8 +119,8 @@ def db_get_match_id(uid_a, uid_b):
             print(err)
     else:
         cnx.close()
-    print "db_get_match_id returns :" + str(match_id[0])
-    return str(match_id[0])
+    print "db_get_match_id returns :" + match_id[0]
+    return str(match_id)
 
 
 def submit_claim(uid_a, uid_b, user_id, status='claimed'):
