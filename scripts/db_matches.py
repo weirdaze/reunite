@@ -123,7 +123,7 @@ def db_get_match_id(uid_a, uid_b):
     return str(match_id)
 
 
-def submit_claim(uid_a, uid_b, status='claimed'):
+def submit_claim(uid_a, uid_b, user_id, status='claimed'):
     # this function gets kicked of in the sequence of events where someone clicks the claim button
     # first generate the match_id
     there_is_match = db_get_match_id(uid_a, uid_b)
@@ -138,7 +138,7 @@ def submit_claim(uid_a, uid_b, status='claimed'):
         match = uid_a + "," + uid_b + "," + status + "," + match_id
         db_add_update_match(match)
         updates = "created by " + uid_a + " on the app"
-        tickets.create_ticket(match_id, "new", updates)
+        tickets.create_ticket(match_id, "new", updates, user_id)
         match_var = uid_a + "," + uid_b
         update_claiming(match_var)
         return db_get_match_id(uid_a, uid_b)

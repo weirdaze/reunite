@@ -37,7 +37,7 @@ MariaDB [reunite]> describe ticket_history;
 '''
 
 
-def create_ticket(match_id, status, updates):
+def create_ticket(match_id, status, updates, user_id):
     # this function takes in the Match_ID, status, and updates and creates
     # a new ticket when a "potential" match has been identified or when someone hits the claim button
     ticket_number = id_generator(size=11)
@@ -63,6 +63,8 @@ def create_ticket(match_id, status, updates):
                 print(err)
         else:
             cnx.close()
+        updates = "@"+ user_id + " created ticket " + ticket_number + " for match-id " + match_id
+        insert_history_event(ticket_number, updates, user_id)
 
 
 def db_get_ticket(match_id):
@@ -109,11 +111,11 @@ def assign_ticket(ticket_number, admin_username, userid):
             print(err)
     else:
         cnx.close()
-    update = "@" + userid + " assigned the ticket to @" + admin_username
-    insert_history_event(ticket_number + "," + update + "," + userid)
+    updates = "@" + userid + " assigned the ticket to @" + admin_username
+    insert_history_event(ticket_number, updates, userid)
 
 
-def change_status(ticket_number, status, userid):
+def change_status(ticket_number, status, user_id):
     # this changes the ticket status and enters the event
 
     try:
@@ -133,17 +135,13 @@ def change_status(ticket_number, status, userid):
             print(err)
     else:
         cnx.close()
-    update = "@" + userid + " changed status to " + status
-    insert_history_event(ticket_number + "," + update + "," + userid)
+    updates = "@" + user_id + " changed status to " + status
+    insert_history_event(ticket_number, updates, user_id)
 
 
-def insert_history_event(event_str):
+def insert_history_event(ticket_number, updates, user_id):
     # this function inserts an event in the ticket_history table
     # the event_str should be "TicketNumber,Updates,userid"
-    event = event_str.split(',')
-    ticket_number = event[0]
-    updates = event[1]
-    username = event[2]
     date_updated = datetime.datetime.now()
 
     try:
@@ -151,7 +149,7 @@ def insert_history_event(event_str):
                                       host=appollo.dbhostname, database=appollo.dbname)
         cursor = cnx.cursor()
         query = ("INSERT INTO ticket_history (TicketNumber, userid, Updates, DateUpdated) "
-                 "VALUES('" + ticket_number + "', '" + username + "', '" + updates + "', '" + str(date_updated) +
+                 "VALUES('" + ticket_number + "', '" + user_id + "', '" + updates + "', '" + str(date_updated) +
                  "')")
         cursor.execute(query)
         cnx.commit()
