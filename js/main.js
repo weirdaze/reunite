@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	var timeout = 0;
+	//load results based on gender
 	$(document).on("click",".selectPerson",function(){
 		var gender = $(this).data("gender");
 		var search_term = $("#searchInput").val();
@@ -10,10 +11,12 @@ $(document).ready(function(){
 		}
 		updateContent("#results","includes/results.php",{"gender": gender, "search_term": search_term},"overwrite","",complete,"");
 	});
+	//show the gender options
 	$(document).on("click",".showUserSelect",function(){
 		$("#selectPersonType").slideDown(500);
 		$(this).hide();
 	});
+	//open modal to view additional information about a child or adult and claim as self or parent
 	$(document).on("click",".person, .child",function(){
 		var child = $(this).hasClass("child");
 		var uid = $(this).data("uid");
@@ -51,6 +54,7 @@ $(document).ready(function(){
 		}
 		updateContent(".modal-body","includes/person.php",{"uid": uid, "gender": gender},"overwrite",before,complete,modalsubmit);
 	});
+	//reload results based on search
 	$(document).on("keyup","#searchInput",function(){
 		clearTimeout(timeout);
 		timeout = setTimeout(function(){
@@ -62,13 +66,14 @@ $(document).ready(function(){
 			updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val()},"overwrite","",complete,"");
 		},1000);
 	});
-
+	//append more results
 	$(document).on("click","#loadMore",function(){
 		var gender = $("#searchInput").attr("data-gender");
 		var page = $(this).attr("data-page");
 		$(this).remove();
 		updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val(), "page": page},"append","","","");
 	});
+	//open modal to preview a match
 	$(document).on("click",".previewMatch",function(){
 		var match_id = $(this).data("match_id");
 		var uid_a = $(this).data("uid_a");
@@ -82,6 +87,7 @@ $(document).ready(function(){
 		}
 		updateContent(".modal-body","match_info.php",{"uid_a": uid_a, "uid_b": uid_b},"overwrite",before,complete,"");
 	});
+	//open modal dialog and reload display_tickets to reflect any changes made in dialog
 	$(document).on("click",".editTicket",function(){
 		var ticket_id = $(this).data("ticket_id");
 		var before = function(){
@@ -103,6 +109,7 @@ $(document).ready(function(){
 		}
 		updateContent(".modal-body","manage_ticket.php",{"ticket_id": ticket_id},"overwrite",before,complete,modalsubmit);
 	});
+	//open modal dialog and update facility info
 	$(document).on("click",".editFacility",function(){
 		var facility_name = $(this).data("facility_name");
 		var before = function(){
@@ -118,6 +125,7 @@ $(document).ready(function(){
 		}
 		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},"overwrite",before,complete,modalsubmit);
 	});
+	//change status to selected dropdown item
 	$(document).on("click",".changeStatus",function(){
 		var status = $(this).data("status");
 		var ticket_number = $("#ticketNo").data("ticket_number");
@@ -125,6 +133,7 @@ $(document).ready(function(){
 			$("#changeStatus").text("Status: " + status);
 		});
 	});
+	//change agent assignment to current userid
 	$(document).on("click","#assignMe",function(){
 		var userid = $("#assignMe").data("userid");
 		var ticket_number = $("#ticketNo").data("ticket_number");
@@ -132,6 +141,7 @@ $(document).ready(function(){
 			$("#changeAgent").text("Assigned to: " + userid);
 		});
 	});
+	//update ticket history and save notes on button click
 	$(document).on("click","#saveNotes",function(){
 		var ticket_number = $("#ticketNo").data("ticket_number");
 		var update = $("#updates").val();
@@ -140,5 +150,54 @@ $(document).ready(function(){
 			console.log(data);
 			$("#ticketHistory").html(data);
 		});
+	});
+	//update matches or tickets table with selected page
+	$(document).on("click","#matchesPagination .page-link, #ticketsPagination .page-link",function(e){
+		e.preventDefault();
+
+		var item = $(this).parent();
+		var container = item.parents("nav");
+		var page = 1;
+
+		if(item.is("#prevPage,#nextPage")){
+			var currPage = parseInt($(".page-item.active").attr("data-page"));
+			item.is("#prevPage") ? page = currPage - 1 : page = currPage + 1;
+		}
+		else {
+			page = $(this).parent().attr("data-page");
+		}
+
+		/*console.log(currPage);*/
+		
+		var totalPages = container.data("total");
+
+		var complete = function(){
+			$(".page-item").removeClass("active");
+			$(".page-item[data-page='"+page+"']").addClass("active");
+			if(totalPages != 1){
+				if(page == 1){
+					$("#prevPage").addClass("disabled");
+					$("#nextPage").removeClass("disabled");
+				}
+				else if(page == totalPages){
+					$("#nextPage").addClass("disabled");
+					$("#prevPage").removeClass("disabled");
+				}
+				else {
+					$("#nextPage, #prevPage").removeClass("disabled");
+				}
+			}
+			else {
+				$("#prevPage, #nextPage").addClass("disabled");
+			}
+			
+		}
+		if(container.is("#matchesPagination")){
+			updateContent("#matches","includes/matches.php",{"page": page},"overwrite","",complete,"");
+		}
+		else {
+			var assigned_to = container.attr("data-assigned_to");
+			updateContent("#tickets","includes/tickets.php",{"page": page, "assigned_to": assigned_to},"overwrite","",complete,"");
+		}
 	});
 });

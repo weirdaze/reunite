@@ -1,62 +1,73 @@
 <?php
 	include 'header.php';
-	include('config.php');
-?>
-<div class="container">
-	<div class="col-1 mb-3">
-		<a href="admintools.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
-	</div>
-	<table class="table">
-		<tr>
-			<th>Preview</th>
-			<th>Match ID</th>
-			<th>Claimer</th>
-			<th>Claimed</th>
-			<th>Status</th>
-			<th>Date Created</th>
-		</tr>
-<?php
-		
-	$sql = "SELECT Match_ID, UID_A, UID_B, DateMatched, Status from matches where Status<>'closed' ORDER BY DateMatched DESC";
+	include 'config.php';
+
+	$sql = "SELECT * from matches where Status<>'closed'";
 
 	$result = mysqli_query($db,$sql);
 
-	if ($result->num_rows > 0) {
-		while($row = $result->fetch_assoc()) {
-			$uid_a = $row['UID_A'];
-			$uid_b = $row['UID_B'];
-			$date_matched = date("m/d/Y",strtotime($row['DateMatched']));
-			
-			$sql2 = "SELECT FirstName, LastName from person where UID='$uid_a'";
-			$result2 = mysqli_query($db,$sql2);
-			$row2 = $result2->fetch_assoc();
-			$uid_a_fn = $row2['FirstName'];
-			$uid_a_ln = $row2['LastName'];
-
-			$sql3 = "SELECT FirstName, LastName from person where UID='$uid_b'";
-			$result3 = mysqli_query($db,$sql3);
-			$row3 = $result3->fetch_assoc();
-			$uid_b_fn = $row3['FirstName'];
-			$uid_b_ln = $row3['LastName'];
-
-?>
-			<tr>
-				<td>
-					<a class="previewMatch text-primary ml-3" data-match_id="<?php echo $row['Match_ID']; ?>" data-uid_a="<?php echo $row['UID_A']; ?>" data-uid_b="<?php echo $row['UID_B']; ?>"><i class="fa fa-eye"></i></a>
-				</td>
-				<td><?php echo $row['Match_ID']; ?></td>
-				<td><?php echo "<a class='uid text-primary' data-toggle='tooltip' data-title='".$row['UID_A']."'><i class='far fa-id-badge'></i></a> ".$uid_a_ln.", ".$uid_a_fn; ?></td>
-			    <td><?php echo "<a class='uid text-primary' data-toggle='tooltip' data-title='".$row['UID_B']."'><i class='far fa-id-badge'></i></a> ".$uid_b_ln.", ".$uid_b_fn; ?></td>
-				<td><?php echo $row['Status']; ?></td>
-				<td><?php echo $date_matched; ?></td>
-			</tr>
-<?php
-		}
+	$pages = $result->num_rows;
+	$limit = 10;
+	$pages = ceil($pages/$limit);
+	// echo $pages;
+	$active = "";
+	$disableNext = "";
+	if($pages == 1){
+		$disableNext = "disabled";
 	}
 ?>
+<div class="container">
+	<div class="d-flex align-items-center mb-3">
+		<a href="admintools.php" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Back</a>
+		<nav id="matchesPagination" class="ml-auto" data-total="<?php echo $pages; ?>">
+			<ul class="pagination pagination-sm mb-0">
+				<li id="prevPage" class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+				<?php
+					for($i=1; $i<=$pages; $i++){
+						if($i == 1){
+							$active = "active";
+						}
+						else {
+							$active = "";
+						}
+
+						if($pages >= 10){
+							if($i <= 3 || $i > ($pages-3)) {
+				?>
+								<li class="page-item <?php echo $active; ?>" data-page="<?php echo $i; ?>"><a class="page-link" href="#"><?php echo $i; ?></a></li>
+				<?php				
+							}
+							else if($i == 4) {
+				?>
+								<li class="page-item disabled"><a class="page-link"><i class='fa fa-ellipsis-h'></i></a></li>
+				<?php	
+							}
+						}
+						else {
+				?>
+							<li class="page-item <?php echo $active; ?>" data-page="<?php echo $i; ?>"><a class="page-link" href="#"><?php echo $i; ?></a></li>
+				<?php
+						}
+					}
+				?>
+				<li id="nextPage" class="page-item <?php echo $disableNext; ?>"><a class="page-link" href="#">&raquo;</a></li>
+			</ul>
+		</nav>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Preview</th>
+				<th>Match ID</th>
+				<th>Claimer</th>
+				<th>Claimed</th>
+				<th>Status</th>
+				<th>Date Created</th>
+			</tr>
+		</thead>
+		<tbody id="matches">
+			<?php include 'includes/matches.php' ?>
+		</tbody>
 	</table>
 </div>
-<script>
-	$(".uid").tooltip();
-</script>
 <?php include 'footer.php'?>
