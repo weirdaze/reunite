@@ -17,6 +17,6 @@
 	];
 
 
-	$response = $client->index($params);
+	$response = $client->search($params);
 	print_r($response);
 ?>
