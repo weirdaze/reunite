@@ -37,7 +37,7 @@
 		}
 
 		$exec_str = "python /var/www/html/reunite/scripts/add_user.py '".$first_name.",".$middle_name.",".$last_name.",".$dob.",".$maternal_last_name.",".$sex.",".$entry_point.",".$country.",".$last_facility.",".$current_facility.",".$relatives.",".$date_detained.",".$status.",".$claiming.",".$type.",".$video.",".$photo.",".$facility_uid.",".$admin_username.",".$uid."'";
-		echo $exec_str;
+		// echo $exec_str;
 		$result = exec($exec_str);
 		echo "user added result: " . $result;
 	}
