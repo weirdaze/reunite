@@ -11,7 +11,7 @@
     'body' => [
         'query' => [
             'match' => [
-                'firstname' => '$search_string'
+                'firstname' => "'". $search_string . "'"
             	]
         	]
     	]
