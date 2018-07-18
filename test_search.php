@@ -7,8 +7,15 @@
 	$params = [
     'index' => 'person',
     'type' => 'person',
-    'body' => ['firstname' => 'jose']
+    'body' => [
+        'query' => [
+            'match' => [
+                'firstname' => 'jose'
+            	]
+        	]
+    	]
 	];
+
 
 	$response = $client->index($params);
 	print_r($response);
