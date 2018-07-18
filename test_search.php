@@ -1,5 +1,5 @@
 <?php
-	$search_string = $_POST['search_string']
+	$search_string = $_POST['search_string'];
 	require 'vendor/autoload.php';
 
 	use Elasticsearch\ClientBuilder;
@@ -11,7 +11,7 @@
     'body' => [
         'query' => [
             'match' => [
-                'firstname' => $search_string
+                'firstname' => '$search_string'
             	]
         	]
     	]
