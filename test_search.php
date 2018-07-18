@@ -20,6 +20,7 @@
 
 	$response = $client->search($params);
 	$myArray = json_decode($response, false);
+	print_r($myArray);
 	print ($myArray['hits']['hits'][0]['firstname']);
 	print("hello");
 	print_r($response);
