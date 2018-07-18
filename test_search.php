@@ -19,5 +19,5 @@
 
 
 	$response = $client->search($params);
-	print_r($response['firstname']);
+	print_r($response);
 ?>
