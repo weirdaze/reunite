@@ -5,25 +5,21 @@
 	use Elasticsearch\ClientBuilder;
 
 	$client = ClientBuilder::create()->build();
-	$params = [
-    'index' => 'person',
-    'type' => 'person',
-    'body' => [
-        'query' => [
-            'bool' => [
+	$response = $client->search([
+		'body' => [
+		    'query' => [
+		        'bool' => [
 			    'should' => [
-			        'match' => ['firstname' => "'".$search_string."'"],
-		        	]
-		        'must' => [
-			        'match' => ['type' => 'adult'],
-		        	]
-		     	]
-		  	]
-    	]
-	];
+			        'match' => ['firstname' => $search_string],
+					'match' => ['lastname' => $search_string]
+		        ]
+		    ]
+                ]
+	    ]
+	]);
 
 
-	$response = $client->search($params);
+	//$response = $client->search($quy);
 	$hits = count($response['hits']['hits']);
 	$result = null;
 	$i = 0;
