@@ -8,8 +8,8 @@
 	$params = array();
 	$params['index'] = 'person';
 	$params['type'] = 'person';
-	$params['body']['query']['match']['firstname'] = $search_string;
-
+	//$params['body']['query']['match']['firstname'] = $search_string;
+	$params['body']['query']['bool']['must'][]['match']['firstname'] = $search_string;
 
 	$response = $client->search($params);
 	$hits = count($response['hits']['hits']);
