@@ -11,8 +11,8 @@
 	//$params['body']['query']['match']['firstname'] = $search_string;
 	//$params['body']['query']['bool']['should'][]['match']['firstname'] = $search_string;
 	$params['body']['query']['filtered']['filter']['and'][]['term']['firstname'] = $search_string;
-	$params['body']['query']['filtered']['filter']['and'][]['term']['type'] = 'adult';
-	
+	//$params['body']['query']['filtered']['filter']['and'][]['term']['type'] = 'adult';
+
 	$response = $client->search($params);
 	$hits = count($response['hits']['hits']);
 	$result = null;
