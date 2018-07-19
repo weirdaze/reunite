@@ -13,7 +13,7 @@
 	//$params['body']['query']['bool']['filter']['and'][]['term']['firstname'] = $search_string;
 	//$params['body']['query']['bool']['filter']['and'][]['term']['type'] = 'adult';
 	$params['body']['query']['query_string']['default_field'] = "*";
-	$params['body']['query']['query_string']['query'] = $search_string;
+	$params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
 
 	$response = $client->search($params);
 	$hits = count($response['hits']['hits']);
@@ -25,7 +25,7 @@
 		$i++;
 	}
 	foreach ($result as $key => $value) {
-		echo $value['firstname'] . "<br>";
+		echo $value['firstname'] . " " . $value['lastname'] . " " . $value['type'] . "<br>";
 	}
 
 	/*$myData = json_decode($response);
