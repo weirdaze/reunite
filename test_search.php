@@ -13,7 +13,6 @@
             'bool' => [
 			    'should' => [
 			        'match' => ['firstname' => "'".$search_string."'"],
-					'match' => ['lastname' => "'".$search_string]."'"]
 		        	]
 		     	]
 		  	]
