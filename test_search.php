@@ -19,9 +19,21 @@
 
 
 	$response = $client->search($params);
-	$myData = json_decode($response);
+	$hits = count($response['hits']['hits']);
+	$result = null;
+	$i = 0;
+	 
+	while ($i < $hits) {
+		$result[$i] = $response['hits']['hits'][$i]['_source'];
+		$i++;
+	}
+	foreach ($result as $key => $value) {
+		echo $value['firstname'] . "<br>";
+	}
+
+	/*$myData = json_decode($response);
 	foreach ($myData->hits->hits as $result) {
 		echo $result->_source->firstname;
-	}
-	print_r($response);
+	}*/
+	// print_r($response);
 ?>
