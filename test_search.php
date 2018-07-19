@@ -13,7 +13,9 @@
             'bool' => [
 			    'should' => [
 			        'match' => ['firstname' => "'".$search_string."'"],
-			        'match' => ['lastname' => "'".$search_string."'"],
+		        	]
+		        'must' => [
+			        'match' => ['type' => 'adult'],
 		        	]
 		     	]
 		  	]
