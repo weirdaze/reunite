@@ -12,7 +12,7 @@
 	//$params['body']['query']['bool']['should'][]['match']['firstname'] = $search_string;
 	//$params['body']['query']['bool']['filter']['and'][]['term']['firstname'] = $search_string;
 	//$params['body']['query']['bool']['filter']['and'][]['term']['type'] = 'adult';
-	$params['body']['query']['query_string']['default_field'] = "firstname";
+	$params['body']['query']['query_string']['default_field'] = "*";
 	$params['body']['query']['query_string']['query'] = $search_string;
 
 	$response = $client->search($params);
