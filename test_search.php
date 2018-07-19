@@ -10,10 +10,16 @@
     'type' => 'person',
     'body' => [
         'query' => [
-            'match' => [
-                'country' => "'". $search_string . "'"
-            	]
-        	]
+            'bool' => [
+			    'should' => [
+			        'match' => ['firstname' => $search_string],
+					'match' => ['lastname' => $search_string]
+		        	]
+		        'must' => [
+			        'match' => ['type' => 'adult']
+		        	]
+		     	]
+		  	]
     	]
 	];
 
