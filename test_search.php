@@ -10,8 +10,9 @@
 	$params['type'] = 'person';
 	//$params['body']['query']['match']['firstname'] = $search_string;
 	//$params['body']['query']['bool']['should'][]['match']['firstname'] = $search_string;
-	$params['body']['query']['bool']['filter']['and'][]['term']['firstname'] = $search_string;
-	$params['body']['query']['bool']['filter']['and'][]['term']['type'] = 'adult';
+	//$params['body']['query']['bool']['filter']['and'][]['term']['firstname'] = $search_string;
+	//$params['body']['query']['bool']['filter']['and'][]['term']['type'] = 'adult';
+	$params['body']['query']['bool']['filter'][]['term']['firstname'] = $search_string;
 
 	$response = $client->search($params);
 	$hits = count($response['hits']['hits']);
