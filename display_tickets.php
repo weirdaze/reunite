@@ -18,7 +18,12 @@
 
 	$result = mysqli_query($db,$sql);
 
-	$pages = $result->num_rows;
+	if($result) { 
+		$pages = $result->num_rows;
+	}
+	else {
+		$pages = 1;
+	}
 	$limit = 10;
 	$pages = ceil($pages/$limit);
 	// echo $pages;
