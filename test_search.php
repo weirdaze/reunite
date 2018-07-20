@@ -29,6 +29,7 @@
 	$counter = $client->count($count_params);
 
 	echo "this is the number of total hits: ".$counter;
+	print_r($counter);
 	
 	while ($i < $hits) {
 		$result[$i] = $response['hits']['hits'][$i]['_source'];
