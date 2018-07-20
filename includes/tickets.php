@@ -10,6 +10,8 @@
 	$limit = 10;
 	$start = $page*$limit;
 
+	$userid = $_SESSION['userid'];
+
 	if($assigned_to == 'me'){
 		$sql = "SELECT TicketNumber, Match_ID, Agent, Status, DateCreated FROM tickets WHERE Status<>'closed' AND Agent='$userid' ORDER BY DateCreated DESC LIMIT $start,$limit";
 	}
