@@ -1,22 +1,36 @@
 <?php
 	include ("header.php");
-	$search_string = $_POST['search_string'];
+	$search_string = "";
+	$search_term = "";
+	$gender = "*";
 	require 'vendor/autoload.php';
 
 	use Elasticsearch\ClientBuilder;
 
-	$from = 0;
-	$sizes = 12;
+	$page = 0;
+	if(isset($_GET['page'])){
+		$page = $_GET['page'];
+	}
+	$limit = 12;
+	$start = $page*$limit;
+
+	if(isset($_GET['gender'])){
+		$gender = $_GET['gender'];
+	}
+	if(isset($_GET['search_term'])){
+		$search_term = TRIM($_GET['search_term']);
+	}
 
 	$client = ClientBuilder::create()->build();
+	
 	$params = array();
 	$params['index'] = 'person';
 	$params['type'] = 'person';
-	$params['from'] = $from;
-	$params['size'] = $sizes;
+	$params['from'] = $start;
+	$params['size'] = $limit;
 	//$params['sort']['firstname']['order'] = 'asc';
 	$params['body']['query']['query_string']['default_field'] = "*";
-	$params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
+	$params['body']['query']['query_string']['query'] = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
 	//$params['body']['sort'] = [['firstname' => ['order' => 'asc']],];
 
 	$response = $client->search($params);
@@ -28,12 +42,12 @@
 	$count_params['index'] = 'person';
 	$count_params['type'] = 'person';
 	$count_params['body']['query']['query_string']['default_field'] = "*";
-	$count_params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
+	$count_params['body']['query']['query_string']['query'] = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
 	$counter = $client->count($count_params);
 
-	$final_count = $counter['count'];
-	$pages = ceil($final_count/$sizes);
-	echo "this is the number of total hits: ".$final_count."<br>";
+	$total_count = $counter['count'];
+	$pages = ceil($final_count/$limit);
+	echo "this is the number of total hits: ".$total_count."<br>";
 	echo "this is how many pages we would get: ".$pages."<br>";
 
 	
@@ -63,6 +77,7 @@
 	<?php
 		}
 	?>
+		<button id="loadMore1" class="btn btn-primary" data-page="<?php echo $page + 1; ?>">Load More Results</button>
 	</div>
 </div>
 <script>
