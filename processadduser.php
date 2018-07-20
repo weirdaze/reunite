@@ -44,5 +44,5 @@
 	else {
 		echo "nothing submitted";
 	}
-	
+	header("Location: add_user.php");
 ?>
