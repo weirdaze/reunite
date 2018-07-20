@@ -9,7 +9,7 @@
 	$params = array();
 	$params['index'] = 'person';
 	$params['type'] = 'person';
-	$params['from'] = 1;
+	$params['from'] = 0;
 	$params['size'] = 12;
 	//$params['sort']['firstname']['order'] = 'asc';
 	$params['body']['query']['query_string']['default_field'] = "*";
