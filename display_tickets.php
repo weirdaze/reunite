@@ -33,7 +33,7 @@
 	<div class="d-flex align-items-center my-3">
 		<a class="btn btn-secondary ml-2" href="admintools.php"><i class="fa fa-chevron-left"></i> Back</a>
 		<a class="btn btn-info mr-2 ml-auto" href="display_tickets.php"><i class="fa fa-tags"></i> All Tickets</a>
-		<a class="btn btn-info mr-2" href="display_tickets.php?assigned_to=me"><i class="fa fa-tag"></i> My Tickets</a>
+		<a class="btn btn-info mr-2" href="display_tickets.php?assigned_to=<?php echo $userid; ?>"><i class="fa fa-tag"></i> My Tickets</a>
 	</div>
 	<div class="d-flex justify-content-end mb-2">
 		<nav id="ticketsPagination" class="ml-auto" data-total="<?php echo $pages; ?>" data-assigned_to="<?php echo $assigned_to; ?>">
