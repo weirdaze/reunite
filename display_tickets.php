@@ -53,7 +53,7 @@
 							$active = "";
 						}
 
-						if($pages >= 10){
+						if($pages >= 1000){
 							if($i <= 3 || $i > ($pages-3)) {
 				?>
 								<li class="page-item <?php echo $active; ?>" data-page="<?php echo $i; ?>"><a class="page-link" href="#"><?php echo $i; ?></a></li>

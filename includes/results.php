@@ -1,48 +1,82 @@
 
 	<?php
-		$search_term = "";
-		$gender = "";
+
 		$page = 0;
+		$search_term = "*";
+		$gender = "*";
 		if(isset($_GET['page'])){
 			$page = $_GET['page'];
 		}
-		$limit = 12;
-		$start = $page*$limit;
-
-		/*echo $start . ", " . $limit;*/
-
+		if(isset($_GET['search_term'])){
+			if($_GET['search_term'] == ""){
+				$search_term = "*";
+			}
+			else {			
+				$search_term = TRIM($_GET['search_term']);
+			}
+		}
 		if(isset($_GET['gender'])){
 			$gender = $_GET['gender'];
 		}
+		require '../vendor/autoload.php';
+
+		use Elasticsearch\ClientBuilder;
+
+		$limit = 12;
+		$start = $page * $limit
+
+		$client = ClientBuilder::create()->build();
+		$params = array();
+		$params['index'] = 'person';
+		$params['type'] = 'person';
+		$params['from'] = $start;
+		$params['size'] = $limit;
+		//$params['sort']['firstname']['order'] = 'asc';
+		$params['body']['query']['query_string']['default_field'] = "*";
+		$params['body']['query']['query_string']['query'] = "(".$search_term.") AND (Adult)";
+		//$params['body']['sort'] = [['firstname' => ['order' => 'asc']],];
+
+		$response = $client->search($params);
+		$hits = count($response['hits']['hits']);
+		$result = null;
+		$i = 0;
 		
-		if(isset($_GET['search_term'])){
-			$search_term = TRIM($_GET['search_term']);
+		$count_params = array();
+		$count_params['index'] = 'person';
+		$count_params['type'] = 'person';
+		$count_params['body']['query']['query_string']['default_field'] = "*";
+		$count_params['body']['query']['query_string']['query'] = "(".$search_term.") AND (Adult)";
+		$counter = $client->count($count_params);
+
+		$total_count = $counter['count'];
+		$pages = ceil($total_count/$limit);
+		echo "this is the number of total hits: ".$total_count."<br>";
+		echo "this is how many pages we would get: ".$pages."<br>";
+
+		
+		while ($i < $hits) {
+			$result[$i] = $response['hits']['hits'][$i]['_source'];
+			$i++;
 		}
 
-		include('../config.php');
-		session_start();
+		foreach ($result as $key => $value) {
+			$firstname = $value['firstname'];
+			$lastname = $value['lastname'];
+			$sex = $value['sex'];
+			$uid = $value['uid'];
+			$photo = $value['photo'];
 		
-		$sql = "SELECT * FROM person where ";
-
-		if($gender != ""){
-			$sql = $sql . "sex = '$gender' and ";
-		} 
-
-		$sql =  $sql . "(UPPER(FirstName) like UPPER('%$search_term%') or UPPER(LastName) like UPPER('%$search_term%')) and type='Adult' order by LastName LIMIT $start,$limit";
-
-		$result = mysqli_query($db,$sql);
-		 
-		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
 	?>
-			<div class="person d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $row['UID']; ?>" data-gender="<?php echo $row['Sex']; ?>" data-fullname="<?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>">
-				<div class="personImg" style="background-image: url('media/photo/<?php echo $row['photo']; ?>');"></div>
-				<div class="caption"><?php echo $row['LastName'] . ", " . $row['FirstName']; ?></div>
+			<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $sex; ?>" data-fullname="<?php echo $firstname . ' ' . $lastname; ?>">
+				<div class="personImg" style="background-image: url('media/photo/<?php echo $photo; ?>');"></div>
+				<div class="caption"><?php echo $lastname . ", " . $firstname; ?></div>
 			</div>	
 	<?php
-			}
+		}
+
+		if($hits > 0) {
 	?>
-		<button id="loadMore" class="btn btn-primary" data-page="<?php echo $page + 1; ?>">Load More Results</button>
+			<button id="loadMore" class="btn btn-primary" data-page="<?php echo $page + 1; ?>">Load More Results</button>
 	<?php
 		}
 		else {
