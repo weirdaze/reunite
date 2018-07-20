@@ -2,7 +2,7 @@
 <?php
 	session_start();
 	$page = 0;
-	$assigned_to = "";
+	$assigned_to = $_GET['assigned_to'];
 	if(isset($_GET['page'])){
 		include('../config.php');
 		$page = intval($_GET['page']) - 1;
