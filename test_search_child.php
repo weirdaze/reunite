@@ -28,7 +28,7 @@
 	$count_params['index'] = 'person';
 	$count_params['type'] = 'person';
 	$count_params['body']['query']['query_string']['default_field'] = "*";
-	$count_params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
+	$count_params['body']['query']['query_string']['query'] = "(".$search_string.") AND (child)";
 	$counter = $client->count($count_params);
 
 	$final_count = $counter['count'];
