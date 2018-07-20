@@ -20,7 +20,16 @@
 	$hits = count($response['hits']['hits']);
 	$result = null;
 	$i = 0;
-	echo "this is the number of hits: ".$hits;
+	
+	$count_params = array();
+	$count_params['index'] = 'person';
+	$count_params['type'] = 'person';
+	$count_params['body']['query']['query_string']['default_field'] = "*";
+	$count_params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
+	$counter = $client->count($count_params);
+
+	echo "this is the number of total hits: ".$counter;
+	
 	while ($i < $hits) {
 		$result[$i] = $response['hits']['hits'][$i]['_source'];
 		$i++;
