@@ -13,7 +13,7 @@
 	//$params['sort']['firstname']['order'] = 'asc';
 	$params['body']['query']['query_string']['default_field'] = "*";
 	$params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
-	$params['body']['sort'] = [['firstname' => ['order' => 'asc']],];
+	//$params['body']['sort'] = [['firstname' => ['order' => 'asc']],];
 
 	$response = $client->search($params);
 	$hits = count($response['hits']['hits']);
