@@ -17,6 +17,7 @@
 
 	$response = $client->search($params);
 	$hits = count($response['hits']['hits']);
+	echo "this is the number of hits: ".$hits;
 	$result = null;
 	$i = 0;
 	 
@@ -26,6 +27,6 @@
 	}
 	foreach ($result as $key => $value) {
 		echo $value['firstname'] . " " . $value['lastname'] . " " . $value['type'] . "<br>";
-		
+
 	}
 ?>
