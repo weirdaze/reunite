@@ -20,7 +20,7 @@
 	$hits = count($response['hits']['hits']);
 	$result = null;
 	$i = 0;
-	 
+	echo "this is the number of hits: ".$hits;
 	while ($i < $hits) {
 		$result[$i] = $response['hits']['hits'][$i]['_source'];
 		$i++;

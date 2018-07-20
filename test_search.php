@@ -26,5 +26,6 @@
 	}
 	foreach ($result as $key => $value) {
 		echo $value['firstname'] . " " . $value['lastname'] . " " . $value['type'] . "<br>";
+		
 	}
 ?>
