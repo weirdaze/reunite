@@ -63,7 +63,7 @@
 		<small><p class="bg-warning" id="poc1"></p></small>
 	</div>
 	<div class="form-group mx-3">
-		<small><p class="bg-warning" id="message1">commas or apostrophes are not allowed as inputs</p></small>
+		<small><p class="bg-warning" id="message1">apostrophes are not allowed as inputs</p></small>
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Update">
 	<a href="display_facilities.php" class="btn btn-secondary">Cancel</a>
