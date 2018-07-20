@@ -28,7 +28,7 @@
 	$count_params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
 	$counter = $client->count($count_params);
 
-	echo "this is the number of total hits: ".$counter;
+	echo "this is the number of total hits: ".$counter['count'];
 	print_r($counter);
 	
 	while ($i < $hits) {
