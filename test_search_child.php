@@ -33,12 +33,16 @@
 	<div id="results" class="d-flex align-items-center justify-content-center flex-wrap">
 	<?php
 		foreach ($result as $key => $value) {
-		echo $value['firstname'] . " " . $value['lastname'] . " " . $value['type'] . "<br>";
+			$firstname = $value['firstname'];
+			$lastname = $value['lastname'];
+			$sex = $value['sex'];
+			$uid = $value['uid'];
+			$photo = $value['photo'];
 		
 	?>
-			<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $value['uid']; ?>" data-gender="<?php echo $value['sex']; ?>" data-fullname="<?php echo $value['firstname'] . ' ' . $value['lastname']; ?>">
-				<div class="personImg" style="background-image: url('media/photo/<?php echo $value['photo']; ?>');"></div>
-				<div class="caption"><?php echo $value['lastName'] . ", " . $value['firstName']; ?></div>
+			<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $sex; ?>" data-fullname="<?php echo $firstname . ' ' . $lastname; ?>">
+				<div class="personImg" style="background-image: url('media/photo/<?php echo $photo; ?>');"></div>
+				<div class="caption"><?php echo $lastname . ", " . $firstname; ?></div>
 			</div>	
 	<?php
 		}
