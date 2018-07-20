@@ -8,10 +8,7 @@
 	$params = array();
 	$params['index'] = 'person';
 	$params['type'] = 'person';
-	//$params['body']['query']['match']['firstname'] = $search_string;
-	//$params['body']['query']['bool']['should'][]['match']['firstname'] = $search_string;
-	//$params['body']['query']['bool']['filter']['and'][]['term']['firstname'] = $search_string;
-	//$params['body']['query']['bool']['filter']['and'][]['term']['type'] = 'adult';
+
 	$params['body']['query']['query_string']['default_field'] = "*";
 	$params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
 
@@ -27,10 +24,4 @@
 	foreach ($result as $key => $value) {
 		echo $value['firstname'] . " " . $value['lastname'] . " " . $value['type'] . "<br>";
 	}
-
-	/*$myData = json_decode($response);
-	foreach ($myData->hits->hits as $result) {
-		echo $result->_source->firstname;
-	}*/
-	// print_r($response);
 ?>

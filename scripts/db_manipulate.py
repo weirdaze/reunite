@@ -240,7 +240,7 @@ def generate_uid(facility_number, user_id):
     return uid
 
 
-def rename_media(filename, uid, media_type):
+def rename_media1(filename, uid, media_type):
     # this function takes the filename of the file, and changes it to something uniform. checks for duplicates.
     # first we split up the filename
     name_split = filename.split('.')
@@ -263,3 +263,26 @@ def rename_media(filename, uid, media_type):
     return media_name
 
 
+def rename_media(filename, uid, media_type):
+    # this function takes the filename of the file, and changes it to something uniform. checks for duplicates.
+    # first we split up the filename
+    name_split = filename.split('.')
+    length = name_split.__len__()
+    extension = name_split[length-1]
+    name = name_split[0]
+    # extension = name_split[1]
+    offset = 1
+    media_name = uid + "-" + str(offset) + "." + extension
+
+    while True:
+        offset += 1
+        if media_type == 'video':
+            fname = appollo.video_path + media_name
+        else:
+            fname = appollo.photo_path + media_name
+
+        if os.path.isfile(fname):
+            media_name = uid + "-" + str(offset) + "." + extension
+        else:
+            break
+    return media_name
