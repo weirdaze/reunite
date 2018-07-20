@@ -23,7 +23,7 @@
 		use Elasticsearch\ClientBuilder;
 
 		$limit = 12;
-		$start = $page * $limit
+		$start = $page * $limit;
 
 		$client = ClientBuilder::create()->build();
 		$params = array();
