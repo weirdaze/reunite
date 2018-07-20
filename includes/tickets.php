@@ -1,5 +1,6 @@
 
 <?php
+	session_start();
 	$page = 0;
 	$assigned_to = "";
 	if(isset($_GET['page'])){
