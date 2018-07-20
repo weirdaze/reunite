@@ -1,4 +1,5 @@
 <?php
+	include ("header.php");
 	$search_string = $_POST['search_string'];
 	require 'vendor/autoload.php';
 
@@ -17,16 +18,38 @@
 
 	$response = $client->search($params);
 	$hits = count($response['hits']['hits']);
-	echo "this is the number of hits: ".$hits;
 	$result = null;
 	$i = 0;
-	 
+	echo "this is the number of hits: ".$hits;
 	while ($i < $hits) {
 		$result[$i] = $response['hits']['hits'][$i]['_source'];
 		$i++;
 	}
-	foreach ($result as $key => $value) {
-		echo $value['firstname'] . " " . $value['lastname'] . " " . $value['type'] . "<br>";
 
-	}
 ?>
+<div class="container">
+
+	<h2 class="text-center my-3"><a id="goBack" href="who_are_you.php" data-toggle="tooltip" data-title="Return to Form"><i class="fa fa-arrow-circle-left"></i></a> Encuéntrate en las imágenes</h2>
+	<div id="results" class="d-flex align-items-center justify-content-center flex-wrap">
+	<?php
+		foreach ($result as $key => $value) {
+			$firstname = $value['firstname'];
+			$lastname = $value['lastname'];
+			$sex = $value['sex'];
+			$uid = $value['uid'];
+			$photo = $value['photo'];
+		
+	?>
+			<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $sex; ?>" data-fullname="<?php echo $firstname . ' ' . $lastname; ?>">
+				<div class="personImg" style="background-image: url('media/photo/<?php echo $photo; ?>');"></div>
+				<div class="caption"><?php echo $lastname . ", " . $firstname; ?></div>
+			</div>	
+	<?php
+		}
+	?>
+	</div>
+</div>
+<script>
+	$("#goBack").tooltip();
+</script>
+<?php include("footer.php"); ?>
