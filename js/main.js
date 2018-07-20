@@ -73,6 +73,13 @@ $(document).ready(function(){
 		$(this).remove();
 		updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val(), "page": page},"append","","","");
 	});
+	//testing purposes
+	$(document).on("click","#loadMore1",function(){
+		var gender = $("#search_string").attr("data-gender");
+		var page = $(this).attr("data-page");
+		$(this).remove();
+		updateContent("#results1","test_search.php",{"gender": gender, "search_term1": $("#searchInput1").val(), "page": page},"append","","","");
+	});
 	//open modal to preview a match
 	$(document).on("click",".previewMatch",function(){
 		var match_id = $(this).data("match_id");
