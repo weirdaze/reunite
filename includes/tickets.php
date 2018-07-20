@@ -19,8 +19,7 @@
 	else{
 		$sql = "SELECT TicketNumber, Match_ID, Agent, Status, DateCreated FROM tickets WHERE Status<>'closed' ORDER BY DateCreated DESC LIMIT $start,$limit";
 	}
-	echo ("assigned_to: ".$assigned_to.". how about that.");
-	echo ($sql);
+
 	$result = mysqli_query($db,$sql);
 
 	if ($result->num_rows > 0) {
