@@ -10,6 +10,7 @@
 	$params['type'] = 'person';
 	$params['from'] = 1;
 	$params['size'] = 12;
+	$params['body']['sort']['firstname'] = "asc";
 	$params['body']['query']['query_string']['default_field'] = "*";
 	$params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
 
