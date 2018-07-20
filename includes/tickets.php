@@ -20,7 +20,7 @@
 		$sql = "SELECT TicketNumber, Match_ID, Agent, Status, DateCreated FROM tickets WHERE Status<>'closed' ORDER BY DateCreated DESC LIMIT $start,$limit";
 	}
 	
-
+	echo ($sql);
 	$result = mysqli_query($db,$sql);
 
 	if ($result->num_rows > 0) {
