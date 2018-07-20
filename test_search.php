@@ -8,7 +8,8 @@
 	$params = array();
 	$params['index'] = 'person';
 	$params['type'] = 'person';
-
+	$params['from'] = 0;
+	$params['size'] = 2;
 	$params['body']['query']['query_string']['default_field'] = "*";
 	$params['body']['query']['query_string']['query'] = "(".$search_string.") AND (adult)";
 
