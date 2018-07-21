@@ -12,7 +12,7 @@
 				$search_term = "*";
 			}
 			else {			
-				$search_term = TRIM($_GET['search_term']);
+				$search_term = $_GET['search_term'];
 			}
 		}
 		if(isset($_GET['gender'])){
@@ -24,6 +24,8 @@
 
 		$limit = 12;
 		$start = $page * $limit;
+		$query = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
+		echo $query;
 
 		$client = ClientBuilder::create()->build();
 		$params = array();
@@ -33,7 +35,7 @@
 		$params['size'] = $limit;
 		//$params['sort']['firstname']['order'] = 'asc';
 		$params['body']['query']['query_string']['default_field'] = "*";
-		$params['body']['query']['query_string']['query'] = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
+		$params['body']['query']['query_string']['query'] = $query;
 		//$params['body']['sort'] = [['firstname' => ['order' => 'asc']],];
 
 		$response = $client->search($params);
@@ -45,7 +47,7 @@
 		$count_params['index'] = 'person';
 		$count_params['type'] = 'person';
 		$count_params['body']['query']['query_string']['default_field'] = "*";
-		$count_params['body']['query']['query_string']['query'] = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
+		$count_params['body']['query']['query_string']['query'] = $query;
 		$counter = $client->count($count_params);
 
 		$total_count = $counter['count'];
