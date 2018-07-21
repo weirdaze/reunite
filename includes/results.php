@@ -33,7 +33,7 @@
 		$params['size'] = $limit;
 		//$params['sort']['firstname']['order'] = 'asc';
 		$params['body']['query']['query_string']['default_field'] = "*";
-		$params['body']['query']['query_string']['query'] = "(".$search_term.") AND (Adult)";
+		$params['body']['query']['query_string']['query'] = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
 		//$params['body']['sort'] = [['firstname' => ['order' => 'asc']],];
 
 		$response = $client->search($params);
@@ -45,13 +45,13 @@
 		$count_params['index'] = 'person';
 		$count_params['type'] = 'person';
 		$count_params['body']['query']['query_string']['default_field'] = "*";
-		$count_params['body']['query']['query_string']['query'] = "(".$search_term.") AND (Adult)";
+		$count_params['body']['query']['query_string']['query'] = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
 		$counter = $client->count($count_params);
 
 		$total_count = $counter['count'];
 		$pages = ceil($total_count/$limit);
-		echo "this is the number of total hits: ".$total_count."<br>";
-		echo "this is how many pages we would get: ".$pages."<br>";
+		// echo "this is the number of total hits: ".$total_count."<br>";
+		// echo "this is how many pages we would get: ".$pages."<br>";
 
 		
 		while ($i < $hits) {
