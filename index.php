@@ -15,7 +15,7 @@
 	<div class="row">
 		<div class="col">
 			<div class="form-group">
-				<input id="searchInput" name="search" class="form-control" placeholder="Search..." data-gender="">
+				<input id="searchInput" name="search" class="form-control" placeholder="Search..." data-gender="*">
 				<a id="searchIcon"><i class="fa fa-search"></i></a>
 			</div>
 		</div>
