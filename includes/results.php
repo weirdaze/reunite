@@ -25,7 +25,7 @@
 		$limit = 12;
 		$start = $page * $limit;
 		$query = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
-		echo $query;
+		//echo $query;
 
 		$client = ClientBuilder::create()->build();
 		$params = array();
