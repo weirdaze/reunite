@@ -17,7 +17,7 @@
 			<div class="form-group">
 				<input id="searchInput" name="search" class="form-control" placeholder="Search..." data-gender="*">
 				<a id="searchIcon"><i class="fa fa-search"></i></a>
-			</div>
+			</div>	
 		</div>
 	</div>
 	<div id="results" class="d-flex align-items-center justify-content-center flex-wrap">

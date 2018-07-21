@@ -31,7 +31,7 @@
 					$relatives = $value;
 				}
 				else {
-					$relatives = $relatives . ";" . $value;
+					$relatives = $relatives . "," . $value;
 				}
 			}
 		}

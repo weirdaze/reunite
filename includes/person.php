@@ -87,6 +87,19 @@
 								</ul>
 							</td>
 						</tr>
+						<tr>
+							<td colspan="2">
+								<strong>Claims:</strong>
+								<ul class="list-group mt-2">
+									<?php 
+										$a = explode(',',$row['Claiming']);
+										foreach($a as $v){
+											echo "<li class='list-group-item'>".$v."</li>";
+										}
+									?>
+								</ul>
+							</td>
+						</tr>
 					</table>
 				</div>
 				<!-- <div class="nextArrow col-1"><i class="fa fa-chevron-right fa-3x"></i></div> -->
