@@ -8,7 +8,6 @@
 	$sql = "SELECT * FROM person where uid = '" . $uid . "'";
 
 	$result = mysqli_query($db,$sql);
-	$sex = $row['Sex'];
 
 
 	if ($result->num_rows > 0) {
@@ -17,6 +16,7 @@
 
 	    while($row = $result->fetch_assoc()) {
 	        // echo $row['FirstName'] . " " . $row['LastName'];
+	        $sex = $row['Sex'];
 	        ?>
 
 			<div class="row">
