@@ -19,6 +19,8 @@
 	        $sex = $row['Sex'];
 	        $date_detained = $row['DateDetained'];
 	        $current_facility = $row['CurrentFacility'];
+	        $entry_point = $row['EntryPoint'];
+	        $country = $row['Country'];
 	        ?>
 
 			<div class="row">
@@ -55,15 +57,21 @@
 						</tr>
 						<tr>
 							<th>Entry Point:</th>
-							<td><?php echo $row['EntryPoint']; ?></td>
+							<td><?php echo $entry_point; ?></td>
 						</tr>
 						<tr>
 							<th>Current Facility:</th>
-							<td><?php echo $current_facility; ?></td>
+							<td><?php 
+									$sql2 = "SELECT FacilityName FROM facilities where FacilityNumber = '" . $current_facility . "'";
+
+									$result2 = mysqli_query($db,$sql2);
+									$row2 = $result->fetch_assoc();
+									echo $row2['FacilityName']; 
+								?></td>
 						</tr>
 						<tr>
 							<th>Country of Origin:</th>
-							<td><?php echo $row['Country']; ?></td>
+							<td><?php echo $country; ?></td>
 						</tr>
 						<tr>
 							<td colspan="2">
