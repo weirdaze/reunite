@@ -41,6 +41,18 @@
 					}
 				?>
 			</div>
+			<?php
+				if(isset($_GET['cleared'])){
+			?>
+				<div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+					User successfully cleared!
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<?php
+				}
+			?>
 		</div>
 	</div>
 </div>

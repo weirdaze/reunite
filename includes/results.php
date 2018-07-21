@@ -4,6 +4,8 @@
 		$page = 0;
 		$search_term = "*";
 		$gender = "*";
+		$person_type = "adult";
+		$divclass = "person";
 		if(isset($_GET['page'])){
 			$page = $_GET['page'];
 		}
@@ -18,13 +20,21 @@
 		if(isset($_GET['gender'])){
 			$gender = $_GET['gender'];
 		}
+		if(isset($_GET['person_type'])){
+			$person_type = $_GET['person_type'];
+		}
+		if($person_type == "child"){
+			$divclass = "child";
+		}
+
+
 		require '../vendor/autoload.php';
 
 		use Elasticsearch\ClientBuilder;
 
 		$limit = 12;
 		$start = $page * $limit;
-		$query = "(".$search_term.") AND (adult) AND (sex:".$gender.")";
+		$query = "(".$search_term.") AND ($person_type) AND (sex:".$gender.")";
 		//echo $query;
 
 		$client = ClientBuilder::create()->build();
@@ -69,14 +79,14 @@
 			$photo = $value['photo'];
 		
 	?>
-			<div class="child d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $sex; ?>" data-fullname="<?php echo $firstname . ' ' . $lastname; ?>">
+			<div class="<?php echo $divclass; ?> d-flex align-items-center flex-column justify-content-center" data-uid="<?php echo $uid; ?>" data-gender="<?php echo $sex; ?>" data-fullname="<?php echo $firstname . ' ' . $lastname; ?>">
 				<div class="personImg" style="background-image: url('media/photo/<?php echo $photo; ?>');"></div>
 				<div class="caption"><?php echo $lastname . ", " . $firstname; ?></div>
 			</div>	
 	<?php
 		}
 
-		if($hits > 0) {
+		if($hits >= $limit) {
 	?>
 			<button id="loadMore" class="btn btn-primary" data-page="<?php echo $page + 1; ?>">Load More Results</button>
 	<?php

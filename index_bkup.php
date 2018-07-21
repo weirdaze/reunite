@@ -7,7 +7,6 @@
 <div class="container py-3">
 	<?php 
 		if(isset($_SESSION['uid'])){
-			$person_type = "adult";
 	?>
 		<div id="selectPersonType">
 			<?php include 'includes/userSelect.php'; ?>
@@ -19,8 +18,7 @@
 	<?php
 		}
 		else {
-			$person_type = "child";
-			echo "<h2 class='text-center mb-3'>¿Quién eres tú?</h2>";
+			echo "<h3>Who Are You?</h3>";
 		}
 	?>
 
@@ -28,7 +26,7 @@
 	<div class="row">
 		<div class="col">
 			<div class="form-group">
-				<input id="searchInput" name="search" class="form-control" placeholder="Search..." data-gender="*" data-person_type="<?php echo $person_type; ?>">
+				<input id="searchInput" name="search" class="form-control" placeholder="Search..." data-gender="*">
 				<a id="searchIcon"><i class="fa fa-search"></i></a>
 			</div>	
 		</div>
