@@ -8,7 +8,12 @@
 	$sql = "SELECT * FROM person where uid = '" . $uid . "'";
 
 	$result = mysqli_query($db,$sql);
+	$record = '';
+	$sql2 = "SELECT FacilityName FROM facilities where FacilityNumber = '" . $current_facility . "'";
 
+	$result2 = mysqli_query($db,$sql2);
+	$row2 = $result2->fetch_assoc();
+	
 
 	if ($result->num_rows > 0) {
 
@@ -62,10 +67,6 @@
 						<tr>
 							<th>Current Facility:</th>
 							<td><?php 
-									$sql2 = "SELECT FacilityName FROM facilities where FacilityNumber = '" . $current_facility . "'";
-
-									$result2 = mysqli_query($db,$sql2);
-									$row2 = $result2->fetch_assoc();
 									//echo $sql2;
 									echo $row2['FacilityName']; 
 								?></td>
@@ -94,12 +95,10 @@
 									<?php 
 										$a = explode(',',$row['Claiming']);
 										foreach($a as $v){
-											$record = '';
 											$sql3 = "SELECT FirstName, LastName, Country FROM person where UID = '" . $v . "'";
-
 											$result3 = mysqli_query($db,$sql3);
-											$row3 = $result3->fetch_assoc();
 											if ($result3->num_rows > 0){
+												$row3 = $result3->fetch_assoc();
 												$record = $row3['FirstName'].' '.$row3['LastName'].' ('.$row3['Country'].')';
 											}
 											
