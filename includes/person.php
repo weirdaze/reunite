@@ -8,6 +8,8 @@
 	$sql = "SELECT * FROM person where uid = '" . $uid . "'";
 
 	$result = mysqli_query($db,$sql);
+	$sex = $row['Sex'];
+
 
 	if ($result->num_rows > 0) {
 
@@ -36,23 +38,23 @@
 					<table class="table">
 						<tr>
 							<th>Sex:</th>
-							<td><?php echo $row['Sex'] ?></td>
+							<td><?php echo $sex; ?></td>
 						</tr>
 						<tr>
 							<th>Date Detained:</th>
-							<td><?php echo $row['DateDetained'] ?></td>
+							<td><?php echo $row['DateDetained']; ?></td>
 						</tr>
 						<tr>
 							<th>Entry Point:</th>
-							<td><?php echo $row['EntryPoint'] ?></td>
+							<td><?php echo $row['EntryPoint']; ?></td>
 						</tr>
 						<tr>
 							<th>Current Facility:</th>
-							<td><?php echo $row['CurrentFacility'] ?></td>
+							<td><?php echo $row['CurrentFacility']; ?></td>
 						</tr>
 						<tr>
 							<th>Country of Origin:</th>
-							<td><?php echo $row['Country'] ?></td>
+							<td><?php echo $row['Country']; ?></td>
 						</tr>
 						<tr>
 							<td colspan="2">
