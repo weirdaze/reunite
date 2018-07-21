@@ -17,6 +17,8 @@
 	    while($row = $result->fetch_assoc()) {
 	        // echo $row['FirstName'] . " " . $row['LastName'];
 	        $sex = $row['Sex'];
+	        $date_detained = $row['DateDetained'];
+	        $current_facility = $row['CurrentFacility'];
 	        ?>
 
 			<div class="row">
@@ -42,7 +44,7 @@
 						</tr>
 						<tr>
 							<th>Date Detained:</th>
-							<td><?php echo $row['DateDetained']; ?></td>
+							<td><?php echo $date_detained; ?></td>
 						</tr>
 						<tr>
 							<th>Entry Point:</th>
@@ -50,7 +52,7 @@
 						</tr>
 						<tr>
 							<th>Current Facility:</th>
-							<td><?php echo $row['CurrentFacility']; ?></td>
+							<td><?php echo $current_facility; ?></td>
 						</tr>
 						<tr>
 							<th>Country of Origin:</th>
