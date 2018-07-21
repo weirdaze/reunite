@@ -65,7 +65,8 @@
 									$sql2 = "SELECT FacilityName FROM facilities where FacilityNumber = '" . $current_facility . "'";
 
 									$result2 = mysqli_query($db,$sql2);
-									$row2 = $result->fetch_assoc();
+									$row2 = $result2->fetch_assoc();
+									//echo $sql2;
 									echo $row2['FacilityName']; 
 								?></td>
 						</tr>
