@@ -94,7 +94,12 @@
 									<?php 
 										$a = explode(',',$row['Claiming']);
 										foreach($a as $v){
-											echo "<li class='list-group-item'>".$v."</li>";
+											$sql3 = "SELECT FirstName, LastName, Country FROM person where UID = '" . $v . "'";
+
+											$result3 = mysqli_query($db,$sql3);
+											$row3 = $result3->fetch_assoc();
+											$record = $row3['FirstName'].' '.$row3['LastName'].'('.$row3['Country'].')';
+											echo "<li class='list-group-item'>".$record."</li>";
 										}
 									?>
 								</ul>
