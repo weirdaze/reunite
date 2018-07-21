@@ -40,7 +40,14 @@
 					<table class="table">
 						<tr>
 							<th>Sex:</th>
-							<td><?php echo $sex; ?></td>
+							<td><?php 
+								if ($sex == 'm'){
+									echo "Male";
+								}else{
+									echo "Female";
+								}
+								//echo $sex; 
+							?></td>
 						</tr>
 						<tr>
 							<th>Date Detained:</th>
