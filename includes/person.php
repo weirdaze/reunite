@@ -9,10 +9,6 @@
 
 	$result = mysqli_query($db,$sql);
 	$record = '';
-	$sql2 = "SELECT FacilityName FROM facilities where FacilityNumber = '" . $current_facility . "'";
-
-	$result2 = mysqli_query($db,$sql2);
-	$row2 = $result2->fetch_assoc();
 	
 
 	if ($result->num_rows > 0) {
@@ -67,6 +63,10 @@
 						<tr>
 							<th>Current Facility:</th>
 							<td><?php 
+									$sql2 = "SELECT FacilityName FROM facilities where FacilityNumber = '" . $current_facility . "'";
+
+									$result2 = mysqli_query($db,$sql2);
+									$row2 = $result2->fetch_assoc();
 									//echo $sql2;
 									echo $row2['FacilityName']; 
 								?></td>
