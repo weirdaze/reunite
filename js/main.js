@@ -59,27 +59,24 @@ $(document).ready(function(){
 		clearTimeout(timeout);
 		timeout = setTimeout(function(){
 			var gender = $("#searchInput").attr("data-gender");
+			var person_type = $("#searchInput").attr("data-person_type");
 			$(".showUserSelect").show();
 			var complete = function() {
-				$("#selectPersonType").slideUp(500);
+				if(person_type == "adult"){
+					$("#selectPersonType").slideUp(500);
+				}
 			}
-			updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val()},"overwrite","",complete,"");
+			updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val(), "person_type": person_type},"overwrite","",complete,"");
 		},1000);
 	});
 	//append more results
 	$(document).on("click","#loadMore",function(){
 		var gender = $("#searchInput").attr("data-gender");
+		var person_type = $("#searchInput").attr("data-person_type");
 		var page = $(this).attr("data-page");
 		$(this).remove();
-		updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val(), "page": page},"append","","","");
+		updateContent("#results","includes/results.php",{"gender": gender, "search_term": $("#searchInput").val(), "page": page, "person_type": person_type},"append","","","");
 	});
-	//testing purposes
-	/*$(document).on("click","#loadMore1",function(){
-		var gender = $("#search_string").attr("data-gender");
-		var page = $(this).attr("data-page");
-		$(this).remove();
-		updateContent("#results1","test_search.php",{"gender": gender, "search_term1": $("#searchInput1").val(), "page": page},"append","","","");
-	});*/
 	//open modal to preview a match
 	$(document).on("click",".previewMatch",function(){
 		var match_id = $(this).data("match_id");
