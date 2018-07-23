@@ -30,7 +30,7 @@ $(document).ready(function(){
 		var complete = function(){
 			$(".modal-title").html(name + " <a id='uid' data-uid='"+uid+"' data-toggle='tooltip' data-placement='bottom' title='" + uid + "'><i class='far fa-id-badge fa-lg'></i></a>");
 			if(child){
-				$("#modalSubmit").text("¡Este soy yo!");
+				$("#modalSubmit").text("¡Soy Yo!");
 			}
 			else {
 				gender == "m" ? $("#modalSubmit").text("¡Es mi Papa!") : $("#modalSubmit").text("¡Es mi Mama!");
