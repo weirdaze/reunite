@@ -30,6 +30,10 @@
 					<span class="menuIcon"><i class="fa fa-exchange-alt"></i></span>
 					<span class="menuText">View Matches</span>
 				</a>
+				<a class="list-group-item d-flex align-items-center" href="test_graph.php">
+					<span class="menuIcon"><i class="fa fa-chart-pie"></i></span>
+					<span class="menuText">View Data</span>
+				</a>
 				<?php
 					if(isset($_SESSION['uid'])){
 				?>
