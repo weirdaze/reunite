@@ -122,10 +122,10 @@ $(document).ready(function(){
 		}
 		var complete = function(){
 			$(".modal-title").html("Facility Name: " + facility_name);
-			$("#modalSubmit").text("Use button above");
+			$("#modalSubmit").text("Update Facility");
 		}
 		var modalsubmit = function(){
-			alert("facility edit submitted");
+			$("#update_facility").submit();
 		}
 		updateContent(".modal-body","manage_facility.php",{"facility_name": facility_name},"overwrite",before,complete,modalsubmit);
 	});

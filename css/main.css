@@ -73,13 +73,13 @@ a:hover {
 .formBox {
 	margin-top: 20px;
 }
-.loginBox .form-group, .formBox .form-group {
+.loginBox .form-group.icon-group, .formBox .form-group, .icon-group {
 	position: relative;
 }
-.loginBox .form-group input, .formBox .form-group input {
+.loginBox .form-group input, .formBox .form-group input, .icon-group input {
 	padding-left: 35px;
 }
-.loginBox .input-icon, .formBox  .input-icon {
+.loginBox .input-icon, .formBox  .input-icon, .icon-group .input-icon {
 	position: absolute;
 	top: 8px;
 	left: 12px;
