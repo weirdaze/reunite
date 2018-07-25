@@ -49,8 +49,9 @@
 		<input class="form-control mb-2" type="text" name="poc" placeholder="Notes" pattern="[0-9A-Za-z :,!@%*/?&)(.#-]+">
 		<small><p class="bg-warning" id="poc1"></p></small>
 	</div>
-	<div class="form-group mx-3">
-		<small><p class="bg-warning" id="message1">apostrophes are not allowed as inputs</p></small>
+	<div class="alert alert-warning small px-2 mx-3" role="alert">
+		<i class="fa fa-exclamation-triangle text-danger"></i>
+		Apostrophes are not allowed within text inputs
 	</div>
 	<input class="btn btn-primary ml-3 mr-2" type="submit" value="Create">
 	<a href="admintools.php" class="btn btn-secondary">Cancel</a>
@@ -84,6 +85,9 @@
         	return false;
     	} 
 	}
+	$(".custom-select").select2({
+		placeholder: "Choose State"
+	});
 </script>
 <?php include 'footer.php'?>
 

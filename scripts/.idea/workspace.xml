@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09cb3590-30d6-4264-a06e-3a32898c9df0" name="Default" comment="" />
+    <list default="true" id="09cb3590-30d6-4264-a06e-3a32898c9df0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/update_person_status.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/db_matches.py" afterPath="$PROJECT_DIR$/db_matches.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_user.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_user.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
@@ -56,25 +60,45 @@
       <file leaf-file-name="db_matches.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_matches.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
+            <state relative-caret-position="188">
+              <caret line="154" column="19" lean-forward="true" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
-                <marker date="1531791504821" expanded="true" signature="2390:2426" ph="DELETE FROM matches... " />
-                <marker date="1531791504821" expanded="true" signature="2390:2440" ph="DELETE FROM matches... " />
-                <marker date="1531791504821" expanded="true" signature="2390:2443" ph="DELETE FROM matches... " />
-                <marker date="1531791504821" expanded="true" signature="2390:2445" ph="DELETE FROM matches... " />
-                <marker date="1531791504821" expanded="true" signature="3251:3289" ph="SELECT * FRO... person" />
-                <marker date="1531791504821" expanded="true" signature="3251:3306" ph="SELECT * FRO... person" />
-                <marker date="1531791504821" expanded="true" signature="4236:4278" ph="SELECT * FRO... matches" />
-                <marker date="1531791504821" expanded="true" signature="4236:4304" ph="SELECT * FRO... matches" />
-                <marker date="1531791504821" expanded="true" signature="4236:4318" ph="SELECT * FRO... matches" />
-                <marker date="1531791504821" expanded="true" signature="4236:4320" ph="SELECT * FRO... matches" />
-                <marker date="1531791504821" expanded="true" signature="6504:6546" ph="SELECT * FRO... matches" />
-                <marker date="1531791504821" expanded="true" signature="6504:6569" ph="SELECT UID_A... matches" />
-                <marker date="1531791504821" expanded="true" signature="6504:6571" ph="SELECT * FRO... matches" />
-                <marker date="1531791504821" expanded="true" signature="10799:10850" ph="SELECT Claim... person" />
-                <marker date="1531791504821" expanded="true" signature="11707:11776" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="2390:2426" ph="DELETE FROM matches... " />
+                <marker date="1532526268434" expanded="true" signature="2390:2440" ph="DELETE FROM matches... " />
+                <marker date="1532526268434" expanded="true" signature="2390:2443" ph="DELETE FROM matches... " />
+                <marker date="1532526268434" expanded="true" signature="2390:2445" ph="DELETE FROM matches... " />
+                <marker date="1532526268434" expanded="true" signature="3251:3289" ph="SELECT * FRO... person" />
+                <marker date="1532526268434" expanded="true" signature="3251:3306" ph="SELECT * FRO... person" />
+                <marker date="1532526268434" expanded="true" signature="4236:4278" ph="SELECT * FRO... matches" />
+                <marker date="1532526268434" expanded="true" signature="4236:4304" ph="SELECT * FRO... matches" />
+                <marker date="1532526268434" expanded="true" signature="4236:4318" ph="SELECT * FRO... matches" />
+                <marker date="1532526268434" expanded="true" signature="4236:4320" ph="SELECT * FRO... matches" />
+                <marker date="1532526268434" expanded="true" signature="6170:6196" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="6170:6215" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="6170:6221" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="6170:6227" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="6170:6258" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="6170:6267" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="6170:6281" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="6170:6283" ph="UPDATE person... " />
+                <marker date="1532526268434" expanded="true" signature="7420:7462" ph="SELECT * FRO... matches" />
+                <marker date="1532526268434" expanded="true" signature="7420:7485" ph="SELECT UID_A... matches" />
+                <marker date="1532526268434" expanded="true" signature="7420:7487" ph="SELECT * FRO... matches" />
+                <marker date="1532526268434" expanded="true" signature="11715:11766" ph="SELECT Claim... person" />
+                <marker date="1532526268434" expanded="true" signature="12623:12692" ph="UPDATE person... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_person_status.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/update_person_status.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,8 +107,8 @@
       <file leaf-file-name="submit_claim.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/submit_claim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -149,18 +173,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_ticket.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create_ticket.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -202,12 +214,13 @@
         <option value="$PROJECT_DIR$/facilities.py" />
         <option value="$PROJECT_DIR$/create_ticket.py" />
         <option value="$PROJECT_DIR$/submit_claim.py" />
-        <option value="$PROJECT_DIR$/db_matches.py" />
         <option value="$PROJECT_DIR$/tickets.py" />
         <option value="$PROJECT_DIR$/update_ticket.py" />
         <option value="$PROJECT_DIR$/db_manipulate.py" />
         <option value="$PROJECT_DIR$/test_rename.py" />
         <option value="$PROJECT_DIR$/add_user.py" />
+        <option value="$PROJECT_DIR$/db_matches.py" />
+        <option value="$PROJECT_DIR$/update_person_status.py" />
       </list>
     </option>
   </component>
@@ -371,11 +384,11 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22869955" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22869955" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17937219" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13697788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17937219" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13636364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -438,21 +451,29 @@
           <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
-            <marker date="1531791504821" expanded="true" signature="2390:2426" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="2390:2440" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="2390:2443" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="2390:2445" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="3251:3289" ph="SELECT * FRO... person" />
-            <marker date="1531791504821" expanded="true" signature="3251:3306" ph="SELECT * FRO... person" />
-            <marker date="1531791504821" expanded="true" signature="4236:4278" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="4236:4304" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="4236:4318" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="4236:4320" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="6504:6546" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="6504:6569" ph="SELECT UID_A... matches" />
-            <marker date="1531791504821" expanded="true" signature="6504:6571" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="10799:10850" ph="SELECT Claim... person" />
-            <marker date="1531791504821" expanded="true" signature="11707:11776" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="2390:2426" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="2390:2440" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="2390:2443" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="2390:2445" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="3251:3289" ph="SELECT * FRO... person" />
+            <marker date="1532526268434" expanded="true" signature="3251:3306" ph="SELECT * FRO... person" />
+            <marker date="1532526268434" expanded="true" signature="4236:4278" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="4236:4304" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="4236:4318" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="4236:4320" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="6170:6196" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6215" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6221" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6227" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6258" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6267" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6281" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6283" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="7420:7462" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="7420:7485" ph="SELECT UID_A... matches" />
+            <marker date="1532526268434" expanded="true" signature="7420:7487" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="11715:11766" ph="SELECT Claim... person" />
+            <marker date="1532526268434" expanded="true" signature="12623:12692" ph="UPDATE person... " />
           </folding>
         </state>
       </provider>
@@ -677,41 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/submit_claim.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_matches.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1531791504821" expanded="true" signature="2390:2426" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="2390:2440" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="2390:2443" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="2390:2445" ph="DELETE FROM matches... " />
-            <marker date="1531791504821" expanded="true" signature="3251:3289" ph="SELECT * FRO... person" />
-            <marker date="1531791504821" expanded="true" signature="3251:3306" ph="SELECT * FRO... person" />
-            <marker date="1531791504821" expanded="true" signature="4236:4278" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="4236:4304" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="4236:4318" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="4236:4320" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="6504:6546" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="6504:6569" ph="SELECT UID_A... matches" />
-            <marker date="1531791504821" expanded="true" signature="6504:6571" ph="SELECT * FRO... matches" />
-            <marker date="1531791504821" expanded="true" signature="10799:10850" ph="SELECT Claim... person" />
-            <marker date="1531791504821" expanded="true" signature="11707:11776" ph="UPDATE person... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tickets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
@@ -779,6 +765,59 @@
         <state relative-caret-position="330">
           <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/submit_claim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_matches.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="154" column="19" lean-forward="true" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1532526268434" expanded="true" signature="2390:2426" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="2390:2440" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="2390:2443" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="2390:2445" ph="DELETE FROM matches... " />
+            <marker date="1532526268434" expanded="true" signature="3251:3289" ph="SELECT * FRO... person" />
+            <marker date="1532526268434" expanded="true" signature="3251:3306" ph="SELECT * FRO... person" />
+            <marker date="1532526268434" expanded="true" signature="4236:4278" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="4236:4304" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="4236:4318" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="4236:4320" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="6170:6196" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6215" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6221" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6227" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6258" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6267" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6281" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="6170:6283" ph="UPDATE person... " />
+            <marker date="1532526268434" expanded="true" signature="7420:7462" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="7420:7485" ph="SELECT UID_A... matches" />
+            <marker date="1532526268434" expanded="true" signature="7420:7487" ph="SELECT * FRO... matches" />
+            <marker date="1532526268434" expanded="true" signature="11715:11766" ph="SELECT Claim... person" />
+            <marker date="1532526268434" expanded="true" signature="12623:12692" ph="UPDATE person... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_person_status.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -143,9 +143,33 @@ def submit_claim(uid_a, uid_b, user_id, status='claimed'):
         tickets.create_ticket(match_id, "new", updates, user_id)
         match_var = uid_a + "," + uid_b
         update_claiming(match_var)
+        user_state = 'potential-match'
+        update_status(uid_a, uid_b, user_state)
         return db_get_match_id(uid_a, uid_b)
     else:
         return "already-matched"
+
+
+def update_status(uid_a, uid_b, user_state):
+    try:
+        cnx = mysql.connector.connect(user=appollo.dbusername, password=appollo.dbpassword,
+                                      host=appollo.dbhostname, database=appollo.dbname)
+        cursor = cnx.cursor()
+        query = ("UPDATE person SET Status='" + user_state + "' WHERE UID='" + uid_a +
+                 "' OR UID='" + uid_b + "'")
+        print(query)
+        cursor.execute(query)
+        cnx.commit()
+        cursor.close()
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+            print("Database does not exist")
+        else:
+            print(err)
+    else:
+        cnx.close()
 
 
 def potential_match():
