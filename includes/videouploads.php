@@ -42,7 +42,7 @@
 		}
 	    if(move_uploaded_file($_FILES["video"]["tmp_name"], $target_file_dir)){
 	        // echo "The file ". basename($_FILES["image"]["name"]) . " has been uploaded.";
-	        echo "<img class='thumbnail' src='/var/www/html/reunite/media/video/moviereel.png'/> <input type='hidden' name='video1' id='video1' value='$result1'>";
+	        echo "<video width='100%' controls><source src='$target_file_dir'></video> <input type='hidden' name='video1' id='video1' value='$result1'>";
 	    } 
 	    else {
 	        echo "Sorry, there was an error uploading your file.";

@@ -192,10 +192,9 @@
 		    	data: img,
 		    	success: function(data){
 		    		$("#imgThumbnails").find("i").remove();
-		    		$("#imgThumbnails").append(data);
+		    		$("#imgThumbnails").html(data);
 		    		var photoLabel = $("#photo").next(".custom-file-label");
-		    		var newText = photoLabel.text();
-		    		newText == "Upload Photos" ? newText = filename : newText = newText + "," + filename;
+		    		var newText = filename;
 		    		photoLabel.removeClass("placeholder").text(newText);
 		    		$("#photos").val(newText);
 		    		var imageName = $("#imageName").val();
@@ -212,7 +211,7 @@
 		    var filename = $(this).get(0).files[0].name;
 		    vid.append("iuid",iuid);
 		    /*console.log($(this).get(0).files[0]);*/
-		    $("#vidThumbnails").append("Files set for upload. Please only upload 1 file.");
+		    $("#vidThumbnails").append("<i class='fa fa-spinner fa-spin fa-lg'></i>");
 		    $.ajax({
 		    	type: "POST",
 		    	url: "includes/videouploads.php",
@@ -220,16 +219,14 @@
 		    	contentType: false,
 		    	data: vid,
 		    	success: function(data){
-		    		//$("#vidThumbnails").find("i").remove();
-		    		$("#vidThumbnails").append(data);
+		    		$("#vidThumbnails").find("i").remove();
+		    		$("#vidThumbnails").html(data);
 		    		var videoLabel = $("#video").next(".custom-file-label");
-		    		var newText = videoLabel.text();
-		    		newText == "Upload Photos" ? newText = filename : newText = newText + "," + filename;
+		    		var newText = filename;
 		    		videoLabel.removeClass("placeholder").text(newText);
 		    		$("#videos").val(newText);
 		    	}
 		    });
-
 		});
 
 		var count = 1;
