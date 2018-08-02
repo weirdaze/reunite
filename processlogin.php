@@ -21,9 +21,9 @@
 				$_SESSION['userid'] = $username;
 				$_SESSION['current_facility'] = $current_facility;
 				if (strpos($groups, 'admin') !== false) {
-    				$_SESSION['admin'] = 1;
+    				$_SESSION['admin'] = '1';
 				} else {
-					$_SESSION['admin'] = 0;
+					$_SESSION['admin'] = '0';
 				}
 				header("Location: index.php");
 			}

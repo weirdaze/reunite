@@ -19,7 +19,7 @@
 					<span class="menuText">Add User</span>
 				</a>
 				<?php
-					if($_SESSION['admin']) == 1){
+					if($_SESSION['admin'] == '1'){
 				?>
 				<a class="list-group-item d-flex align-items-center" href="facility.php">
 					<span class="menuIcon"><i class="fa fa-building"></i></span>
