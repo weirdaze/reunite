@@ -16,7 +16,7 @@
 		if($count == 1) {
 			if(password_verify($password,$row['password']) == 1){
 				session_start();
-				$groups = $row['groups']
+				$groups = $row['groups'];
 				$_SESSION['logged_in'] = true;
 				$_SESSION['userid'] = $username;
 				$_SESSION['current_facility'] = $current_facility;
