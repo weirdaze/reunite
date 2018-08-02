@@ -20,7 +20,7 @@
 				$_SESSION['logged_in'] = true;
 				$_SESSION['userid'] = $username;
 				$_SESSION['current_facility'] = $current_facility;
-				if (preg_match('/\badmin\b/',$groups)) {
+				if (strpos($groups, 'admin') !== false) {
     				$_SESSION['admin'] = 1;
 				} else {
 					$_SESSION['admin'] = 0;
