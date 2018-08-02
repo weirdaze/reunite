@@ -6,7 +6,7 @@
    		$password = $_POST['password'];
    		$current_facility = $_POST['current_facility'];
 
-   		$sql = "SELECT UserID, password FROM admin WHERE UserID = '$username'";
+   		$sql = "SELECT UserID, password, groups FROM admin WHERE UserID = '$username'";
 		$result = mysqli_query($db,$sql);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
@@ -16,9 +16,15 @@
 		if($count == 1) {
 			if(password_verify($password,$row['password']) == 1){
 				session_start();
+				$groups = $row['groups']
 				$_SESSION['logged_in'] = true;
 				$_SESSION['userid'] = $username;
 				$_SESSION['current_facility'] = $current_facility;
+				if (preg_match('/\badmin\b/',$groups)) {
+    				$_SESSION['admin'] = 1;
+				} else {
+					$_SESSION['admin'] = 0;
+				}
 				header("Location: index.php");
 			}
 			else {

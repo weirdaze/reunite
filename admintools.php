@@ -18,10 +18,16 @@
 					<span class="menuIcon"><i class="fa fa-user-plus"></i></span>
 					<span class="menuText">Add User</span>
 				</a>
+				<?php
+					if($_SESSION['admin']) == 1){
+				?>
 				<a class="list-group-item d-flex align-items-center" href="facility.php">
 					<span class="menuIcon"><i class="fa fa-building"></i></span>
 					<span class="menuText">Manage Facilities</span>
 				</a>
+				<?php
+					}
+				?>
 				<a class="list-group-item d-flex align-items-center" href="display_tickets.php">
 					<span class="menuIcon"><i class="fa fa-file-alt"></i></span>
 					<span class="menuText">Manage Tickets</span>
