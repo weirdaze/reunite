@@ -30,4 +30,42 @@ reconciled - match has been found but not reunited
 closed - family has been confirmed reunited
 
 
+admin user groups
+super_admin - sees all has access to all. can delete tickets and facilities and all kinds of omnipotence
+facility_admin - can edit some of the facility parameters and can edit users
+admin - is a volunteer or worker who helps others with their registrations
+user - is a person seeking to be reunited. when someone self-registers they immediately become part of this group
+
+
+
+Flow and goings on - the refugee scenario
+- need a user ticket queue for admins to work approvals through.
+- need to account for all types of characters being entered into the db. need to learn how to encode and decode or something.
+- need to account for a password of the day mechanism for the facility_admins. (only the facility_admins can unlock the terminal) (google passcode)
+- need to account for multiple stations in a single facility
+
+once a "user" self-registers it will actually be the whole add_user form. the user_id to use in the creation of the username will be 'self'
+
+once they hit "submit" on the user registration form...
+
+  1. a ticket will be issued to the add-user-tickets database table
+  2. it will show up as a new ticket in the general admin queue
+  3. the user will have to wait until an admin approves the registration.
+  4. once the admin verifies that the picture and video uploaded correctly, they can hit approve. (this is a step to keep the system clean)
+       - no profanity, no nudity, no hateful speech, no threats.
+       - if these terms are violated, the admin is responsible.
+  5. once the user has been approved they can start browsing and searching for their family
+  6. the user will be able to log into the system but until the user's status is approved, they only have access to "view registration status page"
+  7. once the user is approved, the user_id doubles as their identify for searching for people
+  8. once the user claims someone, a ticket is generated as usual. 
+  9. the user will NOT be able to edit their own profile after the fact.
+  10. they will have the ability to submit a ticket for editing - which will go in the admin queue
+  11. they can only browse and claim people. 
+
+SAFETY - There is a chance that someone will approach the station with bad intentions. perhaps even agents of the governement that's trying to kill them... this is something we cannot get around. BUT... if we work with the facilities around who has access to the kiosk then this may be 
+alleviated somewhat. basically, if the person is known to the refugee camp and has been registered with the refugee camp, then they can then be allowed to go register in the kiosk. remember, only the facility-admins can unlock a station for use.
+
+
+
+
 
